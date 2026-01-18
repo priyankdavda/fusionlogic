@@ -18,81 +18,87 @@
 
     <main>
 
-        {{-- ================= HERO SECTION ================= --}}
-        <section class="hero hero-style--two pos-rel bg_img"
-                data-background="{{ asset('img/bg/dm.webp') }}">
+    {{-- ================= HERO SECTION ================= --}}
+    @if($activeBanner)
+    <section class="hero hero-style--two pos-rel bg_img"
+            data-background="{{ $activeBanner->background_image ? asset('storage/' . $activeBanner->background_image) : asset('img/bg/dm.webp') }}"
+            style="background-image: url('{{ $activeBanner->background_image ? asset('storage/' . $activeBanner->background_image) : asset('img/bg/dm.webp') }}');">
 
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="hero-content hero-content--two">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="hero-content hero-content--two" style="text-align: {{ $activeBanner->text_alignment }}; color: {{ $activeBanner->text_color }};">
 
-                            <h2 class="title scale-animation wow">
-                                Fusion <span class="title-color">Tech</span> Solution
-                            </h2>
+                        <h2 class="title scale-animation wow" style="color: {{ $activeBanner->text_color }};">
+                            {!! $activeBanner->heading !!}
+                        </h2>
 
-                            <p class="sub-title scale-animation wow">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                Aliquam placerat tincidunt orci, sed hendrerit felis ultricies non.
-                                Pellentesque metus dui, blandit quis quam eget, semper maximus magna.
-                                Duis elementum cursus nulla, a rutrum velit pretium in.
-                                In eget dignissim ante. Praesent dignissim magna at imperdiet pellentesque.
-                            </p>
+                        @if($activeBanner->paragraph)
+                        <p class="sub-title scale-animation wow" style="color: {{ $activeBanner->text_color }};">
+                            {{ $activeBanner->paragraph }}
+                        </p>
+                        @endif
 
-                            <div class="hero-btn scale-animation wow">
-                                <a class="thm-btn agency-btn" href="{{ url('/contact') }}">
-                                    <span class="text">Contact Us</span>
+                        @if($activeBanner->button_text && $activeBanner->button_link)
+                        <div class="hero-btn scale-animation wow">
+                            <a class="thm-btn agency-btn" 
+                            href="{{ $activeBanner->button_link }}"
+                            target="{{ $activeBanner->button_target }}"
+                            style="background-color: {{ $activeBanner->button_color }};">
+                                <span class="text">{{ $activeBanner->button_text }}</span>
 
-                                    <span class="arrow">
-                                        <span class="arrow-icon">
-                                            {{-- Arrow SVG --}}
-                                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <rect x="5.06592" y="19.9785" width="20.5712" height="2.61221"
-                                                    transform="rotate(-40.2798 5.06592 19.9785)" fill="white"/>
-                                                <rect x="7.97095" y="7.24463" width="2.61221" height="2.61221"
-                                                    transform="rotate(-40.2798 7.97095 7.24463)" fill="white"/>
-                                                <rect x="11.6523" y="7.54834" width="2.61221" height="2.61221"
-                                                    transform="rotate(-40.2798 11.6523 7.54834)" fill="white"/>
-                                                <rect x="15.334" y="7.85205" width="2.61221" height="2.61221"
-                                                    transform="rotate(-40.2798 15.334 7.85205)" fill="white"/>
-                                                <rect x="18.7119" y="11.8374" width="2.61221" height="2.61221"
-                                                    transform="rotate(-40.2798 18.7119 11.8374)" fill="white"/>
-                                                <rect x="18.4084" y="15.52" width="2.61221" height="2.61221"
-                                                    transform="rotate(-40.2798 18.4084 15.52)" fill="white"/>
-                                                <rect x="18.104" y="19.2012" width="2.61221" height="2.61221"
-                                                    transform="rotate(-40.2798 18.104 19.2012)" fill="white"/>
-                                            </svg>
+                                <span class="arrow">
+                                    <span class="arrow-icon">
+                                        {{-- Arrow SVG --}}
+                                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <rect x="5.06592" y="19.9785" width="20.5712" height="2.61221"
+                                                transform="rotate(-40.2798 5.06592 19.9785)" fill="white"/>
+                                            <rect x="7.97095" y="7.24463" width="2.61221" height="2.61221"
+                                                transform="rotate(-40.2798 7.97095 7.24463)" fill="white"/>
+                                            <rect x="11.6523" y="7.54834" width="2.61221" height="2.61221"
+                                                transform="rotate(-40.2798 11.6523 7.54834)" fill="white"/>
+                                            <rect x="15.334" y="7.85205" width="2.61221" height="2.61221"
+                                                transform="rotate(-40.2798 15.334 7.85205)" fill="white"/>
+                                            <rect x="18.7119" y="11.8374" width="2.61221" height="2.61221"
+                                                transform="rotate(-40.2798 18.7119 11.8374)" fill="white"/>
+                                            <rect x="18.4084" y="15.52" width="2.61221" height="2.61221"
+                                                transform="rotate(-40.2798 18.4084 15.52)" fill="white"/>
+                                            <rect x="18.104" y="19.2012" width="2.61221" height="2.61221"
+                                                transform="rotate(-40.2798 18.104 19.2012)" fill="white"/>
+                                        </svg>
 
-                                            {{-- Duplicate SVG for animation --}}
-                                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <rect x="5.06592" y="19.9785" width="20.5712" height="2.61221"
-                                                    transform="rotate(-40.2798 5.06592 19.9785)" fill="white"/>
-                                                <rect x="7.97095" y="7.24463" width="2.61221" height="2.61221"
-                                                    transform="rotate(-40.2798 7.97095 7.24463)" fill="white"/>
-                                                <rect x="11.6523" y="7.54834" width="2.61221" height="2.61221"
-                                                    transform="rotate(-40.2798 11.6523 7.54834)" fill="white"/>
-                                                <rect x="15.334" y="7.85205" width="2.61221" height="2.61221"
-                                                    transform="rotate(-40.2798 15.334 7.85205)" fill="white"/>
-                                                <rect x="18.7119" y="11.8374" width="2.61221" height="2.61221"
-                                                    transform="rotate(-40.2798 18.7119 11.8374)" fill="white"/>
-                                                <rect x="18.4084" y="15.52" width="2.61221" height="2.61221"
-                                                    transform="rotate(-40.2798 18.4084 15.52)" fill="white"/>
-                                                <rect x="18.104" y="19.2012" width="2.61221" height="2.61221"
-                                                    transform="rotate(-40.2798 18.104 19.2012)" fill="white"/>
-                                            </svg>
-                                        </span>
+                                        {{-- Duplicate SVG for animation --}}
+                                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <rect x="5.06592" y="19.9785" width="20.5712" height="2.61221"
+                                                transform="rotate(-40.2798 5.06592 19.9785)" fill="white"/>
+                                            <rect x="7.97095" y="7.24463" width="2.61221" height="2.61221"
+                                                transform="rotate(-40.2798 7.97095 7.24463)" fill="white"/>
+                                            <rect x="11.6523" y="7.54834" width="2.61221" height="2.61221"
+                                                transform="rotate(-40.2798 11.6523 7.54834)" fill="white"/>
+                                            <rect x="15.334" y="7.85205" width="2.61221" height="2.61221"
+                                                transform="rotate(-40.2798 15.334 7.85205)" fill="white"/>
+                                            <rect x="18.7119" y="11.8374" width="2.61221" height="2.61221"
+                                                transform="rotate(-40.2798 18.7119 11.8374)" fill="white"/>
+                                            <rect x="18.4084" y="15.52" width="2.61221" height="2.61221"
+                                                transform="rotate(-40.2798 18.4084 15.52)" fill="white"/>
+                                            <rect x="18.104" y="19.2012" width="2.61221" height="2.61221"
+                                                transform="rotate(-40.2798 18.104 19.2012)" fill="white"/>
+                                        </svg>
                                     </span>
-                                </a>
-                            </div>
-
+                                </span>
+                            </a>
                         </div>
+                        @endif
+
                     </div>
                 </div>
             </div>
-        </section>
-        {{-- ================= HERO SECTION END ================= --}}
+        </div>
+    </section>
+    @endif
+    {{-- ================= HERO SECTION END ================= --}}
 
 
         {{-- ================= BRAND SECTION ================= --}}
@@ -134,117 +140,110 @@
             </section>
         {{-- ================= BRAND SECTION END ================= --}}
 
-        {{-- ================= SERVICES SECTION ================= --}}
-            <section class="service pt-80">
 
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-11">
-                            <div class="sec-title custom-sec-title xb-sec-padding text-center">
-                                <span class="sub-title">Our Main Services</span>
-                                <h2 class="title">
-                                    Scalable solutions for growing businesses
-                                </h2>
-                            </div>
+        {{-- ================= SERVICES SECTION ================= --}}
+        <section class="service pt-80">
+
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-11">
+                        <div class="sec-title custom-sec-title xb-sec-padding text-center">
+                            <span class="sub-title">Our Main Services</span>
+                            <h2 class="title">
+                                Scalable solutions for growing businesses
+                            </h2>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="xb-service-wrap bg_img"
-                    data-background="{{ asset('img/bg/service-bg.png') }}">
+            <div class="xb-service-wrap bg_img"
+                data-background="{{ asset('img/bg/service-bg.png') }}">
 
-                    @php
-                        $services = [
-                            [
-                                'title' => 'AI-driven SEO & AEO',
-                                'desc'  => 'Use AI to target audiences, personalize campaigns, and analyze data for better engagement and results.',
-                            ],
-                            [
-                                'title' => 'Lead Generation',
-                                'desc'  => 'We turn complex data into clear, actionable insights using AI and advanced analytics.',
-                            ],
-                            [
-                                'title' => 'Brand & Social Management',
-                                'desc'  => 'We create intelligent brand strategies and manage social platforms effectively.',
-                            ],
-                            [
-                                'title' => 'AI Graphics & Videos',
-                                'desc'  => 'AI-powered visuals and video content for impactful brand communication.',
-                            ],
-                            [
-                                'title' => 'Web Development',
-                                'desc'  => 'Custom, scalable and performance-driven web development solutions.',
-                            ],
-                            [
-                                'title' => 'Digital Marketing',
-                                'desc'  => 'Data-driven digital marketing strategies to boost growth and visibility.',
-                            ],
-                        ];
-                    @endphp
+                @forelse($services as $index => $service)
+                    <div class="xb-service-item xb-border xb-mouseenter {{ $index === 0 ? 'active' : '' }}">
+                        <div class="xb-item--inner">
 
-                    @foreach($services as $index => $service)
-                        <div class="xb-service-item xb-border xb-mouseenter {{ $index === 0 ? 'active' : '' }}">
-                            <div class="xb-item--inner">
-
-                                <div class="xb-item--item">
-                                    <div class="xb-item--head-item">
-                                        <h3 class="xb-item--title border-effect">
-                                            <a href="#">{{ $service['title'] }}</a>
-                                        </h3>
-                                        <a class="xb-item--icon" href="#">
-                                            <img src="{{ asset('img/icon/rotate-arrow-black.svg') }}" alt="arrow">
+                            <div class="xb-item--item">
+                                <div class="xb-item--head-item">
+                                    <h3 class="xb-item--title border-effect">
+                                        <a href="{{ url('/services/' . $service->slug) }}">
+                                            {{ $service->title }}
                                         </a>
-                                    </div>
-
-                                    <p class="xb-item--content">
-                                        {{ $service['desc'] }}
-                                    </p>
-
-                                    <div class="img-hove-effect">
-                                        <div class="xb-item--img xb-img">
-                                            @for($i = 0; $i < 4; $i++)
-                                                <a href="#">
-                                                    <img src="{{ asset('img/service/img03.jpg') }}" alt="service image">
-                                                </a>
-                                            @endfor
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="service-vertical-text">
-                                    <h3 class="xb-item--title">
-                                        <a href="#">{{ $service['title'] }}</a>
                                     </h3>
-                                    <a class="xb-icon" href="#">
-                                        {{-- Arrow SVG (unchanged) --}}
-                                        <svg width="31" height="31" viewBox="0 0 31 31" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <rect x="6.28979" y="21.4111" width="22.36" height="2.83936"
-                                                transform="rotate(-40.2798 6.28979 21.4111)" fill="white"/>
-                                            <rect x="9.44751" y="7.57031" width="2.83936" height="2.83936"
-                                                transform="rotate(-40.2798 9.44751 7.57031)" fill="white"/>
-                                            <rect x="13.449" y="7.90015" width="2.83936" height="2.83936"
-                                                transform="rotate(-40.2798 13.449 7.90015)" fill="white"/>
-                                            <rect x="17.4507" y="8.23047" width="2.83936" height="2.83936"
-                                                transform="rotate(-40.2798 17.4507 8.23047)" fill="white"/>
-                                            <rect x="21.1223" y="12.5627" width="2.83936" height="2.83936"
-                                                transform="rotate(-40.2798 21.1223 12.5627)" fill="white"/>
-                                            <rect x="20.7925" y="16.5649" width="2.83936" height="2.83936"
-                                                transform="rotate(-40.2798 20.7925 16.5649)" fill="white"/>
-                                            <rect x="20.4617" y="20.5667" width="2.83936" height="2.83936"
-                                                transform="rotate(-40.2798 20.4617 20.5667)" fill="white"/>
-                                        </svg>
+                                    <a class="xb-item--icon" href="{{ url('/services/' . $service->slug) }}">
+                                        <img src="{{ asset('img/icon/rotate-arrow-black.svg') }}" alt="arrow">
                                     </a>
                                 </div>
 
+                                <p class="xb-item--content">
+                                    {{ $service->short_description }}
+                                </p>
+
+                                <div class="img-hove-effect">
+                                    <div class="xb-item--img xb-img">
+                                        @if($service->gallery && count($service->gallery) > 0)
+                                            @foreach(array_slice($service->gallery, 0, 4) as $image)
+                                                <a href="{{ url('/services/' . $service->slug) }}">
+                                                    <img src="{{ asset('storage/' . $image) }}" alt="{{ $service->title }}">
+                                                </a>
+                                            @endforeach
+                                        @elseif($service->featured_image)
+                                            @for($i = 0; $i < 4; $i++)
+                                                <a href="{{ url('/services/' . $service->slug) }}">
+                                                    <img src="{{ asset('storage/' . $service->featured_image) }}" alt="{{ $service->title }}">
+                                                </a>
+                                            @endfor
+                                        @else
+                                            @for($i = 0; $i < 4; $i++)
+                                                <a href="{{ url('/services/' . $service->slug) }}">
+                                                    <img src="{{ asset('img/service/img03.jpg') }}" alt="{{ $service->title }}">
+                                                </a>
+                                            @endfor
+                                        @endif
+                                    </div>
+                                </div>
                             </div>
+
+                            <div class="service-vertical-text">
+                                <h3 class="xb-item--title">
+                                    <a href="{{ url('/services/' . $service->slug) }}">
+                                        {{ $service->title }}
+                                    </a>
+                                </h3>
+                                <a class="xb-icon" href="{{ url('/services/' . $service->slug) }}">
+                                    {{-- Arrow SVG --}}
+                                    <svg width="31" height="31" viewBox="0 0 31 31" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="6.28979" y="21.4111" width="22.36" height="2.83936"
+                                            transform="rotate(-40.2798 6.28979 21.4111)" fill="white"/>
+                                        <rect x="9.44751" y="7.57031" width="2.83936" height="2.83936"
+                                            transform="rotate(-40.2798 9.44751 7.57031)" fill="white"/>
+                                        <rect x="13.449" y="7.90015" width="2.83936" height="2.83936"
+                                            transform="rotate(-40.2798 13.449 7.90015)" fill="white"/>
+                                        <rect x="17.4507" y="8.23047" width="2.83936" height="2.83936"
+                                            transform="rotate(-40.2798 17.4507 8.23047)" fill="white"/>
+                                        <rect x="21.1223" y="12.5627" width="2.83936" height="2.83936"
+                                            transform="rotate(-40.2798 21.1223 12.5627)" fill="white"/>
+                                        <rect x="20.7925" y="16.5649" width="2.83936" height="2.83936"
+                                            transform="rotate(-40.2798 20.7925 16.5649)" fill="white"/>
+                                        <rect x="20.4617" y="20.5667" width="2.83936" height="2.83936"
+                                            transform="rotate(-40.2798 20.4617 20.5667)" fill="white"/>
+                                    </svg>
+                                </a>
+                            </div>
+
                         </div>
-                    @endforeach
+                    </div>
+                @empty
+                    <div class="col-12 text-center py-5">
+                        <p class="text-muted">No services available at the moment.</p>
+                    </div>
+                @endforelse
 
-                </div>
-            </section>
-            {{-- ================= SERVICES SECTION END ================= --}}
-
+            </div>
+        </section>
+        {{-- ================= SERVICES SECTION END ================= --}}
 
         {{-- ================= PORTFOLIO / PROJECT SECTION ================= --}}
         <section class="project bg_img pt-90 pb-100"
