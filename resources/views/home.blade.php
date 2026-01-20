@@ -41,7 +41,7 @@
 
                         @if($activeBanner->button_text && $activeBanner->button_link)
                         <div class="hero-btn scale-animation wow">
-                            <a class="thm-btn agency-btn" 
+                            <a class="thm-btn agency-btn"
                             href="{{ $activeBanner->button_link }}"
                             target="{{ $activeBanner->button_target }}"
                             style="background-color: {{ $activeBanner->button_color }};">
