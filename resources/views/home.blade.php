@@ -41,7 +41,7 @@
 
                         @if($activeBanner->button_text && $activeBanner->button_link)
                         <div class="hero-btn scale-animation wow">
-                            <a class="thm-btn agency-btn" 
+                            <a class="thm-btn agency-btn"
                             href="{{ $activeBanner->button_link }}"
                             target="{{ $activeBanner->button_target }}"
                             style="background-color: {{ $activeBanner->button_color }};">
@@ -124,11 +124,19 @@
                                         'logo05.png',
                                         'logo06.png',
                                     ];
+                                     $brandLogos_array = [
+                                            (object) ['logo' => 'logo01.png', 'name' => 'Brand 1'],
+                                            (object) ['logo' => 'logo02.png', 'name' => 'Brand 2'],
+                                            (object) ['logo' => 'logo03.png', 'name' => 'Brand 3'],
+                                            (object) ['logo' => 'logo04.png', 'name' => 'Brand 4'],
+                                            (object) ['logo' => 'logo05.png', 'name' => 'Brand 5'],
+                                            (object) ['logo' => 'logo06.png', 'name' => 'Brand 6'],
+                                        ];
                                 @endphp
 
-                                @foreach($brandLogos as $logo)
+                                @foreach($brandLogos_array as $brand)
                                     <div class="xb-brand-item">
-                                        <img src="{{ asset('img/brand/'.$logo) }}" alt="brand logo">
+                                        <img src="{{ asset('img/brand/'.$brand->logo) }}" alt="brand logo">
                                     </div>
                                 @endforeach
 
