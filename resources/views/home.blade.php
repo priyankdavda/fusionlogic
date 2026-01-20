@@ -100,45 +100,45 @@
     @endif
     {{-- ================= HERO SECTION END ================= --}}
 
+    {{-- ================= BRAND SECTION ================= --}}
+    <section class="brand pt-0 pb-0">
+        <div class="container">
+            <div class="xb-brand-wrap xb-border">
 
-        {{-- ================= BRAND SECTION ================= --}}
-            <section class="brand pt-0 pb-0">
-                <div class="container">
-                    <div class="xb-brand-wrap xb-border">
+                {{-- STATIC HEADING (UNCHANGED) --}}
+                <div class="brand-sub-title xb-border">
+                    <p>
+                        World's Best <span>120 Companies</span> Work With Us
+                    </p>
+                </div>
 
-                        <div class="brand-sub-title xb-border">
-                            <p>
-                                World's Best <span>120 Companies</span> Work With Us
-                            </p>
-                        </div>
+                <div class="brand-marquee marquee-left">
+                    <div class="xb-brand-inner ul_li_between">
 
-                        <div class="brand-marquee marquee-left">
-                            <div class="xb-brand-inner ul_li_between">
+                        @foreach($brands as $brand)
+                            <div class="xb-brand-item">
+                                @if($brand->website_url)
+                                    <a href="{{ $brand->website_url }}" target="_blank" rel="nofollow noopener">
+                                @endif
+                                <img
+                                    src="{{ rtrim(config('services.cms.asset_url'), '/') . '/storage/' . $brand->logo }}"
+                                    alt="{{ $brand->name }}"
+                                    loading="lazy"
+                                >
 
-                                @php
-                                    $brandLogos = [
-                                        'logo01.png',
-                                        'logo02.png',
-                                        'logo03.png',
-                                        'logo04.png',
-                                        'logo05.png',
-                                        'logo06.png',
-                                    ];
-                                @endphp
-
-                                @foreach($brandLogos as $logo)
-                                    <div class="xb-brand-item">
-                                        <img src="{{ asset('img/brand/'.$logo) }}" alt="brand logo">
-                                    </div>
-                                @endforeach
-
+                                @if($brand->website_url)
+                                    </a>
+                                @endif
                             </div>
-                        </div>
+                        @endforeach
 
                     </div>
                 </div>
-            </section>
-        {{-- ================= BRAND SECTION END ================= --}}
+
+            </div>
+        </div>
+    </section>
+    {{-- ================= BRAND SECTION END ================= --}}
 
 
         {{-- ================= SERVICES SECTION ================= --}}

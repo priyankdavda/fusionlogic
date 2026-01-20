@@ -14,6 +14,11 @@ return [
     |
     */
 
+    'cms' => [
+        'asset_url' => env('CMS_ASSET_URL'),
+    ],
+
+
     'mailgun' => [
         'domain' => env('MAILGUN_DOMAIN'),
         'secret' => env('MAILGUN_SECRET'),
