@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,4 +17,7 @@ use App\Http\Controllers\HomeController;
 //     return view('welcome');
 // });
 Route::get('/', [HomeController::class,'home'])->name('home');
-Route::get('/about', fn () => view('about'));
+Route::get('/portfolio/{portfolio}', [HomeController::class, 'show'])
+    ->name('portfolio.show');
+
+Route::get('/about', [HomeController::class,'about'])->name('about');

@@ -279,42 +279,7 @@
                 </div>
             </div>
 
-            @php
-                $projects = [
-                    [
-                        'title'   => 'Chatbot and NLP projects',
-                        'desc'    => 'We build smart chatbots and NLP tools that understand and respond naturally.',
-                        'service' => 'Data Processing',
-                        'country' => 'Germany, Issum',
-                        'client'  => 'Aivora',
-                        'image'   => 'project-img01.jpg',
-                    ],
-                    [
-                        'title'   => 'E-commerce & marketing',
-                        'desc'    => 'AI solutions that boost sales using recommendations and dynamic pricing.',
-                        'service' => 'Artificial Intelligence',
-                        'country' => 'Singapore',
-                        'client'  => 'Aivora',
-                        'image'   => 'project-img02.jpg',
-                    ],
-                    [
-                        'title'   => 'Computer vision projects',
-                        'desc'    => 'AI systems that analyze and understand visual data accurately.',
-                        'service' => 'Computer Vision',
-                        'country' => 'United States',
-                        'client'  => 'Aivora',
-                        'image'   => 'project-img03.jpg',
-                    ],
-                    [
-                        'title'   => 'Data science analytics',
-                        'desc'    => 'AI-powered analytics turning complex data into insights.',
-                        'service' => 'Data Science',
-                        'country' => 'Canada',
-                        'client'  => 'Aivora',
-                        'image'   => 'project-img04.jpg',
-                    ],
-                ];
-            @endphp
+          
 
             <div class="container mxw-1800">
                 <div class="xb-project-wrap">
@@ -329,45 +294,59 @@
                     </div>
 
                     <div class="xb-project-inner">
-                        @foreach($projects as $project)
-                            <div class="xb-project-item bg_img"
-                                data-background="{{ asset('img/project/' . $project['image']) }}">
-
-                                <div class="xb-project-content">
-                                    <div class="xb-item--inner xb-border">
-
-                                        <h2 class="xb-item--title">
-                                            {{ $project['title'] }}
-                                        </h2>
-
-                                        <p class="xb-item--content">
-                                            {{ $project['desc'] }}
-                                        </p>
-
-                                        <ul class="xb-item--list ul_li">
-                                            <li>Services: <span>{{ $project['service'] }}</span></li>
-                                            <li>Country: <span>{{ $project['country'] }}</span></li>
-                                        </ul>
-
-                                        <ul class="xb-item--list ul_li">
-                                            <li>Client: <span>{{ $project['client'] }}</span></li>
-                                        </ul>
-
-                                        <div class="xb-item---btn mt-50">
-                                            <a class="thm-btn agency-btn" href="#">
-                                                <span class="text">Read More</span>
-                                                <span class="arrow">
-                                                    <span class="arrow-icon">
-                                                        @include('partials.arrow-svg')
+                        <div class="xb-project-inner">
+                            @foreach($portfolios as $portfolio)
+                                <div class="xb-project-item bg_img"
+                                    data-background="{{ 
+                                        rtrim(config('services.cms.asset_url'), '/') . '/storage/' . $portfolio->featured_image 
+                                    }}">
+                        
+                                    <div class="xb-project-content">
+                                        <div class="xb-item--inner xb-border">
+                        
+                                            <h2 class="xb-item--title">
+                                                {{ $portfolio->title }}
+                                            </h2>
+                        
+                                            <p class="xb-item--content">
+                                                {{ $portfolio->short_description }}
+                                            </p>
+                        
+                                            <ul class="xb-item--list ul_li">
+                                                <li>
+                                                    Services:
+                                                    <span>{{ implode(', ', $portfolio->services ?? []) }}</span>
+                                                </li>
+                                                <li>
+                                                    Country:
+                                                    <span>{{ implode(', ', $portfolio->countries ?? []) }}</span>
+                                                </li>
+                                            </ul>
+                        
+                                            <ul class="xb-item--list ul_li">
+                                                <li>
+                                                    Client:
+                                                    <span>{{ $portfolio->client_name }}</span>
+                                                </li>
+                                            </ul>
+                        
+                                            <div class="xb-item---btn mt-50">
+                                                <a class="thm-btn agency-btn"
+                                                   href="{{ route('portfolio.show', $portfolio->slug) }}">
+                                                    <span class="text">Read More</span>
+                                                    <span class="arrow">
+                                                        <span class="arrow-icon">
+                                                            @include('partials.arrow-svg')
+                                                        </span>
                                                     </span>
-                                                </span>
-                                            </a>
+                                                </a>
+                                            </div>
+                        
                                         </div>
-
                                     </div>
                                 </div>
-                            </div>
-                        @endforeach
+                            @endforeach
+                        </div>
                     </div>
 
                 </div>
@@ -375,7 +354,7 @@
         </section>
         {{-- ================= PORTFOLIO SECTION END ================= --}}
 
-        {{-- ================= WHY CHOOSE US ================= --}}
+       {{-- ================= WHY CHOOSE US ================= --}}
         <section class="why-choose-us bg_img pt-70 pb-100">
             <div class="container">
 
@@ -384,43 +363,8 @@
                     <h2 class="title">Proven expertise. Measurable results.</h2>
                 </div>
 
-                @php
-                    $features = [
-                        [
-                            'icon' => 'feature-icon01.svg',
-                            'title' => 'Smarter insights',
-                            'desc' => 'Make faster, data-driven decisions powered by real-time AI analysis.',
-                        ],
-                        [
-                            'icon' => 'feature-icon02.svg',
-                            'title' => 'Integrated AI solutions',
-                            'desc' => 'No extra tools needed. Built-in scalable AI from day one.',
-                        ],
-                        [
-                            'icon' => 'feature-icon03.svg',
-                            'title' => 'End-to-end automation',
-                            'desc' => 'Eliminate bottlenecks with intelligent workflows.',
-                        ],
-                        [
-                            'icon' => 'feature-icon03.svg',
-                            'title' => 'Secure architecture',
-                            'desc' => 'Enterprise-grade security with scalable infrastructure.',
-                        ],
-                        [
-                            'icon' => 'feature-icon03.svg',
-                            'title' => 'Custom strategies',
-                            'desc' => 'Tailored AI strategies aligned with your business goals.',
-                        ],
-                        [
-                            'icon' => 'feature-icon03.svg',
-                            'title' => 'Continuous optimization',
-                            'desc' => 'We refine systems continuously for maximum performance.',
-                        ],
-                    ];
-                @endphp
-
                 <div class="row mt-25">
-                    @foreach($features as $index => $feature)
+                    @foreach($whyChooseUsItems as $index => $item)
                         <div class="col-lg-4 col-md-6 mt-30">
                             <div class="xb-feature-item wow fadeInUp"
                                 data-wow-delay="{{ 700 + ($index * 100) }}ms"
@@ -428,12 +372,24 @@
 
                                 <div class="xb-item--inner xb-border">
                                     <span class="xb-item--icon">
-                                        <img src="{{ asset('img/icon/'.$feature['icon']) }}" alt="icon">
+
+                                        {{-- SVG preferred --}}
+                                        @if(!empty($item->icon_svg))
+                                            {!! $item->icon_svg !!}
+
+                                        {{-- Image fallback --}}
+                                        @elseif(!empty($item->icon_image))
+                                            <img
+                                                src="{{ rtrim(config('services.cms.asset_url'), '/') . '/storage/' . $item->icon_image }}"
+                                                alt="{{ $item->title }}"
+                                            >
+                                        @endif
+
                                     </span>
 
                                     <div class="xb-item--holder">
-                                        <h2 class="xb-item--title">{{ $feature['title'] }}</h2>
-                                        <p class="xb-item--content">{{ $feature['desc'] }}</p>
+                                        <h2 class="xb-item--title">{{ $item->title }}</h2>
+                                        <p class="xb-item--content">{{ $item->description }}</p>
                                     </div>
                                 </div>
 
@@ -445,6 +401,7 @@
             </div>
         </section>
         {{-- ================= WHY CHOOSE US END ================= --}}
+
 
         {{-- ================= CASE STUDIES ================= --}}
         <section id="process" class="process-sction z-1">
@@ -459,7 +416,9 @@
                                 <h2 class="title d-inline">Projects that deliver impact</h2>
 
                                 <div class="xb-heading-btn d-inline">
-                                    <a class="thm-btn agency-btn" href="#">
+                                    <a class="thm-btn agency-btn" 
+                                        {{-- href="{{ route('case-studies.index') }}" --}}
+                                    >
                                         <span class="text">View All Case Studies</span>
                                         <span class="arrow">
                                             <span class="arrow-icon">
@@ -473,31 +432,6 @@
                     </div>
 
                     {{-- RIGHT SIDE --}}
-                    @php
-                        $caseStudies = [
-                            [
-                                'industry' => 'Insurance',
-                                'flag' => 'india-flag.png',
-                                'image' => 'ga.webp',
-                                'project' => 'www.acko.com',
-                                'challenge' => 'Low-quality backlinks | High competition | Stagnant traffic',
-                                'result' => '99.94% Organic Growth',
-                                'result_desc' => 'Traffic increased from 100k to 490k.',
-                                'keywords' => 'Car insurance, Student insurance, Auto insurance',
-                            ],
-                            [
-                                'industry' => 'Finance',
-                                'flag' => 'india-flag.png',
-                                'image' => 'ga.webp',
-                                'project' => 'www.policybazaar.com',
-                                'challenge' => 'Low CTR | High CPC',
-                                'result' => '3.9x Growth',
-                                'result_desc' => 'Top 3 rankings across major keywords.',
-                                'keywords' => 'Health insurance, Life insurance',
-                            ],
-                        ];
-                    @endphp
-
                     <div class="col-lg-7">
                         <div class="xb-process-right-container pb-50 mt-none-30 wow fadeInRight"
                             data-wow-duration="600ms">
@@ -507,41 +441,53 @@
                                     <div class="container">
                                         <div class="row align-items-start mb-4 case-studies">
 
+                                            {{-- Screenshot --}}
                                             <div class="col-md-9">
-                                                <img src="{{ asset('img/case-study/'.$case['image']) }}"
-                                                    class="img-fluid rounded shadow" alt="case study">
+                                                <img
+                                                    src="{{ rtrim(config('services.cms.asset_url'), '/') . '/storage/' . $case->featured_image }}"
+                                                    class="img-fluid rounded shadow"
+                                                    alt="{{ $case->title }}"
+                                                >
                                             </div>
 
+                                            {{-- Meta --}}
                                             <div class="col-md-3 text-end right-content">
-                                                <h3 class="industry-tag">{{ $case['industry'] }}</h3>
-                                                <img src="{{ asset('img/case-study/'.$case['flag']) }}" alt="flag">
+                                                <h3 class="industry-tag">{{ $case->industry }}</h3>
 
-                                                <div class="project-name">
+                                                @if($case->country)
+                                                    <span class="d-block small">Country: {{ $case->country }}</span>
+                                                @endif
+
+                                                <div class="project-name mt-2">
                                                     <h5 class="fw-bold mb-1">Project</h5>
-                                                    <p class="mb-0 project-link">{{ $case['project'] }}</p>
+                                                    <p class="mb-0 project-link">
+                                                        {{ $case->title }}
+                                                    </p>
                                                 </div>
                                             </div>
 
+                                            {{-- Details --}}
                                             <div class="row g-4">
                                                 <div class="col-md-4">
                                                     <div class="info-box">
                                                         <h5 class="fw-bold mb-1">Challenge</h5>
-                                                        <p>{{ $case['challenge'] }}</p>
+                                                        <p>{{ $case->challenge }}</p>
                                                     </div>
                                                 </div>
 
                                                 <div class="col-md-4">
                                                     <div class="info-box">
                                                         <h5 class="fw-bold mb-1">Results</h5>
-                                                        <p class="fw-bold text-success">{{ $case['result'] }}</p>
-                                                        <p>{{ $case['result_desc'] }}</p>
+                                                        <p class="fw-bold text-success">
+                                                            {{ Str::limit($case->results, 50) }}
+                                                        </p>
                                                     </div>
                                                 </div>
 
                                                 <div class="col-md-4">
                                                     <div class="info-box">
                                                         <h5 class="fw-bold mb-1">Keywords</h5>
-                                                        <p>{{ $case['keywords'] }}</p>
+                                                        <p>{{ implode(', ', $case->keywords ?? []) }}</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -559,44 +505,45 @@
         </section>
         {{-- ================= CASE STUDIES END ================= --}}
 
-        {{-- ================= INDUSTRIES SECTION ================= --}}
+
+       {{-- ================= INDUSTRIES SECTION ================= --}}
         <section class="industries pb-80 bg_img"
-                data-background="{{ asset('img/bg/industries-bg02.png') }}">
+        data-background="{{ asset('img/bg/industries-bg02.png') }}">
 
-            <div class="container">
-                <div class="sec-title sec-title-center text-center mb-50">
-                    <span class="sub-title mb-0">Industries Served</span>
-                    <h2 class="title">Industries we served with FL</h2>
-                </div>
-            </div>
+        <div class="container">
+        <div class="sec-title sec-title-center text-center mb-50">
+            <span class="sub-title mb-0">Industries Served</span>
+            <h2 class="title">Industries we served with FL</h2>
+        </div>
+        </div>
 
-            @php
-                $industries = [
-                    ['icon' => 'service-icon01.svg', 'title' => 'Education'],
-                    ['icon' => 'service-icon02.svg', 'title' => 'Logistics'],
-                    ['icon' => 'service-icon03.svg', 'title' => 'Marketing'],
-                    ['icon' => 'service-icon04.svg', 'title' => 'Healthcare'],
-                    ['icon' => 'service-icon05.svg', 'title' => 'Finance'],
-                    ['icon' => 'service-icon06.svg', 'title' => 'Manufacturing'],
-                    ['icon' => 'service-icon07.svg', 'title' => 'E-commerce'],
-                ];
-            @endphp
+        <div class="xb-industries-wrapper d-inline-block">
+        <div class="marquee-right">
+            <div class="xb-industries-inner ul_li">
+                @foreach($industries as $industry)
+                    <div class="xb-industries-item xb-border">
+                        <div class="xb-icon">
 
-            <div class="xb-industries-wrapper d-inline-block">
-                <div class="marquee-right">
-                    <div class="xb-industries-inner ul_li">
-                        @foreach($industries as $industry)
-                            <div class="xb-industries-item xb-border">
-                                <div class="xb-icon">
-                                    <img src="{{ asset('img/icon/'.$industry['icon']) }}"
-                                        alt="{{ $industry['title'] }}">
-                                </div>
-                                <h3 class="xb-title">{{ $industry['title'] }}</h3>
-                            </div>
-                        @endforeach
+                            {{-- SVG preferred --}}
+                            @if(!empty($industry->icon_svg))
+                                {!! $industry->icon_svg !!}
+
+                            {{-- Image fallback --}}
+                            @elseif(!empty($industry->icon_image))
+                                <img
+                                    src="{{ rtrim(config('services.cms.asset_url'), '/') . '/storage/' . $industry->icon_image }}"
+                                    alt="{{ $industry->title }}"
+                                >
+                            @endif
+
+                        </div>
+
+                        <h3 class="xb-title">{{ $industry->title }}</h3>
                     </div>
-                </div>
+                @endforeach
             </div>
+        </div>
+        </div>
 
         </section>
         {{-- ================= INDUSTRIES SECTION END ================= --}}
@@ -707,139 +654,105 @@
         </section>
         {{-- ================= CONTACT END ================= --}}
 
-        {{-- ================= TESTIMONIALS ================= --}}
+       {{-- ================= TESTIMONIALS ================= --}}
         <section class="testimonial pb-110 bg_img"
-                data-background="{{ asset('img/bg/testimonial-bg.png') }}">
+        data-background="{{ asset('img/bg/testimonial-bg.png') }}">
 
-            <div class="container">
-                <div class="sec-title sec-title-center text-center mb-50">
-                    <span class="sub-title mb-15">Our Testimonial</span>
-                    <h2 class="title">Hear from our happy customers</h2>
-                </div>
-            </div>
+        <div class="container">
+        <div class="sec-title sec-title-center text-center mb-50">
+            <span class="sub-title mb-15">Our Testimonial</span>
+            <h2 class="title">Hear from our happy customers</h2>
+        </div>
+        </div>
 
-            @php
-                $testimonials = [
-                    ['name'=>'Riya Mehta','role'=>'Manager - Trendico','img'=>'img01.jpg','msg'=>'Boosted engagement and sales perfectly.'],
-                    ['name'=>'Miguel Torres','role'=>'CEO - DocFlow','img'=>'img02.jpg','msg'=>'Fast, accurate NLP tool saved hours.'],
-                    ['name'=>'Sebastian Clark','role'=>'Manager - SwiftLogix','img'=>'img03.jpg','msg'=>'Automation delivered immediate ROI.'],
-                    ['name'=>'Priya Ramirez','role'=>'CEO - BrightNest','img'=>'img04.jpg','msg'=>'Chatbot transformed customer service.'],
-                ];
-            @endphp
+        <div class="xb-testimonial-slider">
+        <div class="swiper-wrapper">
 
-            <div class="xb-testimonial-slider">
-                <div class="swiper-wrapper">
-                    @foreach($testimonials as $t)
-                        <div class="swiper-slide">
-                            <div class="xb-testimonial-item">
-                                <div class="xb-item--inner xb-border">
-                                    <p class="xb-item--content">"{{ $t['msg'] }}"</p>
-                                    <div class="xb-item--author ul_li">
-                                        <div class="xb-item--avatar">
-                                            <img src="{{ asset('img/avatar/'.$t['img']) }}" alt="avatar">
-                                        </div>
-                                        <div class="xb-item--holder">
-                                            <h3 class="xb-item--name">{{ $t['name'] }}</h3>
-                                            <span class="xb-item--desig">{{ $t['role'] }}</span>
-                                        </div>
-                                    </div>
+            @foreach($testimonials as $testimonial)
+                <div class="swiper-slide">
+                    <div class="xb-testimonial-item">
+                        <div class="xb-item--inner xb-border">
+
+                            <p class="xb-item--content">
+                                "{{ $testimonial->quote }}"
+                            </p>
+
+                            <div class="xb-item--author ul_li">
+                                <div class="xb-item--avatar">
+                                    @if($testimonial->avatar)
+                                        <img
+                                            src="{{ rtrim(config('services.cms.asset_url'), '/') . '/storage/' . $testimonial->avatar }}"
+                                            alt="{{ $testimonial->name }}"
+                                        >
+                                    @endif
+                                </div>
+
+                                <div class="xb-item--holder">
+                                    <h3 class="xb-item--name">
+                                        {{ $testimonial->name }}
+                                    </h3>
+
+                                    <span class="xb-item--desig">
+                                        {{ trim($testimonial->designation . ' - ' . $testimonial->company, ' -') }}
+                                    </span>
                                 </div>
                             </div>
+
                         </div>
-                    @endforeach
+                    </div>
                 </div>
-            </div>
+            @endforeach
+
+        </div>
+        </div>
         </section>
         {{-- ================= TESTIMONIAL END ================= --}}
 
+
         {{-- ================= FAQ ================= --}}
         <section id="faq" class="faq pos-rel pt-40 pb-90 bg_img"
-                data-background="{{ asset('img/bg/faq-bg.png') }}">
+        data-background="{{ asset('img/bg/faq-bg.png') }}">
 
-            <div class="container">
-                <div class="sec-title sec-title-center text-center mb-50">
-                    <span class="sub-title mb-15 wow fadeInUp">FAQ's</span>
-                    <h2 class="title wow fadeInUp" data-wow-delay="150ms">
-                        Have a question? Look here
-                    </h2>
+        <div class="container">
+        <div class="sec-title sec-title-center text-center mb-50">
+            <span class="sub-title mb-15 wow fadeInUp">FAQ's</span>
+            <h2 class="title wow fadeInUp" data-wow-delay="150ms">
+                Have a question? Look here
+            </h2>
+        </div>
+
+        <div class="row">
+            @foreach($faqs->chunk(ceil($faqs->count() / 2)) as $faqColumn)
+                <div class="col-lg-6">
+                    <div class="xb-faq wow fadeInUp">
+                        <ul class="accordion_box list-unstyled">
+
+                            @foreach($faqColumn as $faq)
+                                <li class="accordion block">
+                                    <div class="acc-btn">
+                                        {{ $faq->question }}
+                                        <span class="arrow"><span></span></span>
+                                    </div>
+
+                                    <div class="acc_body">
+                                        <div class="content">
+                                            {!! $faq->answer !!}
+                                        </div>
+                                    </div>
+                                </li>
+                            @endforeach
+
+                        </ul>
+                    </div>
                 </div>
+            @endforeach
+        </div>
+        </div>
 
-                @php
-                    $faqs = [
-                        [
-                            'q' => 'How long does it take to train the chatbot?',
-                            'a' => 'Just provide your website URL. The chatbot automatically scrapes and trains itself.',
-                            'points' => [
-                                'Instant setup with your URL',
-                                'Self-learning from real questions',
-                                'Improves with more data',
-                            ],
-                        ],
-                        [
-                            'q' => 'How can I embed the AI assistant on my website?',
-                            'a' => 'You can embed it using a simple script or plugin provided by us.',
-                            'points' => [
-                                'Easy embed script',
-                                'Works on all platforms',
-                                'No coding required',
-                            ],
-                        ],
-                        [
-                            'q' => 'Does it support other languages than English?',
-                            'a' => 'Yes, it supports multiple languages and keeps improving.',
-                            'points' => [
-                                'Multi-language support',
-                                'Auto language detection',
-                                'Expandable anytime',
-                            ],
-                        ],
-                        [
-                            'q' => 'Can I take control of a conversation if needed?',
-                            'a' => 'Yes, you can jump in anytime and manage conversations manually.',
-                            'points' => [
-                                'Manual override',
-                                'Conversation history',
-                                'Agent takeover',
-                            ],
-                        ],
-                    ];
-                @endphp
-
-                <div class="row">
-                    @foreach(collect($faqs)->chunk(2) as $faqColumn)
-                        <div class="col-lg-6">
-                            <div class="xb-faq wow fadeInUp">
-                                <ul class="accordion_box list-unstyled">
-                                    @foreach($faqColumn as $index => $faq)
-                                        <li class="accordion block ">
-                                            <div class="acc-btn ">
-                                                {{ $faq['q'] }}
-                                                <span class="arrow"><span></span></span>
-                                            </div>
-                                            <div class="acc_body ">
-                                                <div class="content">
-                                                    <p>{{ $faq['a'] }}</p>
-                                                    <ul class="list-unstyled">
-                                                        @foreach($faq['points'] as $point)
-                                                            <li>
-                                                                <i class="far fa-check"></i> {{ $point }}
-                                                            </li>
-                                                        @endforeach
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-
-            <span class="faq-linear-shape"></span>
+        <span class="faq-linear-shape"></span>
         </section>
         {{-- ================= FAQ END ================= --}}
+
 
         {{-- ================= BLOG ================= --}}
         <section class="blog pt-90 pb-15 bg_img"
