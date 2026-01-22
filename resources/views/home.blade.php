@@ -761,7 +761,7 @@
             <div class="container">
                 <div class="row mt-none-30">
 
-                    {{-- LEFT CONTENT --}}
+                    {{-- LEFT CONTENT (STATIC) --}}
                     <div class="col-lg-4 mt-30">
                         <div class="sec-title blog-sec-title mb-70">
                             <span class="sub-title mb-15">Expert Insights</span>
@@ -769,7 +769,9 @@
                         </div>
 
                         <div class="blog-btn">
-                            <a class="thm-btn agency-btn" href="#">
+                            <a class="thm-btn agency-btn" 
+                                {{-- href="{{ route('blogs.index') }}" --}}
+                            >
                                 <span class="text">View More Blog</span>
                                 <span class="arrow">
                                     <span class="arrow-icon">
@@ -781,64 +783,45 @@
                     </div>
 
                     {{-- BLOG LIST --}}
-                    @php
-                        $blogs = [
-                            [
-                                'title' => 'AI chatbots vs human support – which is best?',
-                                'category' => 'Chatbot Tips',
-                                'date' => 'April 27, 2025',
-                                'image' => 'img02.jpg',
-                            ],
-                            [
-                                'title' => 'How E-commerce brands use AI to increase sales',
-                                'category' => 'AI Business',
-                                'date' => 'March 17, 2025',
-                                'image' => 'img02.jpg',
-                            ],
-                            [
-                                'title' => 'Future of AI-driven SEO strategies',
-                                'category' => 'SEO',
-                                'date' => 'Feb 10, 2025',
-                                'image' => 'img02.jpg',
-                            ],
-                            [
-                                'title' => 'How automation improves customer experience',
-                                'category' => 'Automation',
-                                'date' => 'Jan 22, 2025',
-                                'image' => 'img02.jpg',
-                            ],
-                        ];
-                    @endphp
-
                     <div class="col-lg-8 mt-30">
                         <div class="row mt-none-30">
+
                             @foreach($blogs as $blog)
                                 <div class="col-lg-6 col-md-6 mt-30">
                                     <div class="xb-blog-item xb-small-blog-item wow fadeInUp">
                                         <div class="xb-item--inner img-hove-effect xb-border">
 
+                                            {{-- BLOG IMAGE --}}
                                             <div class="xb-img">
-                                                @for($i = 0; $i < 4; $i++)
-                                                    <a href="#">
-                                                        <img src="{{ asset('img/blog/'.$blog['image']) }}" alt="blog">
-                                                    </a>
-                                                @endfor
+                                                <a 
+                                                    {{-- href="{{ route('blogs.show', $blog->slug) }}" --}}
+                                                >
+                                                    <img
+                                                        src="{{ rtrim(config('services.cms.asset_url'), '/') . '/storage/' . $blog->featured_image }}"
+                                                        alt="{{ $blog->title }}"
+                                                    >
+                                                </a>
                                             </div>
 
+                                            {{-- CONTENT --}}
                                             <div class="xb-item--holder">
                                                 <ul class="xb-item--meta ul_li list-unstyled">
                                                     <li>
                                                         <img src="{{ asset('img/icon/blog-icon01.svg') }}">
-                                                        {{ $blog['category'] }}
+                                                        {{ $blog->category?->name }}
                                                     </li>
                                                     <li>
                                                         <img src="{{ asset('img/icon/blog-icon02.svg') }}">
-                                                        {{ $blog['date'] }}
+                                                        {{ $blog->published_at?->format('M d, Y') }}
                                                     </li>
                                                 </ul>
 
                                                 <h2 class="xb-item--title">
-                                                    <a href="#">{{ $blog['title'] }}</a>
+                                                    <a 
+                                                        {{-- href="{{ route('blogs.show', $blog->slug) }}" --}}
+                                                    >
+                                                        {{ $blog->title }}
+                                                    </a>
                                                 </h2>
                                             </div>
 
@@ -846,6 +829,13 @@
                                     </div>
                                 </div>
                             @endforeach
+
+                            @if($blogs->isEmpty())
+                                <div class="col-12">
+                                    <p>No blogs published yet.</p>
+                                </div>
+                            @endif
+
                         </div>
                     </div>
 

@@ -11,6 +11,7 @@ use App\Models\CaseStudy;
 use App\Models\Industry;
 use App\Models\Testimonial;
 use App\Models\Faq;
+use App\Models\Blog;
 
 class HomeController extends Controller
 {
@@ -44,8 +45,14 @@ class HomeController extends Controller
         $faqs = Faq::active()
             ->ordered()
             ->get();
+        
+        $blogs = Blog::published()
+            ->latest()
+            ->with('category')
+            ->limit(4)
+            ->get();
 
-        return view('home', compact('brands','portfolios','whyChooseUsItems','caseStudies','industries','testimonials','faqs'));
+        return view('home', compact('brands','portfolios','whyChooseUsItems','caseStudies','industries','testimonials','faqs','blogs'));
     }
 
     public function about()
