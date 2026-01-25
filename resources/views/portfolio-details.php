@@ -13,21 +13,22 @@
    <body>
       <?php include 'back-to-top.php'; ?>
       <div class="body_wrap o-clip">
-          
+
          <!-- header start -->
          <?php include 'header.php'; ?>
          <!-- header end -->
-         
+
          <div class="body-overlay"></div>
          <!-- main area start -->
          <main>
-             
+
             <!-- hero start -->
             <section class="breadcrumb bg_img" data-background="assets/img/bg/bootcamp-bg.png">
                 <div class="container">
                     <div class="breadcrumb__content">
                         <ul class="breadcrumb__list clearfix list-unstyled">
-                            <li class="breadcrumb-item"><a href="/">home</a></li>
+                            <li class="breadcrumb-item"><a href="/it">home</a></li>
+                            <li class="breadcrumb-item"><a href="/it/portfolio.php">Portfolio</a></li>
                             <li class="breadcrumb-item">Portfolio Details</li>
                         </ul>
                         <h2 class="breadcrumb__title">Portfolio Details</h2>
@@ -35,7 +36,7 @@
                 </div>
             </section>
             <!-- hero end -->
-            
+
             <!-- project-details start -->
         <section class="project-details pb-0 mt-30">
             <div class="container">
@@ -75,7 +76,7 @@
                     </div>
                 </div>
                 </div>
-            
+
                 <ul class="project-meta ul_li_between mt-40 icons">
                     <li><img src="assets/img/icon/project-icon04.svg" alt="icon"> <span>services :</span> Ai solutions</li>
                     <li><img src="assets/img/icon/project-icon05.svg" alt="icon"> <span>client :</span> Aivora</li>
@@ -160,7 +161,7 @@
                         </li>
                     </ul>
                 </div>
-                
+
                 <div class="comparison-container">
                     <div class="row mt-none-30">
                         <div class="col-lg-6 mt-0">
@@ -292,18 +293,18 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <h2 class="details-content-title mt-60 mb-15">Solution and result</h2>
                 <p>The proposed AI solution leverages advanced machine learning algorithms, real-time data analytics, and automation technologies to transform traditional operations into intelligent, adaptive processes. By integrating predictive analytics, the system anticipates potential disruptions, optimizes resource allocation, and automates routine tasks, enabling businesses to operate with greater precision and efficiency.</p>
                 <p class="mt-30">he AI-driven insights empower decision-makers to respond swiftly to changing conditions, reducing downtime and operational costs significantly. Furthermore, continuous learning capabilities ensure that the system evolves alongside the business environment.</p>
             </div>
         </section>
         <!-- project-details end -->
-  
-            
+
+
          </main>
          <!-- main area end -->
-         
+
          <!-- footer start -->
          <?php include 'footer.php'; ?>
          <!-- footer end -->

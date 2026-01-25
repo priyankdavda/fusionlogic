@@ -13,15 +13,15 @@
    <body>
       <?php include 'back-to-top.php'; ?>
       <div class="body_wrap o-clip">
-          
+
          <!-- header start -->
          <?php include 'header.php'; ?>
          <!-- header end -->
-         
+
          <div class="body-overlay"></div>
          <!-- main area start -->
          <main>
-             
+
             <!-- hero start -->
             <section class="breadcrumb bg_img" data-background="assets/img/bg/bootcamp-bg.png">
                 <div class="container">
@@ -51,10 +51,10 @@
                                 </div>
                                 <div class="xb-item--holder">
                                     <a href="#!" class="xb-item--category">#category</a>
-                                    <h3 class="xb-item--title border-effect-2"><a href="blog-details.html">How our AI agency delivers next-gen automation tools..</a></h3>
+                                    <h3 class="xb-item--title border-effect-2"><a href="blog-details.php">How our AI agency delivers next-gen automation tools..</a></h3>
                                     <span class="xb-item--content">Our AI agency creates smart automation tools  simplify.</span>
                                     <div class="xb-item--button mt-40">
-                                        <a class="thm-btn agency-btn" href="blog-details.html">
+                                        <a class="thm-btn agency-btn" href="blog-details.php">
                                             <span class="text">Read more</span>
                                             <span class="arrow">
                                                 <span class="arrow-icon">
@@ -91,10 +91,10 @@
                                 </div>
                                 <div class="xb-item--holder">
                                     <a href="#!" class="xb-item--category">#category</a>
-                                    <h3 class="xb-item--title border-effect-2"><a href="blog-details.html">How our AI agency delivers next-gen automation tools..</a></h3>
+                                    <h3 class="xb-item--title border-effect-2"><a href="blog-details.php">How our AI agency delivers next-gen automation tools..</a></h3>
                                     <span class="xb-item--content">Our AI agency creates smart automation tools  simplify.</span>
                                     <div class="xb-item--button mt-40">
-                                        <a class="thm-btn agency-btn" href="blog-details.html">
+                                        <a class="thm-btn agency-btn" href="blog-details.php">
                                             <span class="text">Read more</span>
                                             <span class="arrow">
                                                 <span class="arrow-icon">
@@ -131,10 +131,10 @@
                                 </div>
                                 <div class="xb-item--holder">
                                     <a href="#!" class="xb-item--category">#category</a>
-                                    <h3 class="xb-item--title border-effect-2"><a href="blog-details.html">How our AI agency delivers next-gen automation tools..</a></h3>
+                                    <h3 class="xb-item--title border-effect-2"><a href="blog-details.php">How our AI agency delivers next-gen automation tools..</a></h3>
                                     <span class="xb-item--content">Our AI agency creates smart automation tools  simplify.</span>
                                     <div class="xb-item--button mt-40">
-                                        <a class="thm-btn agency-btn" href="blog-details.html">
+                                        <a class="thm-btn agency-btn" href="blog-details.php">
                                             <span class="text">Read more</span>
                                             <span class="arrow">
                                                 <span class="arrow-icon">
@@ -171,10 +171,10 @@
                                 </div>
                                 <div class="xb-item--holder">
                                     <a href="#!" class="xb-item--category">#category</a>
-                                    <h3 class="xb-item--title border-effect-2"><a href="blog-details.html">How our AI agency delivers next-gen automation tools..</a></h3>
+                                    <h3 class="xb-item--title border-effect-2"><a href="blog-details.php">How our AI agency delivers next-gen automation tools..</a></h3>
                                     <span class="xb-item--content">Our AI agency creates smart automation tools  simplify.</span>
                                     <div class="xb-item--button mt-40">
-                                        <a class="thm-btn agency-btn" href="blog-details.html">
+                                        <a class="thm-btn agency-btn" href="blog-details.php">
                                             <span class="text">Read more</span>
                                             <span class="arrow">
                                                 <span class="arrow-icon">
@@ -211,10 +211,10 @@
                                 </div>
                                 <div class="xb-item--holder">
                                     <a href="#!" class="xb-item--category">#category</a>
-                                    <h3 class="xb-item--title border-effect-2"><a href="blog-details.html">How our AI agency delivers next-gen automation tools..</a></h3>
+                                    <h3 class="xb-item--title border-effect-2"><a href="blog-details.php">How our AI agency delivers next-gen automation tools..</a></h3>
                                     <span class="xb-item--content">Our AI agency creates smart automation tools  simplify.</span>
                                     <div class="xb-item--button mt-40">
-                                        <a class="thm-btn agency-btn" href="blog-details.html">
+                                        <a class="thm-btn agency-btn" href="blog-details.php">
                                             <span class="text">Read more</span>
                                             <span class="arrow">
                                                 <span class="arrow-icon">
@@ -273,16 +273,16 @@
                                 <h3 class="sidebar_widget_title">Latest posts</h3>
                                 <ul class="recent_post_block list-unstyled">
                                     <li class="recent_post_item xb-border">
-                                        <h3 class="post-title border-effect-2"><a href="blog-details.html">Why your business needs an AI strategy in 2025..</a></h3>
-                                        
+                                        <h3 class="post-title border-effect-2"><a href="blog-details.php">Why your business needs an AI strategy in 2025..</a></h3>
+
                                     </li>
                                     <li class="recent_post_item xb-border">
-                                        <h3 class="post-title border-effect-2"><a href="blog-details.html">AI chatbots vs live chat, which Is better?..</a></h3>
-                                        
+                                        <h3 class="post-title border-effect-2"><a href="blog-details.php">AI chatbots vs live chat, which Is better?..</a></h3>
+
                                     </li>
                                     <li class="recent_post_item xb-border">
-                                        <h3 class="post-title border-effect-2"><a href="blog-details.html">How AI transforms data into business insights..</a></h3>
-                                        
+                                        <h3 class="post-title border-effect-2"><a href="blog-details.php">How AI transforms data into business insights..</a></h3>
+
                                     </li>
                                 </ul>
                             </div>
@@ -327,17 +327,17 @@
                                   </li>
                                 </ul>
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>
             </div>
         </section>
         <!-- blog content end -->
-            
+
          </main>
          <!-- main area end -->
-         
+
          <!-- footer start -->
          <?php include 'footer.php'; ?>
          <!-- footer end -->

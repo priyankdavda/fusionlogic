@@ -3,31 +3,30 @@
         <div class="xb-footer-wrap">
             <div class="xb-footer-nav">
                 <div class="xb-footer-nav-item">
-                    <h2 class="title">FL Services</h2>
+                    <h2 class="title">Service</h2>
                     <ul>
-                        <li><a href="#">AI-driven SEO & AEO</a></li>
-                        <li><a href="#">Lead Generation</a></li>
-                        <li><a href="#">Brand & Social Management</a></li>
-                        <li><a href="#">AI Graphics & Videos</a></li>
-                        <li><a href="#">Web Development</a></li>
-                        <li><a href="#">Digital Marketing</a></li>
-                    </ul>    
+                        <li><a href="https://asquareeng.com/it/ai-seo-service.php">AEO/SEO Service </a></li>
+                        <li><a href="https://asquareeng.com/it/lead-generation.php">Lead Generation</a></li>
+                        <li><a href="https://asquareeng.com/it/social-media-marketing.php">Social & Brand Management</a></li>
+                        <li><a href="https://asquareeng.com/it/ai-video-creation.php">AI Content Creation </a></li>
+                        <li><a href="https://asquareeng.com/it/web-development.php">Web Development</a></li>
+                    </ul>
                 </div>
                 <div class="xb-footer-nav-item">
                     <h2 class="title">Information</a></h2>
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Portfolio</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                    </ul> 
+                        <li><a href="https://asquareeng.com/it/">Home</a></li>
+                        <li><a href="https://asquareeng.com/it/about-us.php">About Us</a></li>
+                        <li><a href="https://asquareeng.com/it/portfolio.php">Portfolio</a></li>
+                        <li><a href="https://asquareeng.com/it/contact-us.php">Contact Us</a></li>
+                    </ul>
                 </div>
                 <div class="xb-footer-nav-item">
                     <h2 class="title">Resources</h2>
                     <ul>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Case Study</a></li>
-                    </ul> 
+                        <li><a href="https://asquareeng.com/it/blog.php">Blog</a></li>
+                        <li><a href="https://asquareeng.com/it/case-studies.php">Case Study</a></li>
+                    </ul>
                 </div>
                 <div class="xb-footer-nav-item follow-us">
                     <h2 class="title">Follow Us</h2>
@@ -54,14 +53,14 @@
                     <a class="mail" href="mailto:aivora@domain.com"><img src="assets/img/icon/email-icon-green.svg" alt="icon"></a>
                     <a class="contact-method" href="mailto:aivora@domain.com">aivora@domain.com</a>
                 </div>
-            
-                
+
+
             </div>
             <div class="xb-footer-bottom-copyright">
                 <div class="contact-item">
                     <p>Copyright © 2026 Fusion Logic, All rights reserved.</p>
                 </div>
-                
+
             </div>
         </div>
     </footer>
