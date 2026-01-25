@@ -45,7 +45,7 @@ class HomeController extends Controller
         $faqs = Faq::active()
             ->ordered()
             ->get();
-        
+
         $blogs = Blog::published()
             ->latest()
             ->with('category')
@@ -59,5 +59,5 @@ class HomeController extends Controller
     {
         return view('about');
     }
-    
+
 }
