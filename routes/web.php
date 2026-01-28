@@ -21,3 +21,4 @@ Route::get('/portfolio/{portfolio}', [HomeController::class, 'show'])
     ->name('portfolio.show');
 
 Route::get('/about', [HomeController::class,'about'])->name('about');
+Route::get('/contact', [HomeController::class,'contact'])->name('contact');
