@@ -79,4 +79,16 @@ class HomeController extends Controller
         return view('contact', compact('brands','whyChooseUsItems'));
     }
 
+    public function service()
+    {
+        $brands = BrandLogo::active()->ordered()->get();
+
+        $whyChooseUsItems = WhyChooseUs::where('is_active', true)
+        ->orderBy('sort_order')
+        ->get();
+
+        // return view('about');
+        return view('service', compact('brands','whyChooseUsItems'));
+    }
+
 }

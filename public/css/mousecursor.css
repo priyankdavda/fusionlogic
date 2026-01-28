@@ -2,17 +2,30 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 999;
-  contain: layout style size;
+
+  width: 28px;
+  height: 28px;
+
+  /* SVG cursor */
+  background-image: url("../img/logo/fl-fav.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  /* dot remove */
+  background-color: transparent;
+  border: none;
+
   pointer-events: none;
+  z-index: 999;
   will-change: transform;
-  -webkit-transition: opacity 0.3s, color 0.4s;
-  -o-transition: opacity 0.3s, color 0.4s;
-  -moz-transition: opacity 0.3s, color 0.4s;
-  transition: opacity 0.3s, color 0.4s;
+
+  /* cursor center fix */
+  transform: translate(-50%, -50%);
 }
 .cb-cursor:before {
-  content: "";
+  display: none !important;
+  /* content: "";
   position: absolute;
   top: -24px;
   left: -24px;
@@ -33,7 +46,7 @@
   -o-transition: opacity 0.1s, -o-transform 0.3s ease-in-out;
   -moz-transition: transform 0.3s ease-in-out, opacity 0.1s, -moz-transform 0.3s ease-in-out;
   transition: transform 0.3s ease-in-out, opacity 0.1s;
-  transition: transform 0.3s ease-in-out, opacity 0.1s, -webkit-transform 0.3s ease-in-out, -moz-transform 0.3s ease-in-out, -o-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, opacity 0.1s, -webkit-transform 0.3s ease-in-out, -moz-transform 0.3s ease-in-out, -o-transform 0.3s ease-in-out; */
 }
 .cb-cursor-text {
   position: absolute;

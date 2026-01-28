@@ -84,59 +84,7 @@
                     </div>
                 </section>
             <!-- contact end -->
-            <!-- about-us start -->
-            <section id="about-us" class="about-us pt-10 pb-70">
-                <div class="container-fluid">
-                    <div class="ai-about-us-wrap mlr-20">
-                        <div class="sec-title sec-title-center about-sec-title about-sec-title-two mt-45">
-                            <span class="sub-title mb-10">Who We are?</span>
-                            <h2 class="title">
-                                Your Trusted IT & Software Development Partner
-                            </h2>
-                            <p class="content">Fusion Logic didn’t start with a pitch deck.  It started with frustration. We kept seeing businesses spend
-                            money online and still feel stuck. The websites looked fine, but didn’t work.
-                            Marketing reports were long but unclear. Nothing felt connected. So we built a team that focuses on making things simpler,
-                            clearer, and more useful. We work with businesses across the USA. We use AI when it helps. We step back when it doesn’t. The goal is steady progress, not noise. </p>
-                        </div>
-                        <div class="row mt-25 three-blocks">
-                            @foreach($whyChooseUsItems as $index => $item)
-                                <div class="col-lg-4 col-md-6 mt-30 d-flex">
-                                    <div class="xb-feature-item wow fadeInUp w-100"
-                                        data-wow-delay="{{ 700 + ($index * 100) }}ms"
-                                        data-wow-duration="600ms" style="visibility: visible; animation-duration: 600ms; animation-delay: 800ms; animation-name: fadeInUp;">
-
-                                        <div class="xb-item--inner xb-border h-100 w-100">
-                                            <span class="xb-item--icon">
-
-                                                {{-- SVG preferred --}}
-                                                @if(!empty($item->icon_svg))
-                                                    {!! $item->icon_svg !!}
-
-                                                {{-- Image fallback --}}
-                                                @elseif(!empty($item->icon_image))
-                                                    <img
-                                                        src="{{ rtrim(config('services.cms.asset_url'), '/') . '/storage/' . $item->icon_image }}"
-                                                        alt="{{ $item->title }}"
-                                                    >
-                                                @endif
-
-                                            </span>
-
-                                            <div class="xb-item--holder">
-                                                <h2 class="xb-item--title">{{ $item->title }}</h2>
-                                                <p class="xb-item--content">{{ $item->description }}</p>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            @endforeach
-                        </div>
-                        
-                    </div>
-                </div>
-            </section>
-            <!-- about-us end -->
+            
 
             <!-- contact start -->
             <section class="contact">

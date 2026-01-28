@@ -230,7 +230,7 @@
             <!-- feature end -->
 
             <!-- team start -->
-            <section class="team pt-70 pb-20 bg_img" data-background="{{ asset('img/bg/team-bg.png')  }}">
+            <!-- <section class="team pt-70 pb-20 bg_img" data-background="{{ asset('img/bg/team-bg.png')  }}">
                 <div class="container">
                     <div class="sec-title sec-title-center text-center mb-45">
                         <span class="sub-title mb-20">Our Specialists</span>
@@ -359,7 +359,7 @@
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> -->
             <!-- team end -->
             
          </main>
