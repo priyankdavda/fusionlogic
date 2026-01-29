@@ -11343,6 +11343,7 @@ body .mfp-wrap .mfp-container .mfp-content .mfp-close:hover::before, body .mfp-w
   opacity: 0;
   visibility: hidden; }
   .xb-backtotop.active {
+      display:none;
     bottom: 40px;
     opacity: 1;
     visibility: visible; }
@@ -12785,4 +12786,20 @@ section.project .xb-item--title{
     }
     .service-process-wrap h4{
         color: #3a92de;
+    }
+    .img-txt {
+        text-align: center;
+        font-size: 22px;
+        font-family: 'SportingGrotesque';
+        margin: 20px 0 0px;
+        color: #3a92de;
+        font-weight: 600;
+    }
+    .first {
+        text-align: center;
+    }
+    .text-ul ul {
+        list-style: none;
+        font-size: 16px;
+        font-family: 'DM Sans';
     }

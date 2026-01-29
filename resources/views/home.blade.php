@@ -145,50 +145,150 @@
 
             <div class="marquee-left">
                 <div class="xb-about-img-inner ul_li">
-
-                    {{-- IMAGE GROUP 01 --}}
-                    <div class="xb-about-img-item img-hove-effect">
-                        <div class="xb-img">
-                            @for($i = 0; $i < 4; $i++)
-                                <a href="#!">
-                                    <img src="{{ asset('img/about/img01.jpg') }}" alt="about">
-                                </a>
-                            @endfor
+                    <div class="seperate">
+                        {{-- IMAGE GROUP 01 --}}
+                        <div class="xb-about-img-item img-hove-effect">
+                            <div class="xb-img">
+                                @for($i = 0; $i < 4; $i++)
+                                    <a href="#!">
+                                        <img src="{{ asset('img/about/vision.jpg') }}" alt="about">
+                                    </a>
+                                @endfor
+                            </div>
                         </div>
+                        <div class="first">
+                        <div class="img-txt">Our Vision</div>
+                            <div class="text-ul">
+                            <ul>
+                                <li>Drive measurable business growth</li>
+                                <li>se AI-powered digital strategies</li>
+                                <li>Focus on leads, sales, and ROI</li>
+                                <li>Deliver long-term marketing success</li>
+                            </ul>
+                            </div>
+                        </div>
+
                     </div>
 
+                    <div class="seperate">
                     {{-- IMAGE GROUP 02 --}}
                     <div class="xb-about-img-item img-hove-effect">
                         <div class="xb-img">
                             @for($i = 0; $i < 4; $i++)
                                 <a href="#!">
-                                    <img src="{{ asset('img/about/img02.jpg') }}" alt="about">
+                                    <img src="{{ asset('img/about/value.jpg') }}" alt="about">
                                 </a>
                             @endfor
                         </div>
                     </div>
+                        <div class="first">
+                            <div class="img-txt">Core Values</div>
+                            <div class="text-ul">
+                                <ul>
+                                    <li>Drive measurable business growth</li>
+                                    <li>se AI-powered digital strategies</li>
+                                    <li>Focus on leads, sales, and ROI</li>
+                                    <li>Deliver long-term marketing success</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
 
+                    <div class="seperate">
                     {{-- IMAGE GROUP 03 --}}
                     <div class="xb-about-img-item img-hove-effect">
                         <div class="xb-img">
                             @for($i = 0; $i < 4; $i++)
                                 <a href="#!">
-                                    <img src="{{ asset('img/about/img03.jpg') }}" alt="about">
+                                    <img src="{{ asset('img/about/mission.jpg') }}" alt="about">
                                 </a>
                             @endfor
+                        </div>
+                    </div>
+                        <div class="first">
+                            <div class="img-txt">Our Mission</div>
+                            <div class="text-ul">
+                                <ul>
+                                    <li>Drive measurable business growth</li>
+                                    <li>se AI-powered digital strategies</li>
+                                    <li>Focus on leads, sales, and ROI</li>
+                                    <li>Deliver long-term marketing success</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="seperate">
+                        {{-- IMAGE GROUP 04 --}}
+                        <div class="xb-about-img-item img-hove-effect">
+                            <div class="xb-img">
+                                @for($i = 0; $i < 4; $i++)
+                                    <a href="#!">
+                                        <img src="{{ asset('img/about/ai-driven.jpg') }}" alt="about">
+                                    </a>
+                                @endfor
+                            </div>
+                        </div>
+                        <div class="first">
+                            <div class="img-txt">Ai-Driven</div>
+                                <div class="text-ul">
+                                <ul>
+                                    <li>Drive measurable business growth</li>
+                                    <li>se AI-powered digital strategies</li>
+                                    <li>Focus on leads, sales, and ROI</li>
+                                    <li>Deliver long-term marketing success</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
 
-                    {{-- IMAGE GROUP 04 --}}
-                    <div class="xb-about-img-item img-hove-effect">
-                        <div class="xb-img">
-                            @for($i = 0; $i < 4; $i++)
-                                <a href="#!">
-                                    <img src="{{ asset('img/about/img04.jpg') }}" alt="about">
-                                </a>
-                            @endfor
+                    <div class="seperate">
+                        {{-- IMAGE GROUP 05 --}}
+                        <div class="xb-about-img-item img-hove-effect">
+                            <div class="xb-img">
+                                @for($i = 0; $i < 4; $i++)
+                                    <a href="#!">
+                                        <img src="{{ asset('img/about/approach.jpg') }}" alt="about">
+                                    </a>
+                                @endfor
+                            </div>
+                        </div>
+                        <div class="first">
+                            <div class="img-txt">Our Approach </div>
+                                <div class="text-ul">
+                                <ul>
+                                    <li>Drive measurable business growth</li>
+                                    <li>se AI-powered digital strategies</li>
+                                    <li>Focus on leads, sales, and ROI</li>
+                                    <li>Deliver long-term marketing success</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
+
+                    <div class="seperate">
+                        {{-- IMAGE GROUP 06 --}}
+                        <div class="xb-about-img-item img-hove-effect">
+                            <div class="xb-img">
+                                @for($i = 0; $i < 4; $i++)
+                                    <a href="#!">
+                                        <img src="{{ asset('img/about/performance-trust.jpg') }}" alt="about">
+                                    </a>
+                                @endfor
+                            </div>
+                        </div>
+                        <div class="first">
+                            <div class="img-txt">Performance & Trust </div>
+                                <div class="text-ul">
+                                <ul>
+                                    <li>Drive measurable business growth</li>
+                                    <li>se AI-powered digital strategies</li>
+                                    <li>Focus on leads, sales, and ROI</li>
+                                    <li>Deliver long-term marketing success</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
 
                 </div>
             </div>
