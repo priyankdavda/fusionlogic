@@ -22,4 +22,5 @@ Route::get('/portfolio/{portfolio}', [HomeController::class, 'show'])
 
 Route::get('/about', [HomeController::class,'about'])->name('about');
 Route::get('/contact', [HomeController::class,'contact'])->name('contact');
-Route::get('/service', [HomeController::class,'service'])->name('service');
+Route::get('/services', [HomeController::class,'service'])->name('services');
+Route::get('/services/{slug}', [HomeController::class,'serviceDetail'])->name('services.detail');
