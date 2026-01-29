@@ -20,11 +20,11 @@ class HomeController extends Controller
     public function home()
     {
         $brands = BrandLogo::active()->ordered()->get();
-        
+
         $activeBanner = \App\Models\Banner::where('is_active', true)
             ->orderBy('order')
             ->first();
-        
+
         $portfolios = Portfolio::published()
             ->ordered()
             ->limit(4)
@@ -75,7 +75,6 @@ class HomeController extends Controller
 
     public function contact()
     {
-        $brands = BrandLogo::active()->ordered()->get();
 
         $whyChooseUsItems = WhyChooseUs::where('is_active', true)
         ->orderBy('sort_order')
@@ -108,6 +107,17 @@ class HomeController extends Controller
             ->firstOrFail();
 
         return view('service-detail', compact('service'));
+    }
+
+    public function portfolio()
+    {
+        $portfolios = Portfolio::published()
+            ->ordered()
+            ->limit(4)
+            ->get();
+
+        // return view('about');
+        return view('portfolio', compact('portfolios'));
     }
 
 }
