@@ -12,6 +12,7 @@ use App\Models\Industry;
 use App\Models\Testimonial;
 use App\Models\Faq;
 use App\Models\Blog;
+use App\Models\Service;
 
 class HomeController extends Controller
 {
@@ -83,12 +84,12 @@ class HomeController extends Controller
     {
         $brands = BrandLogo::active()->ordered()->get();
 
-        $whyChooseUsItems = WhyChooseUs::where('is_active', true)
-        ->orderBy('sort_order')
-        ->get();
+        $services = Service::where('is_active', true)
+            ->orderBy('title')
+            ->get();
 
         // return view('about');
-        return view('service', compact('brands','whyChooseUsItems'));
+        return view('service', compact('brands','services'));
     }
 
 }
