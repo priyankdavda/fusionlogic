@@ -12030,7 +12030,7 @@ margin-top:16px;
       .xb-footer-bottom .copyright-item p a {
         color: var(--color-white); }
   .xb-footer-bottom .contact-method {
-    font-size: 1px;
+    font-size: 16px;
     letter-spacing: -0.01em;
     color: var(--color-white);
     text-transform: lowercase;

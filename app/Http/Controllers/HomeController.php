@@ -13,6 +13,7 @@ use App\Models\Testimonial;
 use App\Models\Faq;
 use App\Models\Blog;
 use App\Models\Service;
+use App\Models\Footer;
 
 class HomeController extends Controller
 {
@@ -76,8 +77,10 @@ class HomeController extends Controller
         ->orderBy('sort_order')
         ->get();
 
+        $footer = Footer::getActive();
+
         // return view('about');
-        return view('contact', compact('brands','whyChooseUsItems'));
+        return view('contact', compact('footer','whyChooseUsItems'));
     }
 
     public function service()

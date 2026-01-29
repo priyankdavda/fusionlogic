@@ -14,11 +14,11 @@
 @include('partials.back-to-top')
 
     <div class="body_wrap o-clip">
-          
+
          <div class="body-overlay"></div>
          <!-- main area start -->
          <main>
-             
+
             <!-- hero start -->
             <section class="breadcrumb bg_img" data-background="{{ asset('img/bg/hero_bg.png')  }}">
                 <div class="container">
@@ -37,6 +37,7 @@
                 <section class="contact pt-30 pb-50">
                     <div class="container">
                         <div class="row mt-none-30">
+                            @if(!empty($footer->contact_info['address']))
                             <div class="col-lg-4 col-md-6 mt-30">
                                 <div class="xb-contact-items img-hove-effect xb-border">
                                     <div class="xb-item--inner">
@@ -45,13 +46,15 @@
                                         </div>
                                         <div class="xb-item--holder">
                                             <h3 class="title">Address</h3>
-                                            <span class="xb-item--contact_info">4517 Washington, USA</span>
-                                        
-                                            
+                                            <span class="xb-item--contact_info">{{ collect($footer->contact_info['address'])->filter()->join(', ') }}</span>
+
+
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            @endif
+                            @if(!empty($footer->contact_info['phone']))
                             <div class="col-lg-4 col-md-6 mt-30">
                                 <div class="xb-contact-items img-hove-effect xb-border">
                                     <div class="xb-item--inner">
@@ -60,12 +63,15 @@
                                         </div>
                                         <div class="xb-item--holder">
                                             <h3 class="title">Phone Number</h3>
-                                            <span class="xb-item--contact_info"><a href="tel:+1 (416) 123-4567">+1 (416) 123-4567</a></span>
-                                        
+                                            <span class="xb-item--contact_info"><a href="tel:{{ $footer->contact_info['phone'] }}">{{ $footer->contact_info['phone'] }}</a></span>
+
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            @endif
+                            @if(!empty($footer->contact_info['email']))
+
                             <div class="col-lg-4 col-md-6 mt-30">
                                 <div class="xb-contact-items img-hove-effect xb-border">
                                     <div class="xb-item--inner">
@@ -74,17 +80,17 @@
                                         </div>
                                         <div class="xb-item--holder">
                                             <h3 class="title">Email</h3>
-                                            <span class="xb-item--contact_info"><a href="mailto:aivora@cadomain.com">aivora@cadomain.com</a></span>
-                                            
+                                            <span class="xb-item--contact_info"><a href="mailto:{{ $footer->contact_info['email'] }}"> {{ $footer->contact_info['email'] }}</a></span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            @endif
                         </div>
                     </div>
                 </section>
             <!-- contact end -->
-            
+
 
             <!-- contact start -->
             <section class="contact">
@@ -117,7 +123,7 @@
                                             <label for="author-phone">Contact No*</label>
                                             <img src="{{ asset('img/icon/call-icon02.svg')  }}" alt="icon">
                                         </div>
-                                        
+
                                     </div>
                                     <div class="col-lg-6 col-md-6 mt-20">
                                         <div class="xb-input-field xb-select-field">
@@ -133,7 +139,7 @@
                                         <img src="{{ asset('img/icon/list-icon.svg')  }}" alt="icon">
                                         </div>
                                     </div>
-                                    
+
                                     <div class="col-lg-12 col-md-12 mt-20">
                                         <div class="xb-input-field xb-massage-field">
                                             <textarea id="massage" required></textarea>
@@ -161,10 +167,10 @@
             </section>
             <!-- contact end -->
 
-            
+
          </main>
          <!-- main area end -->
-        
+
     </div>
 
 @endsection
