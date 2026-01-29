@@ -1,13 +1,19 @@
 @extends('layouts.app')
 
-{{-- ===== SEO ===== --}}
-@section('title', 'Fusion Logic – AI & IT Solutions')
-@section('meta_description', 'Fusion Logic provides AI-driven SEO, Web Development, Digital Marketing and IT solutions.')
-@section('canonical', url('/'))
-@section('og_title', 'Fusion Logic – AI & IT Solutions')
-@section('og_description', 'AI-driven digital solutions for growing businesses.')
-@section('twitter_title', 'Fusion Logic – AI & IT Solutions')
-@section('twitter_description', 'AI-driven digital solutions for growing businesses.')
+{{-- ===== SEO Meta Tags ===== --}}
+@section('title', page_seo('home', 'title', 'Fusion Logic – AI & IT Solutions'))
+@section('meta_description', page_seo('home', 'meta_description', 'Fusion Logic provides AI-driven SEO, Web Development, Digital Marketing and IT solutions.'))
+@section('canonical', page_seo('home', 'canonical', url('/')))
+
+{{-- ===== Open Graph Tags ===== --}}
+@section('og_title', page_seo('home', 'og_title', 'Fusion Logic – AI & IT Solutions'))
+@section('og_description', page_seo('home', 'og_description', 'AI-driven digital solutions for growing businesses.'))
+@section('og_image', page_seo('home', 'og_image'))
+
+{{-- ===== Twitter Card Tags ===== --}}
+@section('twitter_title', page_seo('home', 'twitter_title', 'Fusion Logic – AI & IT Solutions'))
+@section('twitter_description', page_seo('home', 'twitter_description', 'AI-driven digital solutions for growing businesses.'))
+@section('twitter_image', page_seo('home', 'twitter_image'))
 
 @section('content')
 

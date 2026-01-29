@@ -1,13 +1,19 @@
 @extends('layouts.app')
 
-{{-- ===== SEO ===== --}}
-@section('title', 'Fusion Logic – AI & IT Solutions')
-@section('meta_description', 'Fusion Logic provides AI-driven SEO, Web Development, Digital Marketing and IT solutions.')
-@section('canonical', url('/'))
-@section('og_title', 'Fusion Logic – AI & IT Solutions')
-@section('og_description', 'AI-driven digital solutions for growing businesses.')
-@section('twitter_title', 'Fusion Logic – AI & IT Solutions')
-@section('twitter_description', 'AI-driven digital solutions for growing businesses.')
+{{-- ===== SEO Meta Tags ===== --}}
+@section('title', page_seo('about-us', 'title', 'About Us – Fusion Logic'))
+@section('meta_description', page_seo('about-us', 'meta_description', 'Learn about Fusion Logic, your trusted IT & software development partner providing AI-driven solutions.'))
+@section('canonical', page_seo('about-us', 'canonical', url('/about')))
+
+{{-- ===== Open Graph Tags ===== --}}
+@section('og_title', page_seo('about-us', 'og_title', 'About Us – Fusion Logic'))
+@section('og_description', page_seo('about-us', 'og_description', 'Learn about Fusion Logic, your trusted IT & software development partner.'))
+@section('og_image', page_seo('about-us', 'og_image'))
+
+{{-- ===== Twitter Card Tags ===== --}}
+@section('twitter_title', page_seo('about-us', 'twitter_title', 'About Us – Fusion Logic'))
+@section('twitter_description', page_seo('about-us', 'twitter_description', 'Learn about Fusion Logic, your trusted IT & software development partner.'))
+@section('twitter_image', page_seo('about-us', 'twitter_image'))
 
 @section('content')
 

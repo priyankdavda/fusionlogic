@@ -22,9 +22,13 @@ class Service extends Model
         'featured_image',
         'gallery',
         'icon',
+        'video_link',
         'price',
         'price_type',
         'features',
+        'services',
+        'content_blocks',
+        'qna',
         'duration',
         'meta_data',
         'meta_title',
@@ -39,6 +43,9 @@ class Service extends Model
     protected $casts = [
         'gallery' => 'array',
         'features' => 'array',
+        'services' => 'array',
+        'content_blocks' => 'array',
+        'qna' => 'array',
         'meta_data' => 'array',
         'meta_keywords' => 'array',
         'price' => 'decimal:2',
@@ -63,20 +70,20 @@ class Service extends Model
         return $this->belongsTo(ServiceCategory::class, 'category_id');
     }
 
-    public function faqs(): HasMany
-    {
-        return $this->hasMany(ServiceFaq::class)->orderBy('order');
-    }
+    // public function faqs(): HasMany
+    // {
+    //     return $this->hasMany(ServiceFaq::class)->orderBy('order');
+    // }
 
-    public function testimonials(): HasMany
-    {
-        return $this->hasMany(ServiceTestimonial::class)->orderBy('order');
-    }
+    // public function testimonials(): HasMany
+    // {
+    //     return $this->hasMany(ServiceTestimonial::class)->orderBy('order');
+    // }
 
-    public function inquiries(): HasMany
-    {
-        return $this->hasMany(ServiceInquiry::class)->latest();
-    }
+    // public function inquiries(): HasMany
+    // {
+    //     return $this->hasMany(ServiceInquiry::class)->latest();
+    // }
 
     public function scopeActive($query)
     {
