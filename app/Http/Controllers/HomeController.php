@@ -120,4 +120,16 @@ class HomeController extends Controller
         return view('portfolio', compact('portfolios'));
     }
 
+    public function blog()
+    {
+        $blogs = Blog::published()
+            ->latest()
+            ->with('category')
+            ->limit(4)
+            ->get();
+
+        // return view('about');
+        return view('blog', compact('blogs'));
+    }
+
 }
