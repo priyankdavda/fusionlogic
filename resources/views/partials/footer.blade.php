@@ -3,8 +3,51 @@
 @endphp
 
 @if($footer)
+
 <footer class="footer footer-style-one mt-60">
-    <div class="xb-footer-wrap">
+    <div class="xb-footer-wrap pt-0">
+        @if(!empty($footer->social_links))
+            <div class="xb-social-media-wrap mt-0">
+                @foreach($footer->social_links as $social)
+                    <div class="xb-social-media-item ul_li_between">
+                        <div class="xb-item--holder ul_li">
+                            <div class="xb-item--icon">
+                                <i class="fa-brands {{ $social['icon'] }}"></i>
+                            </div>
+                            <span class="xb-item--name">
+                                {{ ucfirst($social['platform']) }}
+                            </span>
+                        </div>
+
+                        <span class="xb-item--arrow">
+                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect x="5.06641" y="19.2783" width="20.5712" height="2.61221"
+                                    transform="rotate(-40.2798 5.06641 19.2783)" fill="white"/>
+                                <rect x="7.97144" y="6.54443" width="2.61221" height="2.61221"
+                                    transform="rotate(-40.2798 7.97144 6.54443)" fill="white"/>
+                                <rect x="11.6528" y="6.84814" width="2.61221" height="2.61221"
+                                    transform="rotate(-40.2798 11.6528 6.84814)" fill="white"/>
+                                <rect x="15.3345" y="7.15186" width="2.61221" height="2.61221"
+                                    transform="rotate(-40.2798 15.3345 7.15186)" fill="white"/>
+                                <rect x="18.7124" y="11.1372" width="2.61221" height="2.61221"
+                                    transform="rotate(-40.2798 18.7124 11.1372)" fill="white"/>
+                                <rect x="18.4089" y="14.8198" width="2.61221" height="2.61221"
+                                    transform="rotate(-40.2798 18.4089 14.8198)" fill="white"/>
+                                <rect x="18.1045" y="18.501" width="2.61221" height="2.61221"
+                                    transform="rotate(-40.2798 18.1045 18.501)" fill="white"/>
+                            </svg>
+                        </span>
+
+                        <a class="xb-overlay"
+                        href="{{ $social['url'] }}"
+                        target="_blank"
+                        aria-label="{{ $social['platform'] }}">
+                        </a>
+                    </div>
+                @endforeach
+            </div>
+        @endif
 
         {{-- Top Navigation --}}
         <div class="xb-footer-nav">
@@ -55,7 +98,7 @@
             </div>
 
             {{-- Social Links --}}
-            <div class="xb-footer-nav-item follow-us">
+            <!-- <div class="xb-footer-nav-item follow-us">
                 <h2 class="title">Follow Us</h2>
                 <ul>
                     @foreach($footer->social_links ?? [] as $social)
@@ -69,7 +112,7 @@
                         </li>
                     @endforeach
                 </ul>
-            </div>
+            </div> -->
 
         </div>
 

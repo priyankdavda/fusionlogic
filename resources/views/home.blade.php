@@ -122,7 +122,7 @@
                 <h2 class="title">
                     Fusion Logic is a
                     <span class="title-color">360 digital marketing company USA</span>
-                    brands trust for AI-powered growth, performance marketing,
+                    brands trust for AI-powered growth, performance marketing
                     and scalable web development solutions.
                 </h2>
             </div>
@@ -810,6 +810,49 @@
     </section>
     {{-- ================= INDUSTRIES SECTION END ================= --}}
 
+    {{-- ================= FAQ ================= --}}
+    <section id="faq" class="faq pos-rel pt-40 pb-90 bg_img" data-background="{{ asset('img/bg/faq-bg.png') }}">
+
+        <div class="container">
+            <div class="sec-title sec-title-center text-center mb-50">
+                <span class="sub-title mb-15 wow fadeInUp">FAQs</span>
+                <h2 class="title wow fadeInUp" data-wow-delay="150ms">
+                    Have a question? Look here
+                </h2>
+            </div>
+
+            <div class="row">
+                @foreach($faqs->chunk(ceil($faqs->count() / 2)) as $faqColumn)
+                    <div class="col-lg-6">
+                        <div class="xb-faq wow fadeInUp">
+                            <ul class="accordion_box list-unstyled">
+
+                                @foreach($faqColumn as $faq)
+                                    <li class="accordion block">
+                                        <div class="acc-btn">
+                                            {{ $faq->question }}
+                                            <span class="arrow"><span></span></span>
+                                        </div>
+
+                                        <div class="acc_body">
+                                            <div class="content">
+                                                {!! $faq->answer !!}
+                                            </div>
+                                        </div>
+                                    </li>
+                                @endforeach
+
+                            </ul>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+
+        <span class="faq-linear-shape"></span>
+    </section>
+    {{-- ================= FAQ END ================= --}}
+
     {{-- ================= CONTACT / LEAD FORM ================= --}}
     <section class="contact-section pt-80 pb-100 bg_img" data-background="{{ asset('img/bg/contact-bg.png') }}">
 
@@ -822,7 +865,7 @@
                         <div class="sec-title contact-sec-title">
                             <span class="sub-title mb-15">Our Achievements</span>
                             <h2 class="title horizontal-shape">
-                                We are trusted <img src="{{ asset('img/icon/b10c3e43e836d32554bf.gif') }}" alt="shape"> Fusion Logic
+                                We are trusted Fusion Logic
                             </h2>
                         </div>
 
@@ -882,13 +925,12 @@
                                 <div class="col-lg-6 mt-20">
                                     <div class="xb-input-field xb-select-field">
                                         <select name="service" class="nice-select">
-                                            <option value="">Select Service*</option>
-                                            <option>AI-driven SEO & AEO</option>
-                                            <option>Lead Generation</option>
-                                            <option>Brand & Social Management</option>
-                                            <option>AI Graphics & Videos</option>
-                                            <option>Web Development</option>
-                                            <option>Digital Marketing</option>
+                                            <option value="1">Select Service*</option>
+                                            <option value="2">AEO/SEO Service</option>
+                                            <option value="3">Lead Generation</option>
+                                            <option value="4">Social & Brand Management</option>
+                                            <option value="5">AI Content Creation</option>
+                                            <option value="6">Web Development</option>
                                         </select>
                                     </div>
                                 </div>
@@ -916,7 +958,7 @@
     {{--  ================= CONTACT END =================  --}}
 
     {{-- ================= TESTIMONIALS ================= --}}
-    <section class="testimonial pb-110 bg_img" data-background="{{ asset('img/bg/testimonial-bg.png') }}">
+    <section class="testimonial pb-20 bg_img" data-background="{{ asset('img/bg/testimonial-bg.png') }}">
 
         <div class="container">
             <div class="sec-title sec-title-center text-center mb-50">
@@ -968,52 +1010,11 @@
     </section>
     {{-- ================= TESTIMONIAL END ================= --}}
 
-    {{-- ================= FAQ ================= --}}
-    <section id="faq" class="faq pos-rel pt-40 pb-90 bg_img" data-background="{{ asset('img/bg/faq-bg.png') }}">
-
-        <div class="container">
-            <div class="sec-title sec-title-center text-center mb-50">
-                <span class="sub-title mb-15 wow fadeInUp">FAQs</span>
-                <h2 class="title wow fadeInUp" data-wow-delay="150ms">
-                    Have a question? Look here
-                </h2>
-            </div>
-
-            <div class="row">
-                @foreach($faqs->chunk(ceil($faqs->count() / 2)) as $faqColumn)
-                    <div class="col-lg-6">
-                        <div class="xb-faq wow fadeInUp">
-                            <ul class="accordion_box list-unstyled">
-
-                                @foreach($faqColumn as $faq)
-                                    <li class="accordion block">
-                                        <div class="acc-btn">
-                                            {{ $faq->question }}
-                                            <span class="arrow"><span></span></span>
-                                        </div>
-
-                                        <div class="acc_body">
-                                            <div class="content">
-                                                {!! $faq->answer !!}
-                                            </div>
-                                        </div>
-                                    </li>
-                                @endforeach
-
-                            </ul>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
-        </div>
-
-        <span class="faq-linear-shape"></span>
-    </section>
-    {{-- ================= FAQ END ================= --}}
+    
 
 
     {{-- ================= BLOG ================= --}}
-    <section class="blog pt-90 pb-15 bg_img" data-background="{{ asset('img/bg/blog-bg.png') }}">
+    <!-- <section class="blog pt-90 pb-15 bg_img" data-background="{{ asset('img/bg/blog-bg.png') }}">
 
         <div class="container">
             <div class="row mt-none-30">
@@ -1098,7 +1099,7 @@
 
             </div>
         </div>
-    </section>
+    </section> -->
     {{-- ================= BLOG END ================= --}}
 
     </main>

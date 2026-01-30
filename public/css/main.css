@@ -11831,7 +11831,7 @@ body .mfp-wrap .mfp-container .mfp-content .mfp-close:hover::before, body .mfp-w
   align-items: center;
   justify-content: space-between;
   padding: 10px 50px 12px;
-  margin-top: 5px; }
+  margin-top: 10px; }
   .xb-footer-nav-item ul{
     list-style: none;margin-top: 15px;
   }
@@ -11846,14 +11846,14 @@ body .mfp-wrap .mfp-container .mfp-content .mfp-close:hover::before, body .mfp-w
   }
   @media only screen and (min-width: 1200px) and (max-width: 1500px) {
     .xb-footer-nav {
-      margin-top: 5px; } }
+      margin-top: 10x; } }
   @media (max-width: 1199px) {
     .xb-footer-nav {
-      margin-top: 5px; } }
+      margin-top: 10px; } }
   @media (max-width: 991px) {
     .xb-footer-nav {
       padding: 0 20px;
-      margin-top: 5px; } }
+      margin-top: 10px; } }
   @media (max-width: 767px) {
     .xb-footer-nav {
       flex-wrap: wrap;

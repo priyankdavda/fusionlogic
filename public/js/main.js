@@ -485,12 +485,12 @@
 	= marquee
 	-------------------------------------------*/
 	$('.marquee-left').marquee({
-		speed: 20,
+		speed: 80,
 		gap: 0,
 		delayBeforeStart: 0,
 		direction: 'left',
 		duplicated: true,
-		pauseOnHover: false,
+		pauseOnHover: true,
 		startVisible: true,
 	});	
 	$('.marquee-right').marquee({
