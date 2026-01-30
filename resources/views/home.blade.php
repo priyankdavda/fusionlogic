@@ -26,9 +26,13 @@
 
     {{-- ================= HERO SECTION ================= --}}
     @if($activeBanner)
-    <section class="hero hero-style--two pos-rel bg_img"
+    <!-- <section class="hero hero-style--two pos-rel bg_img"
             data-background="{{ $activeBanner->background_image ? asset('storage/' . $activeBanner->background_image) : asset('img/bg/hero_bg.png') }}"
-            style="background-image: url('{{ $activeBanner->background_image ? asset('storage/' . $activeBanner->background_image) : asset('img/bg/hero_bg.png') }}');">
+            style="background-image: url('{{ $activeBanner->background_image ? asset('storage/' . $activeBanner->background_image) : asset('img/bg/hero_bg.png') }}');"> -->
+
+        
+    <section class="hero hero-style pos-rel bg_img"
+            data-background="{{ $activeBanner->background_image ? asset('storage/' . $activeBanner->background_image) : asset('img/bg/hero_bg.png') }}">
 
         <div class="container">
             <div class="row">
@@ -523,7 +527,7 @@
                     {{-- STATIC HEADING (UNCHANGED) --}}
                     <div class="brand-sub-title xb-border">
                         <p>
-                            Worlds Best <span>120 Companies</span> Work With Us
+                            Our <span>Client</span>
                         </p>
                     </div>
 
@@ -572,16 +576,7 @@
                         <span class="text">View More Portfolio</span>
                         <span class="arrow">
                             <span class="arrow-icon">
-                                {{--  @include('partials.arrow-svg')  --}}
-                                <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <rect x="5.06592" y="19.9785" width="20.5712" height="2.61221"
-                                        transform="rotate(-40.2798 5.06592 19.9785)" fill="white"/>
-                                    <rect x="7.97095" y="7.24463" width="2.61221" height="2.61221"
-                                        transform="rotate(-40.2798 7.97095 7.24463)" fill="white"/>
-                                    <rect x="11.6523" y="7.54834" width="2.61221" height="2.61221"
-                                        transform="rotate(-40.2798 11.6523 7.54834)" fill="white"/>
-                                </svg>
+                                @include('partials.arrow-svg')
 
                             </span>
                         </span>
@@ -727,6 +722,15 @@
                                                     {{ $case->title }}
                                                 </p>
                                             </div>
+                                            <div class="xb-item---btn mt-10 case-study-more">
+                                                <a class="thm-btn agency-btn" href="#">
+                                                <span class="arrow">
+                                                    <span class="arrow-icon">
+                                                        @include('partials.arrow-svg')
+                                                    </span>
+                                                </span>
+                                                </a>
+                                            </div>
                                         </div>
 
                                         {{-- Details --}}
@@ -770,7 +774,7 @@
 
 
     {{-- ================= INDUSTRIES SECTION ================= --}}
-    <section class="industries pb-80 bg_img" data-background="{{ asset('img/bg/industries-bg02.png') }}">
+    <section class="industries pb-50 bg_img" data-background="{{ asset('img/bg/industries-bg02.png') }}">
 
         <div class="container">
             <div class="sec-title sec-title-center text-center mb-50">
@@ -779,7 +783,7 @@
             </div>
         </div>
 
-        <div class="xb-industries-wrapper d-inline-block">
+        <div class="xb-industries-wrapper d-inline-block equal-height">
             <div class="marquee-right">
                 <div class="xb-industries-inner ul_li">
                     @foreach($industries as $industry)
@@ -810,8 +814,61 @@
     </section>
     {{-- ================= INDUSTRIES SECTION END ================= --}}
 
+    {{-- ================= TESTIMONIALS ================= --}}
+    <section class="testimonial pb-60 pt-40 bg_img" data-background="{{ asset('img/bg/testimonial-bg.png') }}">
+
+        <div class="container">
+            <div class="sec-title sec-title-center text-center mb-50">
+                <span class="sub-title mb-15">Our Testimonial</span>
+                <h2 class="title">Hear from our happy customers</h2>
+            </div>
+        </div>
+
+        <div class="xb-testimonial-slider">
+            <div class="swiper-wrapper">
+
+                @foreach($testimonials as $testimonial)
+                    <div class="swiper-slide">
+                        <div class="xb-testimonial-item">
+                            <div class="xb-item--inner xb-border">
+
+                                <p class="xb-item--content">
+                                    "{{ $testimonial->quote }}"
+                                </p>
+
+                                <div class="xb-item--author ul_li">
+                                    <div class="xb-item--avatar">
+                                        @if($testimonial->avatar)
+                                            <img
+                                                src="{{ rtrim(config('services.cms.asset_url'), '/') . '/storage/' . $testimonial->avatar }}"
+                                                alt="{{ $testimonial->name }}"
+                                            >
+                                        @endif
+                                    </div>
+
+                                    <div class="xb-item--holder">
+                                        <h3 class="xb-item--name">
+                                            {{ $testimonial->name }}
+                                        </h3>
+
+                                        <span class="xb-item--desig">
+                                            {{ trim($testimonial->designation . ' - ' . $testimonial->company, ' -') }}
+                                        </span>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+
+            </div>
+        </div>
+    </section>
+    {{-- ================= TESTIMONIAL END ================= --}}
+
     {{-- ================= FAQ ================= --}}
-    <section id="faq" class="faq pos-rel pt-40 pb-90 bg_img" data-background="{{ asset('img/bg/faq-bg.png') }}">
+    <section id="faq" class="faq pos-rel pt-30 pb-60 bg_img" data-background="{{ asset('img/bg/faq-bg.png') }}">
 
         <div class="container">
             <div class="sec-title sec-title-center text-center mb-50">
@@ -854,7 +911,7 @@
     {{-- ================= FAQ END ================= --}}
 
     {{-- ================= CONTACT / LEAD FORM ================= --}}
-    <section class="contact-section pt-80 pb-100 bg_img" data-background="{{ asset('img/bg/contact-bg.png') }}">
+    <section class="contact-section pt-80 pb-20 bg_img" data-background="{{ asset('img/bg/contact-bg.png') }}">
 
         <div class="container">
             <div class="row mt-none-50 justify-content-center">
@@ -957,58 +1014,7 @@
     </section>
     {{--  ================= CONTACT END =================  --}}
 
-    {{-- ================= TESTIMONIALS ================= --}}
-    <section class="testimonial pb-20 bg_img" data-background="{{ asset('img/bg/testimonial-bg.png') }}">
-
-        <div class="container">
-            <div class="sec-title sec-title-center text-center mb-50">
-                <span class="sub-title mb-15">Our Testimonial</span>
-                <h2 class="title">Hear from our happy customers</h2>
-            </div>
-        </div>
-
-        <div class="xb-testimonial-slider">
-            <div class="swiper-wrapper">
-
-                @foreach($testimonials as $testimonial)
-                    <div class="swiper-slide">
-                        <div class="xb-testimonial-item">
-                            <div class="xb-item--inner xb-border">
-
-                                <p class="xb-item--content">
-                                    "{{ $testimonial->quote }}"
-                                </p>
-
-                                <div class="xb-item--author ul_li">
-                                    <div class="xb-item--avatar">
-                                        @if($testimonial->avatar)
-                                            <img
-                                                src="{{ rtrim(config('services.cms.asset_url'), '/') . '/storage/' . $testimonial->avatar }}"
-                                                alt="{{ $testimonial->name }}"
-                                            >
-                                        @endif
-                                    </div>
-
-                                    <div class="xb-item--holder">
-                                        <h3 class="xb-item--name">
-                                            {{ $testimonial->name }}
-                                        </h3>
-
-                                        <span class="xb-item--desig">
-                                            {{ trim($testimonial->designation . ' - ' . $testimonial->company, ' -') }}
-                                        </span>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-
-            </div>
-        </div>
-    </section>
-    {{-- ================= TESTIMONIAL END ================= --}}
+    
 
     
 

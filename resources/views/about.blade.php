@@ -150,7 +150,7 @@
                             {{-- STATIC HEADING (UNCHANGED) --}}
                             <div class="brand-sub-title xb-border">
                                 <p>
-                                    Worlds Best <span>120 Companies</span> Work With Us
+                                    Our <span>Client</span>
                                 </p>
                             </div>
 

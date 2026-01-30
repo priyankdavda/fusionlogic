@@ -11973,7 +11973,7 @@ body .mfp-wrap .mfp-container .mfp-content .mfp-close:hover::before, body .mfp-w
 .xb-social-media-wrap {
   display: grid;
   margin-top: 20px;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   border-top: 1px solid #262833;
   border-bottom: 1px solid #262833; }
   @media (max-width: 767px) {
@@ -12802,4 +12802,10 @@ section.project .xb-item--title{
         list-style: none;
         font-size: 16px;
         font-family: 'DM Sans';
+    }
+    .equal-height .xb-industries-inner{
+        align-items: stretch;
+    }
+    .case-study-more{
+        float:left;
     }
