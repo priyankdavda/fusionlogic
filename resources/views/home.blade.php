@@ -75,38 +75,146 @@
                 </div>
             </div>
             <div class="row mt-25 three-blocks">
-                @foreach($whyChooseUsItems as $index => $item)
+                {{-- DYNAMIC HERO FEATURE CARDS --}}
+                @if(isset($heroFeatureCards) && $heroFeatureCards->count() > 0)
+                    @foreach($heroFeatureCards as $index => $card)
+                        <div class="col-lg-4 col-md-6 mt-30 d-flex">
+                            <div class="xb-feature-item wow fadeInUp w-100"
+                                data-wow-delay="{{ 700 + ($index * 100) }}ms"
+                                data-wow-duration="600ms" style="visibility: visible; animation-duration: 600ms; animation-delay: {{ 800 + ($index * 100) }}ms; animation-name: fadeInUp;">
+
+                                <div class="xb-item--inner xb-border h-100 w-100">
+                                    <span class="xb-item--icon">
+
+                                        {{-- SVG Icon (preferred) --}}
+                                        @if(!empty($card->icon_svg))
+                                            {!! $card->icon_svg !!}
+
+                                        {{-- Image Icon (fallback) --}}
+                                        @elseif(!empty($card->icon_image))
+                                            <img
+                                                src="{{ rtrim(config('services.cms.asset_url'), '/') . '/storage/' . $card->icon_image }}"
+                                                alt="{{ $card->title ?? 'Feature Icon' }}"
+                                            >
+                                        @endif
+
+                                    </span>
+
+                                    <div class="xb-item--holder">
+                                        {{-- Dynamic Title --}}
+                                        @if(!empty($card->title))
+                                            <h2 class="xb-item--title">{{ $card->title }}</h2>
+                                        @endif
+
+                                        {{-- Dynamic Description --}}
+                                        @if(!empty($card->description))
+                                            <p class="xb-item--content">{{ $card->description }}</p>
+                                        @endif
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    @endforeach
+                @elseif(isset($whyChooseUsItems) && $whyChooseUsItems->count() > 0)
+                    {{-- FALLBACK: Use WhyChooseUs items if HeroFeatureCards not available --}}
+                    @foreach($whyChooseUsItems as $index => $item)
+                        <div class="col-lg-4 col-md-6 mt-30 d-flex">
+                            <div class="xb-feature-item wow fadeInUp w-100"
+                                data-wow-delay="{{ 700 + ($index * 100) }}ms"
+                                data-wow-duration="600ms" style="visibility: visible; animation-duration: 600ms; animation-delay: 800ms; animation-name: fadeInUp;">
+
+                                <div class="xb-item--inner xb-border h-100 w-100">
+                                    <span class="xb-item--icon">
+
+                                        {{-- SVG preferred --}}
+                                        @if(!empty($item->icon_svg))
+                                            {!! $item->icon_svg !!}
+
+                                        {{-- Image fallback --}}
+                                        @elseif(!empty($item->icon_image))
+                                            <img
+                                                src="{{ rtrim(config('services.cms.asset_url'), '/') . '/storage/' . $item->icon_image }}"
+                                                alt="{{ $item->title }}"
+                                            >
+                                        @endif
+
+                                    </span>
+
+                                    <div class="xb-item--holder">
+                                        <h2 class="xb-item--title">{{ $item->title }}</h2>
+                                        <p class="xb-item--content">{{ $item->description }}</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    @endforeach
+                @else
+                    {{-- FALLBACK: Static content if no dynamic data available --}}
                     <div class="col-lg-4 col-md-6 mt-30 d-flex">
                         <div class="xb-feature-item wow fadeInUp w-100"
-                            data-wow-delay="{{ 700 + ($index * 100) }}ms"
+                            data-wow-delay="700ms"
                             data-wow-duration="600ms" style="visibility: visible; animation-duration: 600ms; animation-delay: 800ms; animation-name: fadeInUp;">
 
                             <div class="xb-item--inner xb-border h-100 w-100">
                                 <span class="xb-item--icon">
-
-                                    {{-- SVG preferred --}}
-                                    @if(!empty($item->icon_svg))
-                                        {!! $item->icon_svg !!}
-
-                                    {{-- Image fallback --}}
-                                    @elseif(!empty($item->icon_image))
-                                        <img
-                                            src="{{ rtrim(config('services.cms.asset_url'), '/') . '/storage/' . $item->icon_image }}"
-                                            alt="{{ $item->title }}"
-                                        >
-                                    @endif
-
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none">
+                                        <path d="M25 5L30 20L45 20L33 30L38 45L25 35L12 45L17 30L5 20L20 20L25 5Z" fill="currentColor"/>
+                                    </svg>
                                 </span>
 
                                 <div class="xb-item--holder">
-                                    <h2 class="xb-item--title">{{ $item->title }}</h2>
-                                    <p class="xb-item--content">{{ $item->description }}</p>
+                                    <h2 class="xb-item--title">AI-Powered Solutions</h2>
+                                    <p class="xb-item--content">Leverage cutting-edge AI technology to drive your business forward.</p>
                                 </div>
                             </div>
 
                         </div>
                     </div>
-                @endforeach
+
+                    <div class="col-lg-4 col-md-6 mt-30 d-flex">
+                        <div class="xb-feature-item wow fadeInUp w-100"
+                            data-wow-delay="800ms"
+                            data-wow-duration="600ms" style="visibility: visible; animation-duration: 600ms; animation-delay: 900ms; animation-name: fadeInUp;">
+
+                            <div class="xb-item--inner xb-border h-100 w-100">
+                                <span class="xb-item--icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none">
+                                        <path d="M25 5L30 20L45 20L33 30L38 45L25 35L12 45L17 30L5 20L20 20L25 5Z" fill="currentColor"/>
+                                    </svg>
+                                </span>
+
+                                <div class="xb-item--holder">
+                                    <h2 class="xb-item--title">Data-Driven Results</h2>
+                                    <p class="xb-item--content">Make informed decisions with comprehensive analytics and insights.</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 mt-30 d-flex">
+                        <div class="xb-feature-item wow fadeInUp w-100"
+                            data-wow-delay="900ms"
+                            data-wow-duration="600ms" style="visibility: visible; animation-duration: 600ms; animation-delay: 1000ms; animation-name: fadeInUp;">
+
+                            <div class="xb-item--inner xb-border h-100 w-100">
+                                <span class="xb-item--icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none">
+                                        <path d="M25 5L30 20L45 20L33 30L38 45L25 35L12 45L17 30L5 20L20 20L25 5Z" fill="currentColor"/>
+                                    </svg>
+                                </span>
+
+                                <div class="xb-item--holder">
+                                    <h2 class="xb-item--title">Expert Support</h2>
+                                    <p class="xb-item--content">Get dedicated support from our team of digital marketing experts.</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                @endif
             </div>
 
 
@@ -149,151 +257,200 @@
 
             <div class="marquee-left">
                 <div class="xb-about-img-inner ul_li">
-                    <div class="seperate">
-                        {{-- IMAGE GROUP 01 --}}
-                        <div class="xb-about-img-item img-hove-effect">
-                            <div class="xb-img">
-                                @for($i = 0; $i < 4; $i++)
-                                    <a href="#!">
-                                        <img src="{{ asset('img/about/vision.jpg') }}" alt="about">
-                                    </a>
-                                @endfor
+                    {{-- DYNAMIC WHO WE ARE CARDS --}}
+                    @if(isset($whoWeAreItems) && $whoWeAreItems->count() > 0)
+                        @foreach($whoWeAreItems as $whoWeAreItem)
+                            <div class="seperate">
+                                {{-- IMAGE GROUP - DYNAMIC --}}
+                                <div class="xb-about-img-item img-hove-effect">
+                                    <div class="xb-img">
+                                        @for($i = 0; $i < 4; $i++)
+                                            <a href="#!">
+                                                @if($whoWeAreItem->image)
+                                                    {{-- Dynamic image from CMS --}}
+                                                    <img src="{{ rtrim(config('services.cms.asset_url'), '/') . '/storage/' . $whoWeAreItem->image }}" alt="{{ $whoWeAreItem->heading ?? 'Who We Are' }}">
+                                                @else
+                                                    {{-- Fallback to default image if no image in database --}}
+                                                    <img src="{{ asset('img/about/default.jpg') }}" alt="{{ $whoWeAreItem->heading ?? 'Who We Are' }}">
+                                                @endif
+                                            </a>
+                                        @endfor
+                                    </div>
+                                </div>
+                                <div class="first">
+                                    {{-- Dynamic heading --}}
+                                    @if($whoWeAreItem->heading)
+                                        <div class="img-txt">{{ $whoWeAreItem->heading }}</div>
+                                    @endif
+                                    
+                                    {{-- Dynamic description/bullet points --}}
+                                    @if($whoWeAreItem->description)
+                                        <div class="text-ul">
+                                            {{-- Check if description contains HTML list or plain text --}}
+                                            @if(strip_tags($whoWeAreItem->description) !== $whoWeAreItem->description)
+                                                {{-- Description contains HTML, render it directly --}}
+                                                {!! $whoWeAreItem->description !!}
+                                            @else
+                                                {{-- Plain text description, convert line breaks to list items --}}
+                                                <ul>
+                                                    @foreach(preg_split('/\r\n|\r|\n/', $whoWeAreItem->description) as $line)
+                                                        @if(trim($line))
+                                                            <li>{{ trim($line) }}</li>
+                                                        @endif
+                                                    @endforeach
+                                                </ul>
+                                            @endif
+                                        </div>
+                                    @endif
+                                </div>
                             </div>
-                        </div>
-                        <div class="first">
-                        <div class="img-txt">Our Vision</div>
-                            <div class="text-ul">
-                            <ul>
-                                <li>Drive measurable business growth</li>
-                                <li>se AI-powered digital strategies</li>
-                                <li>Focus on leads, sales, and ROI</li>
-                                <li>Deliver long-term marketing success</li>
-                            </ul>
+                        @endforeach
+                    @else
+                        {{-- FALLBACK: Static content if no dynamic data available --}}
+                        <div class="seperate">
+                            {{-- IMAGE GROUP 01 --}}
+                            <div class="xb-about-img-item img-hove-effect">
+                                <div class="xb-img">
+                                    @for($i = 0; $i < 4; $i++)
+                                        <a href="#!">
+                                            <img src="{{ asset('img/about/vision.jpg') }}" alt="about">
+                                        </a>
+                                    @endfor
+                                </div>
                             </div>
-                        </div>
-
-                    </div>
-
-                    <div class="seperate">
-                    {{-- IMAGE GROUP 02 --}}
-                    <div class="xb-about-img-item img-hove-effect">
-                        <div class="xb-img">
-                            @for($i = 0; $i < 4; $i++)
-                                <a href="#!">
-                                    <img src="{{ asset('img/about/value.jpg') }}" alt="about">
-                                </a>
-                            @endfor
-                        </div>
-                    </div>
-                        <div class="first">
-                            <div class="img-txt">Core Values</div>
-                            <div class="text-ul">
-                                <ul>
-                                    <li>Drive measurable business growth</li>
-                                    <li>se AI-powered digital strategies</li>
-                                    <li>Focus on leads, sales, and ROI</li>
-                                    <li>Deliver long-term marketing success</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="seperate">
-                    {{-- IMAGE GROUP 03 --}}
-                    <div class="xb-about-img-item img-hove-effect">
-                        <div class="xb-img">
-                            @for($i = 0; $i < 4; $i++)
-                                <a href="#!">
-                                    <img src="{{ asset('img/about/mission.jpg') }}" alt="about">
-                                </a>
-                            @endfor
-                        </div>
-                    </div>
-                        <div class="first">
-                            <div class="img-txt">Our Mission</div>
-                            <div class="text-ul">
-                                <ul>
-                                    <li>Drive measurable business growth</li>
-                                    <li>se AI-powered digital strategies</li>
-                                    <li>Focus on leads, sales, and ROI</li>
-                                    <li>Deliver long-term marketing success</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="seperate">
-                        {{-- IMAGE GROUP 04 --}}
-                        <div class="xb-about-img-item img-hove-effect">
-                            <div class="xb-img">
-                                @for($i = 0; $i < 4; $i++)
-                                    <a href="#!">
-                                        <img src="{{ asset('img/about/ai-driven.jpg') }}" alt="about">
-                                    </a>
-                                @endfor
-                            </div>
-                        </div>
-                        <div class="first">
-                            <div class="img-txt">Ai-Driven</div>
+                            <div class="first">
+                                <div class="img-txt">Our Vision</div>
                                 <div class="text-ul">
-                                <ul>
-                                    <li>Drive measurable business growth</li>
-                                    <li>se AI-powered digital strategies</li>
-                                    <li>Focus on leads, sales, and ROI</li>
-                                    <li>Deliver long-term marketing success</li>
-                                </ul>
+                                    <ul>
+                                        <li>Drive measurable business growth</li>
+                                        <li>Use AI-powered digital strategies</li>
+                                        <li>Focus on leads, sales, and ROI</li>
+                                        <li>Deliver long-term marketing success</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="seperate">
-                        {{-- IMAGE GROUP 05 --}}
-                        <div class="xb-about-img-item img-hove-effect">
-                            <div class="xb-img">
-                                @for($i = 0; $i < 4; $i++)
-                                    <a href="#!">
-                                        <img src="{{ asset('img/about/approach.jpg') }}" alt="about">
-                                    </a>
-                                @endfor
+                        <div class="seperate">
+                            {{-- IMAGE GROUP 02 --}}
+                            <div class="xb-about-img-item img-hove-effect">
+                                <div class="xb-img">
+                                    @for($i = 0; $i < 4; $i++)
+                                        <a href="#!">
+                                            <img src="{{ asset('img/about/value.jpg') }}" alt="about">
+                                        </a>
+                                    @endfor
+                                </div>
                             </div>
-                        </div>
-                        <div class="first">
-                            <div class="img-txt">Our Approach </div>
+                            <div class="first">
+                                <div class="img-txt">Core Values</div>
                                 <div class="text-ul">
-                                <ul>
-                                    <li>Drive measurable business growth</li>
-                                    <li>se AI-powered digital strategies</li>
-                                    <li>Focus on leads, sales, and ROI</li>
-                                    <li>Deliver long-term marketing success</li>
-                                </ul>
+                                    <ul>
+                                        <li>Drive measurable business growth</li>
+                                        <li>Use AI-powered digital strategies</li>
+                                        <li>Focus on leads, sales, and ROI</li>
+                                        <li>Deliver long-term marketing success</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="seperate">
-                        {{-- IMAGE GROUP 06 --}}
-                        <div class="xb-about-img-item img-hove-effect">
-                            <div class="xb-img">
-                                @for($i = 0; $i < 4; $i++)
-                                    <a href="#!">
-                                        <img src="{{ asset('img/about/performance-trust.jpg') }}" alt="about">
-                                    </a>
-                                @endfor
+                        <div class="seperate">
+                            {{-- IMAGE GROUP 03 --}}
+                            <div class="xb-about-img-item img-hove-effect">
+                                <div class="xb-img">
+                                    @for($i = 0; $i < 4; $i++)
+                                        <a href="#!">
+                                            <img src="{{ asset('img/about/mission.jpg') }}" alt="about">
+                                        </a>
+                                    @endfor
+                                </div>
                             </div>
-                        </div>
-                        <div class="first">
-                            <div class="img-txt">Performance & Trust </div>
+                            <div class="first">
+                                <div class="img-txt">Our Mission</div>
                                 <div class="text-ul">
-                                <ul>
-                                    <li>Drive measurable business growth</li>
-                                    <li>se AI-powered digital strategies</li>
-                                    <li>Focus on leads, sales, and ROI</li>
-                                    <li>Deliver long-term marketing success</li>
-                                </ul>
+                                    <ul>
+                                        <li>Drive measurable business growth</li>
+                                        <li>Use AI-powered digital strategies</li>
+                                        <li>Focus on leads, sales, and ROI</li>
+                                        <li>Deliver long-term marketing success</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
+                        <div class="seperate">
+                            {{-- IMAGE GROUP 04 --}}
+                            <div class="xb-about-img-item img-hove-effect">
+                                <div class="xb-img">
+                                    @for($i = 0; $i < 4; $i++)
+                                        <a href="#!">
+                                            <img src="{{ asset('img/about/ai-driven.jpg') }}" alt="about">
+                                        </a>
+                                    @endfor
+                                </div>
+                            </div>
+                            <div class="first">
+                                <div class="img-txt">Ai-Driven</div>
+                                <div class="text-ul">
+                                    <ul>
+                                        <li>Drive measurable business growth</li>
+                                        <li>Use AI-powered digital strategies</li>
+                                        <li>Focus on leads, sales, and ROI</li>
+                                        <li>Deliver long-term marketing success</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
 
+                        <div class="seperate">
+                            {{-- IMAGE GROUP 05 --}}
+                            <div class="xb-about-img-item img-hove-effect">
+                                <div class="xb-img">
+                                    @for($i = 0; $i < 4; $i++)
+                                        <a href="#!">
+                                            <img src="{{ asset('img/about/approach.jpg') }}" alt="about">
+                                        </a>
+                                    @endfor
+                                </div>
+                            </div>
+                            <div class="first">
+                                <div class="img-txt">Our Approach </div>
+                                <div class="text-ul">
+                                    <ul>
+                                        <li>Drive measurable business growth</li>
+                                        <li>Use AI-powered digital strategies</li>
+                                        <li>Focus on leads, sales, and ROI</li>
+                                        <li>Deliver long-term marketing success</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="seperate">
+                            {{-- IMAGE GROUP 06 --}}
+                            <div class="xb-about-img-item img-hove-effect">
+                                <div class="xb-img">
+                                    @for($i = 0; $i < 4; $i++)
+                                        <a href="#!">
+                                            <img src="{{ asset('img/about/performance-trust.jpg') }}" alt="about">
+                                        </a>
+                                    @endfor
+                                </div>
+                            </div>
+                            <div class="first">
+                                <div class="img-txt">Performance & Trust </div>
+                                <div class="text-ul">
+                                    <ul>
+                                        <li>Drive measurable business growth</li>
+                                        <li>Use AI-powered digital strategies</li>
+                                        <li>Focus on leads, sales, and ROI</li>
+                                        <li>Deliver long-term marketing success</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    @endif
                 </div>
             </div>
         </div>

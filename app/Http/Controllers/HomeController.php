@@ -7,6 +7,7 @@ use App\Models\BrandLogo;
 use Illuminate\Support\Facades\DB;
 use App\Models\Portfolio;
 use App\Models\WhyChooseUs;
+use App\Models\HeroFeatureCard;
 use App\Models\CaseStudy;
 use App\Models\Industry;
 use App\Models\Testimonial;
@@ -14,6 +15,7 @@ use App\Models\Faq;
 use App\Models\Blog;
 use App\Models\Service;
 use App\Models\Footer;
+use App\Models\WhoWeAre;
 
 class HomeController extends Controller
 {
@@ -30,6 +32,12 @@ class HomeController extends Controller
             ->limit(4)
             ->get();
 
+        // Hero Feature Cards (previously Why Choose Us)
+        $heroFeatureCards = HeroFeatureCard::where('is_active', true)
+            ->orderBy('sort_order')
+            ->get();
+
+        // Keep old variable for backward compatibility in other sections if needed
         $whyChooseUsItems = WhyChooseUs::where('is_active', true)
         ->orderBy('sort_order')
         ->get();
@@ -58,7 +66,11 @@ class HomeController extends Controller
             ->limit(4)
             ->get();
 
-        return view('home', compact('brands','portfolios','whyChooseUsItems','caseStudies','industries','testimonials','faqs','blogs'));
+        $whoWeAreItems = WhoWeAre::active()
+            ->ordered()
+            ->get();
+
+        return view('home', compact('brands','portfolios','heroFeatureCards','whyChooseUsItems','caseStudies','industries','testimonials','faqs','blogs','whoWeAreItems'));
     }
 
     public function about()
