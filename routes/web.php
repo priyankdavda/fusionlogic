@@ -3,6 +3,7 @@
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PortfolioController;
+use App\Http\Controllers\CaseStudyController;
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,10 @@ Route::get('/services/{slug}', [HomeController::class,'serviceDetail'])->name('s
 // Portfolio Routes
 Route::get('/portfolio', [PortfolioController::class,'index'])->name('portfolio');
 Route::get('/portfolio/{slug}', [PortfolioController::class,'show'])->name('portfolio.show');
+
+// Case Study Routes
+Route::get('/case-studies', [CaseStudyController::class,'index'])->name('case-studies');
+Route::get('/case-studies/{slug}', [CaseStudyController::class,'show'])->name('case-studies.show');
 
 // Blog Routes
 Route::get('/blog', [BlogController::class,'index'])->name('blog');
