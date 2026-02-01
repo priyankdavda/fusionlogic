@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\PortfolioController;
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -18,14 +19,15 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 Route::get('/', [HomeController::class,'home'])->name('home');
-Route::get('/portfolio/{portfolio}', [HomeController::class, 'show'])
-    ->name('portfolio.show');
 
 Route::get('/about', [HomeController::class,'about'])->name('about');
 Route::get('/contact', [HomeController::class,'contact'])->name('contact');
 Route::get('/services', [HomeController::class,'service'])->name('services');
 Route::get('/services/{slug}', [HomeController::class,'serviceDetail'])->name('services.detail');
-Route::get('/portfolio', [HomeController::class,'portfolio'])->name('portfolio');
+
+// Portfolio Routes
+Route::get('/portfolio', [PortfolioController::class,'index'])->name('portfolio');
+Route::get('/portfolio/{slug}', [PortfolioController::class,'show'])->name('portfolio.show');
 
 // Blog Routes
 Route::get('/blog', [BlogController::class,'index'])->name('blog');

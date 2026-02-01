@@ -109,15 +109,4 @@ class HomeController extends Controller
         return view('service-detail', compact('service'));
     }
 
-    public function portfolio()
-    {
-        $portfolios = Portfolio::published()
-            ->ordered()
-            ->limit(4)
-            ->get();
-
-        // return view('about');
-        return view('portfolio', compact('portfolios'));
-    }
-
 }
