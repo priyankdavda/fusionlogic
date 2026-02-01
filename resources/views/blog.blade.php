@@ -1,19 +1,19 @@
 @extends('layouts.app')
 
 {{-- ===== SEO Meta Tags ===== --}}
-@section('title', page_seo('about-us', 'title', 'About Us – Fusion Logic'))
-@section('meta_description', page_seo('about-us', 'meta_description', 'Learn about Fusion Logic, your trusted IT & software development partner providing AI-driven solutions.'))
-@section('canonical', page_seo('about-us', 'canonical', url('/about')))
+@section('title', page_seo('blog', 'title', 'Blog – Fusion Logic'))
+@section('meta_description', page_seo('blog', 'meta_description', 'Read the latest insights, tips, and trends in AI, technology, and digital transformation from Fusion Logic.'))
+@section('canonical', page_seo('blog', 'canonical', url('/blog')))
 
 {{-- ===== Open Graph Tags ===== --}}
-@section('og_title', page_seo('about-us', 'og_title', 'About Us – Fusion Logic'))
-@section('og_description', page_seo('about-us', 'og_description', 'Learn about Fusion Logic, your trusted IT & software development partner.'))
-@section('og_image', page_seo('about-us', 'og_image'))
+@section('og_title', page_seo('blog', 'og_title', 'Blog – Fusion Logic'))
+@section('og_description', page_seo('blog', 'og_description', 'Read the latest insights, tips, and trends in AI, technology, and digital transformation.'))
+@section('og_image', page_seo('blog', 'og_image'))
 
 {{-- ===== Twitter Card Tags ===== --}}
-@section('twitter_title', page_seo('about-us', 'twitter_title', 'About Us – Fusion Logic'))
-@section('twitter_description', page_seo('about-us', 'twitter_description', 'Learn about Fusion Logic, your trusted IT & software development partner.'))
-@section('twitter_image', page_seo('about-us', 'twitter_image'))
+@section('twitter_title', page_seo('blog', 'twitter_title', 'Blog – Fusion Logic'))
+@section('twitter_description', page_seo('blog', 'twitter_description', 'Read the latest insights, tips, and trends in AI, technology, and digital transformation.'))
+@section('twitter_image', page_seo('blog', 'twitter_image'))
 
 @section('content')
 
@@ -46,19 +46,32 @@
                     <div class="row mt-none-50 g-0 align-items-start">
                         <div class="col-lg-8 mt-50">
                             <div class="blog_details_content list-page">
+                                @forelse($blogs as $blog)
                                 <div class="blog_details_item img-hove-effect ul_li xb-border">
                                     <div class="xb-item--img xb-img">
-                                        <a href="#!"><img src="{{ asset('img/blog/img02.jpg')  }}" alt=""></a>
-                                        <a href="#!"><img src="{{ asset('img/blog/img02.jpg')  }}" alt=""></a>
-                                        <a href="#!"><img src="{{ asset('img/blog/img02.jpg')  }}" alt=""></a>
-                                        <a href="#!"><img src="{{ asset('img/blog/img02.jpg')  }}" alt=""></a>
+                                        @if($blog->featured_image)
+                                            <a href="{{ route('blog.show', $blog->slug) }}">
+                                                <img src="{{ rtrim(config('services.cms.asset_url'), '/') . '/storage/' . $blog->featured_image }}" alt="{{ $blog->title }}">
+                                            </a>
+                                        @else
+                                            {{-- Fallback image if no featured image --}}
+                                            <a href="{{ route('blog.show', $blog->slug) }}">
+                                                <img src="{{ asset('img/blog/img02.jpg') }}" alt="{{ $blog->title }}">
+                                            </a>
+                                        @endif
                                     </div>
                                     <div class="xb-item--holder">
-                                        <a href="#!" class="xb-item--category">#category</a>
-                                        <h3 class="xb-item--title border-effect-2"><a href="blog-details.php">How our AI agency delivers next-gen automation tools..</a></h3>
-                                        <span class="xb-item--content">Our AI agency creates smart automation tools  simplify.</span>
+                                        @if($blog->category)
+                                        <a href="{{ route('blog.category', $blog->category->slug) }}" class="xb-item--category">#{{ $blog->category->name }}</a>
+                                        @endif
+                                        <h3 class="xb-item--title border-effect-2">
+                                            <a href="{{ route('blog.show', $blog->slug) }}">{{ Str::limit($blog->title, 60) }}</a>
+                                        </h3>
+                                        @if($blog->excerpt)
+                                        <span class="xb-item--content">{{ Str::limit($blog->excerpt, 80) }}</span>
+                                        @endif
                                         <div class="xb-item--button mt-40">
-                                            <a class="thm-btn agency-btn" href="blog-details.php">
+                                            <a class="thm-btn agency-btn" href="{{ route('blog.show', $blog->slug) }}">
                                                 <span class="text">Read more</span>
                                                 <span class="arrow">
                                                     <span class="arrow-icon">
@@ -86,251 +99,97 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="blog_details_item img-hove-effect ul_li xb-border">
-                                    <div class="xb-item--img xb-img">
-                                        <a href="#!"><img src="{{ asset('img/blog/img02.jpg')  }}" alt=""></a>
-                                        <a href="#!"><img src="{{ asset('img/blog/img02.jpg')  }}" alt=""></a>
-                                        <a href="#!"><img src="{{ asset('img/blog/img02.jpg')  }}" alt=""></a>
-                                        <a href="#!"><img src="{{ asset('img/blog/img02.jpg')  }}" alt=""></a>
-                                    </div>
-                                    <div class="xb-item--holder">
-                                        <a href="#!" class="xb-item--category">#category</a>
-                                        <h3 class="xb-item--title border-effect-2"><a href="blog-details.php">How our AI agency delivers next-gen automation tools..</a></h3>
-                                        <span class="xb-item--content">Our AI agency creates smart automation tools  simplify.</span>
-                                        <div class="xb-item--button mt-40">
-                                            <a class="thm-btn agency-btn" href="blog-details.php">
-                                                <span class="text">Read more</span>
-                                                <span class="arrow">
-                                                    <span class="arrow-icon">
-                                                        <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <rect x="3.7832" y="13.4631" width="14.3104" height="1.81719" transform="rotate(-40.2798 3.7832 13.4631)" fill="white" />
-                                                        <rect x="5.80664" y="4.60498" width="1.81719" height="1.81719" transform="rotate(-40.2798 5.80664 4.60498)" fill="white" />
-                                                        <rect x="8.36719" y="4.81616" width="1.81719" height="1.81719" transform="rotate(-40.2798 8.36719 4.81616)" fill="white" />
-                                                        <rect x="10.9258" y="5.02759" width="1.81719" height="1.81719" transform="rotate(-40.2798 10.9258 5.02759)" fill="white" />
-                                                        <rect x="13.2773" y="7.80029" width="1.81719" height="1.81719" transform="rotate(-40.2798 13.2773 7.80029)" fill="white" />
-                                                        <rect x="13.0664" y="10.3616" width="1.81719" height="1.81719" transform="rotate(-40.2798 13.0664 10.3616)" fill="white" />
-                                                        <rect x="12.8555" y="12.9229" width="1.81719" height="1.81719" transform="rotate(-40.2798 12.8555 12.9229)" fill="white" />
-                                                        </svg>
-                                                        <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <rect x="3.7832" y="13.4631" width="14.3104" height="1.81719" transform="rotate(-40.2798 3.7832 13.4631)" fill="white" />
-                                                        <rect x="5.80664" y="4.60498" width="1.81719" height="1.81719" transform="rotate(-40.2798 5.80664 4.60498)" fill="white" />
-                                                        <rect x="8.36719" y="4.81616" width="1.81719" height="1.81719" transform="rotate(-40.2798 8.36719 4.81616)" fill="white" />
-                                                        <rect x="10.9258" y="5.02759" width="1.81719" height="1.81719" transform="rotate(-40.2798 10.9258 5.02759)" fill="white" />
-                                                        <rect x="13.2773" y="7.80029" width="1.81719" height="1.81719" transform="rotate(-40.2798 13.2773 7.80029)" fill="white" />
-                                                        <rect x="13.0664" y="10.3616" width="1.81719" height="1.81719" transform="rotate(-40.2798 13.0664 10.3616)" fill="white" />
-                                                        <rect x="12.8555" y="12.9229" width="1.81719" height="1.81719" transform="rotate(-40.2798 12.8555 12.9229)" fill="white" />
-                                                        </svg>
-                                                    </span>
-                                                </span>
-                                            </a>
-                                        </div>
-                                    </div>
+                                @empty
+                                <div class="alert alert-info">
+                                    <p>No blog posts found. Check back soon for new content!</p>
                                 </div>
-                                <div class="blog_details_item img-hove-effect ul_li xb-border">
-                                    <div class="xb-item--img xb-img">
-                                        <a href="#!"><img src="{{ asset('img/blog/img02.jpg')  }}" alt=""></a>
-                                        <a href="#!"><img src="{{ asset('img/blog/img02.jpg')  }}" alt=""></a>
-                                        <a href="#!"><img src="{{ asset('img/blog/img02.jpg')  }}" alt=""></a>
-                                        <a href="#!"><img src="{{ asset('img/blog/img02.jpg')  }}" alt=""></a>
-                                    </div>
-                                    <div class="xb-item--holder">
-                                        <a href="#!" class="xb-item--category">#category</a>
-                                        <h3 class="xb-item--title border-effect-2"><a href="blog-details.php">How our AI agency delivers next-gen automation tools..</a></h3>
-                                        <span class="xb-item--content">Our AI agency creates smart automation tools  simplify.</span>
-                                        <div class="xb-item--button mt-40">
-                                            <a class="thm-btn agency-btn" href="blog-details.php">
-                                                <span class="text">Read more</span>
-                                                <span class="arrow">
-                                                    <span class="arrow-icon">
-                                                        <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <rect x="3.7832" y="13.4631" width="14.3104" height="1.81719" transform="rotate(-40.2798 3.7832 13.4631)" fill="white" />
-                                                        <rect x="5.80664" y="4.60498" width="1.81719" height="1.81719" transform="rotate(-40.2798 5.80664 4.60498)" fill="white" />
-                                                        <rect x="8.36719" y="4.81616" width="1.81719" height="1.81719" transform="rotate(-40.2798 8.36719 4.81616)" fill="white" />
-                                                        <rect x="10.9258" y="5.02759" width="1.81719" height="1.81719" transform="rotate(-40.2798 10.9258 5.02759)" fill="white" />
-                                                        <rect x="13.2773" y="7.80029" width="1.81719" height="1.81719" transform="rotate(-40.2798 13.2773 7.80029)" fill="white" />
-                                                        <rect x="13.0664" y="10.3616" width="1.81719" height="1.81719" transform="rotate(-40.2798 13.0664 10.3616)" fill="white" />
-                                                        <rect x="12.8555" y="12.9229" width="1.81719" height="1.81719" transform="rotate(-40.2798 12.8555 12.9229)" fill="white" />
-                                                        </svg>
-                                                        <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <rect x="3.7832" y="13.4631" width="14.3104" height="1.81719" transform="rotate(-40.2798 3.7832 13.4631)" fill="white" />
-                                                        <rect x="5.80664" y="4.60498" width="1.81719" height="1.81719" transform="rotate(-40.2798 5.80664 4.60498)" fill="white" />
-                                                        <rect x="8.36719" y="4.81616" width="1.81719" height="1.81719" transform="rotate(-40.2798 8.36719 4.81616)" fill="white" />
-                                                        <rect x="10.9258" y="5.02759" width="1.81719" height="1.81719" transform="rotate(-40.2798 10.9258 5.02759)" fill="white" />
-                                                        <rect x="13.2773" y="7.80029" width="1.81719" height="1.81719" transform="rotate(-40.2798 13.2773 7.80029)" fill="white" />
-                                                        <rect x="13.0664" y="10.3616" width="1.81719" height="1.81719" transform="rotate(-40.2798 13.0664 10.3616)" fill="white" />
-                                                        <rect x="12.8555" y="12.9229" width="1.81719" height="1.81719" transform="rotate(-40.2798 12.8555 12.9229)" fill="white" />
-                                                        </svg>
-                                                    </span>
-                                                </span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="blog_details_item img-hove-effect ul_li xb-border">
-                                    <div class="xb-item--img xb-img">
-                                        <a href="#!"><img src="{{ asset('img/blog/img02.jpg')  }}" alt=""></a>
-                                        <a href="#!"><img src="{{ asset('img/blog/img02.jpg')  }}" alt=""></a>
-                                        <a href="#!"><img src="{{ asset('img/blog/img02.jpg')  }}" alt=""></a>
-                                        <a href="#!"><img src="{{ asset('img/blog/img02.jpg')  }}" alt=""></a>
-                                    </div>
-                                    <div class="xb-item--holder">
-                                        <a href="#!" class="xb-item--category">#category</a>
-                                        <h3 class="xb-item--title border-effect-2"><a href="blog-details.php">How our AI agency delivers next-gen automation tools..</a></h3>
-                                        <span class="xb-item--content">Our AI agency creates smart automation tools  simplify.</span>
-                                        <div class="xb-item--button mt-40">
-                                            <a class="thm-btn agency-btn" href="blog-details.php">
-                                                <span class="text">Read more</span>
-                                                <span class="arrow">
-                                                    <span class="arrow-icon">
-                                                        <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <rect x="3.7832" y="13.4631" width="14.3104" height="1.81719" transform="rotate(-40.2798 3.7832 13.4631)" fill="white" />
-                                                        <rect x="5.80664" y="4.60498" width="1.81719" height="1.81719" transform="rotate(-40.2798 5.80664 4.60498)" fill="white" />
-                                                        <rect x="8.36719" y="4.81616" width="1.81719" height="1.81719" transform="rotate(-40.2798 8.36719 4.81616)" fill="white" />
-                                                        <rect x="10.9258" y="5.02759" width="1.81719" height="1.81719" transform="rotate(-40.2798 10.9258 5.02759)" fill="white" />
-                                                        <rect x="13.2773" y="7.80029" width="1.81719" height="1.81719" transform="rotate(-40.2798 13.2773 7.80029)" fill="white" />
-                                                        <rect x="13.0664" y="10.3616" width="1.81719" height="1.81719" transform="rotate(-40.2798 13.0664 10.3616)" fill="white" />
-                                                        <rect x="12.8555" y="12.9229" width="1.81719" height="1.81719" transform="rotate(-40.2798 12.8555 12.9229)" fill="white" />
-                                                        </svg>
-                                                        <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <rect x="3.7832" y="13.4631" width="14.3104" height="1.81719" transform="rotate(-40.2798 3.7832 13.4631)" fill="white" />
-                                                        <rect x="5.80664" y="4.60498" width="1.81719" height="1.81719" transform="rotate(-40.2798 5.80664 4.60498)" fill="white" />
-                                                        <rect x="8.36719" y="4.81616" width="1.81719" height="1.81719" transform="rotate(-40.2798 8.36719 4.81616)" fill="white" />
-                                                        <rect x="10.9258" y="5.02759" width="1.81719" height="1.81719" transform="rotate(-40.2798 10.9258 5.02759)" fill="white" />
-                                                        <rect x="13.2773" y="7.80029" width="1.81719" height="1.81719" transform="rotate(-40.2798 13.2773 7.80029)" fill="white" />
-                                                        <rect x="13.0664" y="10.3616" width="1.81719" height="1.81719" transform="rotate(-40.2798 13.0664 10.3616)" fill="white" />
-                                                        <rect x="12.8555" y="12.9229" width="1.81719" height="1.81719" transform="rotate(-40.2798 12.8555 12.9229)" fill="white" />
-                                                        </svg>
-                                                    </span>
-                                                </span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="blog_details_item img-hove-effect ul_li xb-border">
-                                    <div class="xb-item--img xb-img">
-                                        <a href="#!"><img src="{{ asset('img/blog/img02.jpg')  }}" alt=""></a>
-                                        <a href="#!"><img src="{{ asset('img/blog/img02.jpg')  }}" alt=""></a>
-                                        <a href="#!"><img src="{{ asset('img/blog/img02.jpg')  }}" alt=""></a>
-                                        <a href="#!"><img src="{{ asset('img/blog/img02.jpg')  }}" alt=""></a>
-                                    </div>
-                                    <div class="xb-item--holder">
-                                        <a href="#!" class="xb-item--category">#category</a>
-                                        <h3 class="xb-item--title border-effect-2"><a href="blog-details.php">How our AI agency delivers next-gen automation tools..</a></h3>
-                                        <span class="xb-item--content">Our AI agency creates smart automation tools  simplify.</span>
-                                        <div class="xb-item--button mt-40">
-                                            <a class="thm-btn agency-btn" href="blog-details.php">
-                                                <span class="text">Read more</span>
-                                                <span class="arrow">
-                                                    <span class="arrow-icon">
-                                                        <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <rect x="3.7832" y="13.4631" width="14.3104" height="1.81719" transform="rotate(-40.2798 3.7832 13.4631)" fill="white" />
-                                                        <rect x="5.80664" y="4.60498" width="1.81719" height="1.81719" transform="rotate(-40.2798 5.80664 4.60498)" fill="white" />
-                                                        <rect x="8.36719" y="4.81616" width="1.81719" height="1.81719" transform="rotate(-40.2798 8.36719 4.81616)" fill="white" />
-                                                        <rect x="10.9258" y="5.02759" width="1.81719" height="1.81719" transform="rotate(-40.2798 10.9258 5.02759)" fill="white" />
-                                                        <rect x="13.2773" y="7.80029" width="1.81719" height="1.81719" transform="rotate(-40.2798 13.2773 7.80029)" fill="white" />
-                                                        <rect x="13.0664" y="10.3616" width="1.81719" height="1.81719" transform="rotate(-40.2798 13.0664 10.3616)" fill="white" />
-                                                        <rect x="12.8555" y="12.9229" width="1.81719" height="1.81719" transform="rotate(-40.2798 12.8555 12.9229)" fill="white" />
-                                                        </svg>
-                                                        <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <rect x="3.7832" y="13.4631" width="14.3104" height="1.81719" transform="rotate(-40.2798 3.7832 13.4631)" fill="white" />
-                                                        <rect x="5.80664" y="4.60498" width="1.81719" height="1.81719" transform="rotate(-40.2798 5.80664 4.60498)" fill="white" />
-                                                        <rect x="8.36719" y="4.81616" width="1.81719" height="1.81719" transform="rotate(-40.2798 8.36719 4.81616)" fill="white" />
-                                                        <rect x="10.9258" y="5.02759" width="1.81719" height="1.81719" transform="rotate(-40.2798 10.9258 5.02759)" fill="white" />
-                                                        <rect x="13.2773" y="7.80029" width="1.81719" height="1.81719" transform="rotate(-40.2798 13.2773 7.80029)" fill="white" />
-                                                        <rect x="13.0664" y="10.3616" width="1.81719" height="1.81719" transform="rotate(-40.2798 13.0664 10.3616)" fill="white" />
-                                                        <rect x="12.8555" y="12.9229" width="1.81719" height="1.81719" transform="rotate(-40.2798 12.8555 12.9229)" fill="white" />
-                                                        </svg>
-                                                    </span>
-                                                </span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
+                                @endforelse
+                                
+                                {{-- Pagination --}}
+                                @if($blogs->hasPages())
                                 <ul class="blog-pagination ul_li">
-                                    <li><a class="xb-border" href="#!"><i class="fas fa-chevron-double-left"></i></a></li>
-                                    <li><a class="xb-border" href="#!">1</a></li>
-                                    <li class="active"><a class="xb-border" href="#!">2</a></li>
-                                    <li><a class="xb-border" href="#!">3</a></li>
-                                    <li><a class="xb-border" href="#!"><i class="fas fa-chevron-double-right"></i></a></li>
+                                    {{-- Previous Page Link --}}
+                                    @if ($blogs->onFirstPage())
+                                        <li class="disabled"><a class="xb-border" href="#"><i class="fas fa-chevron-double-left"></i></a></li>
+                                    @else
+                                        <li><a class="xb-border" href="{{ $blogs->previousPageUrl() }}"><i class="fas fa-chevron-double-left"></i></a></li>
+                                    @endif
+
+                                    {{-- Pagination Elements --}}
+                                    @foreach ($blogs->getUrlRange(1, $blogs->lastPage()) as $page => $url)
+                                        @if ($page == $blogs->currentPage())
+                                            <li class="active"><a class="xb-border" href="#">{{ $page }}</a></li>
+                                        @else
+                                            <li><a class="xb-border" href="{{ $url }}">{{ $page }}</a></li>
+                                        @endif
+                                    @endforeach
+
+                                    {{-- Next Page Link --}}
+                                    @if ($blogs->hasMorePages())
+                                        <li><a class="xb-border" href="{{ $blogs->nextPageUrl() }}"><i class="fas fa-chevron-double-right"></i></a></li>
+                                    @else
+                                        <li class="disabled"><a class="xb-border" href="#"><i class="fas fa-chevron-double-right"></i></a></li>
+                                    @endif
                                 </ul>
+                                @endif
                             </div>
                         </div>
                         <div class="col-lg-4 mt-50">
                             <div class="sidebar">
+                                {{-- Search Widget --}}
                                 <div class="sidebar_widget">
                                     <h3 class="sidebar_widget_title">Search</h3>
-                                    <div class="form-group">
-                                    <input class="form-control" type="search" name="search" placeholder="">
-                                    <button type="submit" class="search_icon">
-                                        <span>
-                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M14.002 5H20.002" stroke="#00020F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                            <path d="M14.002 8H17.002" stroke="#00020F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                            <path d="M21.002 11.5C21.002 16.75 16.752 21 11.502 21C6.25195 21 2.00195 16.75 2.00195 11.5C2.00195 6.25 6.25195 2 11.502 2" stroke="#00020F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                            <path d="M22.002 22L20.002 20" stroke="#00020F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                            </svg>
-                                        </span>
-                                    </button>
-                                    </div>
+                                    <form action="{{ route('blog') }}" method="GET">
+                                        <div class="form-group">
+                                            <input class="form-control" type="search" name="search" placeholder="Search blogs..." value="{{ request('search') }}">
+                                            <button type="submit" class="search_icon">
+                                                <span>
+                                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M14.002 5H20.002" stroke="#00020F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                                    <path d="M14.002 8H17.002" stroke="#00020F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                                    <path d="M21.002 11.5C21.002 16.75 16.752 21 11.502 21C6.25195 21 2.00195 16.75 2.00195 11.5C2.00195 6.25 6.25195 2 11.502 2" stroke="#00020F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                                    <path d="M22.002 22L20.002 20" stroke="#00020F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                                    </svg>
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </form>
                                 </div>
+                                
+                                {{-- Latest Posts Widget --}}
+                                @if($latestPosts && $latestPosts->count() > 0)
                                 <div class="sidebar_widget">
                                     <h3 class="sidebar_widget_title">Latest posts</h3>
                                     <ul class="recent_post_block list-unstyled">
+                                        @foreach($latestPosts as $latestPost)
                                         <li class="recent_post_item xb-border">
-                                            <h3 class="post-title border-effect-2"><a href="blog-details.php">Why your business needs an AI strategy in 2025..</a></h3>
-
+                                            <h3 class="post-title border-effect-2">
+                                                <a href="{{ route('blog.show', $latestPost->slug) }}">
+                                                    {{ Str::limit($latestPost->title, 60) }}
+                                                </a>
+                                            </h3>
                                         </li>
-                                        <li class="recent_post_item xb-border">
-                                            <h3 class="post-title border-effect-2"><a href="blog-details.php">AI chatbots vs live chat, which Is better?..</a></h3>
-
-                                        </li>
-                                        <li class="recent_post_item xb-border">
-                                            <h3 class="post-title border-effect-2"><a href="blog-details.php">How AI transforms data into business insights..</a></h3>
-
-                                        </li>
+                                        @endforeach
                                     </ul>
                                 </div>
+                                @endif
+                                
+                                {{-- Categories Widget --}}
+                                @if($categories && $categories->count() > 0)
                                 <div class="sidebar_widget">
                                     <h3 class="sidebar_widget_title">Categories</h3>
                                     <ul class="category_list_block list-unstyled">
-                                    <li>
-                                        <a href="#">
-                                        <span><i class="far fa-arrow-right"></i> Cybersecurity</span>
-                                        <span>(05)</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <span><i class="far fa-arrow-right"></i>Digital Transformation</span>
-                                            <span>(02)</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <span><i class="far fa-arrow-right"></i>Ai Business Growth</span>
-                                            <span>(02)</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <span><i class="far fa-arrow-right"></i>Security Alerts</span>
-                                            <span>(04)</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <span><i class="far fa-arrow-right"></i>Investor Highlights</span>
-                                            <span>(07)</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <span><i class="far fa-arrow-right"></i>Cloud Computing</span>
-                                            <span>(07)</span>
-                                        </a>
-                                    </li>
+                                        @foreach($categories as $category)
+                                        <li>
+                                            <a href="{{ route('blog.category', $category->slug) }}">
+                                                <span><i class="far fa-arrow-right"></i> {{ $category->name }}</span>
+                                                <span>({{ $category->blogs_count ?? 0 }})</span>
+                                            </a>
+                                        </li>
+                                        @endforeach
                                     </ul>
                                 </div>
+                                @endif
 
                             </div>
                         </div>
