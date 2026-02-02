@@ -1139,12 +1139,16 @@
                                 <div class="col-lg-6 mt-20">
                                     <div class="xb-input-field xb-select-field">
                                         <select name="service" class="nice-select">
-                                            <option value="1">Select Service*</option>
-                                            <option value="2">AEO/SEO Service</option>
-                                            <option value="3">Lead Generation</option>
-                                            <option value="4">Social & Brand Management</option>
-                                            <option value="5">AI Content Creation</option>
-                                            <option value="6">Web Development</option>
+                                            <option value="">Select Service*</option>
+
+                                            @forelse($services as $service)
+                                                <option value="{{ $service->title }}">
+                                                    {{ $service->title }}
+                                                </option>
+                                            @empty
+                                                <option value="">No services available</option>
+                                            @endforelse
+
                                         </select>
                                     </div>
                                 </div>

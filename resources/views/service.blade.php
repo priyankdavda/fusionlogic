@@ -67,14 +67,20 @@
                                             @if($service->gallery && count($service->gallery) > 0)
                                                 @foreach(array_slice($service->gallery, 0, 4) as $image)
                                                     <a href="{{ url('/services/' . $service->slug) }}">
-                                                        <img src="{{ asset('storage/' . $image) }}" alt="{{ $service->title }}">
+                                                        <img 
+                                                            src="{{ rtrim(config('services.cms.asset_url'), '/') . '/storage/' . $image }}" 
+                                                            alt="{{ $service->title }}"
+                                                        >
                                                     </a>
                                                 @endforeach
 
                                             @elseif($service->featured_image)
                                                 @for($i = 0; $i < 4; $i++)
                                                     <a href="{{ url('/services/' . $service->slug) }}">
-                                                        <img src="{{ asset('storage/' . $service->featured_image) }}" alt="{{ $service->title }}">
+                                                        <img 
+                                                            src="{{ rtrim(config('services.cms.asset_url'), '/') . '/storage/' . $service->featured_image }}" 
+                                                            alt="{{ $service->title }}"
+                                                        >
                                                     </a>
                                                 @endfor
 
@@ -86,6 +92,7 @@
                                                 @endfor
                                             @endif
                                         </div>
+
 
                                         {{-- Button --}}
                                         <div class="xb-item--btn mt-40">

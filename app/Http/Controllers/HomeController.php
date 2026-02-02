@@ -35,6 +35,7 @@ class HomeController extends Controller
         // Hero Feature Cards (previously Why Choose Us)
         $heroFeatureCards = HeroFeatureCard::where('is_active', true)
             ->orderBy('sort_order')
+            ->limit(3)
             ->get();
 
         // Keep old variable for backward compatibility in other sections if needed
@@ -94,8 +95,12 @@ class HomeController extends Controller
 
         $footer = Footer::getActive();
 
+        $services = Service::where('is_active', true)
+            ->orderBy('title')
+            ->get();
+
         // return view('about');
-        return view('contact', compact('footer','whyChooseUsItems'));
+        return view('contact', compact('footer','whyChooseUsItems','services'));
     }
 
     public function service()

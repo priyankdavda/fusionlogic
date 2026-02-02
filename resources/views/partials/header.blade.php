@@ -57,7 +57,7 @@
                 </div>
                 
                 <div class="header-btn">
-                    <a class="thm-btn" href="{{ url('/quote') }}">Request A Quote</a>
+                    <a class="thm-btn" href="{{ url('/contact') }}">Request A Quote</a>
                 </div>
                 
                 <div class="header-bar-mobile side-menu d-lg-none">

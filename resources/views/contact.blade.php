@@ -42,7 +42,7 @@
                                 <div class="xb-contact-items img-hove-effect xb-border">
                                     <div class="xb-item--inner">
                                         <div class="xb-icon">
-                                            <img src="{{ asset('img/icon/service-icon01.svg')  }}" alt="icon">
+                                            <img src="{{ asset('img/icon/address.png')  }}" alt="icon">
                                         </div>
                                         <div class="xb-item--holder">
                                             <h3 class="title">Address</h3>
@@ -59,7 +59,7 @@
                                 <div class="xb-contact-items img-hove-effect xb-border">
                                     <div class="xb-item--inner">
                                         <div class="xb-icon">
-                                            <img src="{{ asset('img/icon/service-icon01.svg')  }}" alt="icon">
+                                            <img src="{{ asset('img/icon/phonenumber.png')  }}" alt="icon">
                                         </div>
                                         <div class="xb-item--holder">
                                             <h3 class="title">Phone Number</h3>
@@ -76,7 +76,7 @@
                                 <div class="xb-contact-items img-hove-effect xb-border">
                                     <div class="xb-item--inner">
                                         <div class="xb-icon">
-                                            <img src="{{ asset('img/icon/service-icon01.svg')  }}" alt="icon">
+                                            <img src="{{ asset('img/icon/mail.png')  }}" alt="icon">
                                         </div>
                                         <div class="xb-item--holder">
                                             <h3 class="title">Email</h3>
@@ -125,7 +125,7 @@
                                         </div>
 
                                     </div>
-                                    <div class="col-lg-6 col-md-6 mt-20">
+                                    <!-- <div class="col-lg-6 col-md-6 mt-20">
                                         <div class="xb-input-field xb-select-field">
                                         <select class="nice-select">
                                             <option value="1">Select Service*</option>
@@ -137,6 +137,24 @@
                                             <option value="7">Online Reputation Management</option>
                                         </select>
                                         <img src="{{ asset('img/icon/list-icon.svg')  }}" alt="icon">
+                                        </div>
+                                    </div> -->
+
+                                    <div class="col-lg-6 col-md-6 mt-20">
+                                        <div class="xb-input-field xb-select-field">
+                                            <select name="service" class="nice-select">
+                                                <option value="">Select Service*</option>
+
+                                                @forelse($services as $service)
+                                                    <option value="{{ $service->title }}">
+                                                        {{ $service->title }}
+                                                    </option>
+                                                @empty
+                                                    <option value="">No services available</option>
+                                                @endforelse
+
+                                            </select>
+                                            <img src="{{ asset('img/icon/list-icon.svg')  }}" alt="icon">
                                         </div>
                                     </div>
 

@@ -48,7 +48,7 @@
                 @if($service->featured_image || $service->video_link)
                 <div class="single-item-image service-det-img mb-60">
                     @if($service->featured_image)
-                        <img src="{{ asset('storage/' . $service->featured_image) }}" alt="{{ $service->title }}">
+                         <img src="{{ rtrim(config('services.cms.asset_url'), '/') . '/storage/' . $service->featured_image }}" alt="{{ $service->title }}">
                     @endif
                     
                     @if($service->video_link)
@@ -79,9 +79,41 @@
                         @endif
                     </div>
                     
-                    <div class="mt-40 details">
+                    <div class="row mt-0">
                         @foreach($service->content_blocks as $block)
-                        <div class="ai-award-item wow fadeInUp">
+                        <div class="col-lg-4 mt-20 pt-20 d-flex">
+                            <div class="xb-ser-item xb-border img-hove-effect">
+                                <div class="xb-item--inner">
+                                    @if(!empty($block['heading']))
+                                        <h3 class="xb-item--title xb-text-reveal mb-10">{{ $block['heading'] }}</h3>
+                                    @endif
+                                    <!-- <h3 class="xb-item--title border-effect">
+                                        <a href="#!">AEO Services (Answer Engine Optimization)</a>
+                                    </h3> -->
+                                    @if(!empty($block['description']))
+                                        <p class="xb-item--details">{{ $block['description'] }}</p>
+                                    @endif
+
+                                    @if(!empty($block['image']))
+                                        <div class="xb-item--img xb-img">
+                                            @for($i = 0; $i < 4; $i++)
+                                                <a href="#!">
+                                                     <img src="{{ rtrim(config('services.cms.asset_url'), '/') . '/storage/' . $block['image'] }}" alt="{{ $block['heading'] ?? 'service' }}" >
+                                                </a>
+                                            @endfor
+                                        </div>
+                                    @endif
+                                    <!-- <p class="xb-item--content">Our AEO services focus on getting your brand visible inside AI-driven search results, featured snippets, and answer boxes. Using structured data and content intent, we optimize pages so search engines and answer engines pull your brand first.</p> -->
+                                    <!-- <div class="xb-item--img xb-img">
+                                        <a href="#!"><img src="assets/img/service/aeo-service.jpg" alt="aeo"></a>
+                                        <a href="#!"><img src="assets/img/service/aeo-service.jpg" alt="aeo"></a>
+                                        <a href="#!"><img src="assets/img/service/aeo-service.jpg" alt="aeo"></a>
+                                        <a href="#!"><img src="assets/img/service/aeo-service.jpg" alt="aeo"></a>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="ai-award-item wow fadeInUp">
                             @if(!empty($block['heading']))
                             <h3 class="xb-item--title xb-text-reveal mb-10">{{ $block['heading'] }}</h3>
                             @endif
@@ -89,7 +121,7 @@
                             @if(!empty($block['description']))
                             <p class="xb-item--details">{{ $block['description'] }}</p>
                             @endif
-                        </div>
+                        </div> -->
                         @endforeach
                     </div>
                 </div>
