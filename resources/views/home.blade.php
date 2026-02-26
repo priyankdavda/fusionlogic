@@ -30,7 +30,7 @@
             data-background="{{ $activeBanner->background_image ? asset('storage/' . $activeBanner->background_image) : asset('img/bg/hero_bg.png') }}"
             style="background-image: url('{{ $activeBanner->background_image ? asset('storage/' . $activeBanner->background_image) : asset('img/bg/hero_bg.png') }}');"> -->
 
-        
+
     <section class="hero hero-style pos-rel bg_img"
             data-background="{{ $activeBanner->background_image ? asset('storage/' . $activeBanner->background_image) : asset('img/bg/hero_bg.png') }}">
 
@@ -282,7 +282,7 @@
                                     @if($whoWeAreItem->heading)
                                         <div class="img-txt">{{ $whoWeAreItem->heading }}</div>
                                     @endif
-                                    
+
                                     {{-- Dynamic description/bullet points --}}
                                     @if($whoWeAreItem->description)
                                         <div class="text-ul">
@@ -469,7 +469,7 @@
                     <div class="sec-title custom-sec-title xb-sec-padding text-center">
                         <span class="sub-title">Our Main Services</span>
                         <h2 class="title">
-                            Scalable solutions for growing businesses
+                             Best Digital Marketing Services for Growth
                         </h2>
                     </div>
                 </div>
@@ -574,9 +574,9 @@
                     <span class="sub-title">Why Choose Fusion Logic</span>
                     <h2 class="title">
                         Proven expertise
-                        <span>
+                        {{--  <span>
                             <img src="{{ asset('img/icon/diamond-icon02.gif') }}" alt="icon">
-                        </span>
+                        </span>  --}}
                         Measurable results
                     </h2>
                 </div>
@@ -1084,20 +1084,16 @@
                         </div>
 
                         <div class="xb-contact-conent wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="600ms">
-                            <div class="xb-contact-inner ul_li_between">
-                                <div class="xb-contact-item">
-                                    <h3 class="xb-item--number xb-odm">
-                                        <span class="xbo" data-count="5">00</span><span class="suffix">K+</span>
-                                    </h3>
-                                    <p>Projects Successfully Delivered</p>
+                                <div class="xb-contact-inner ul_li_between">
+                                    <div class="xb-contact-item">
+                                        <h3 class="xb-item--number xb-odm"><span class="xbo" data-count="5">00</span><span class="suffix">K+</span></h3>
+                                        <p class="xb-item--content">Projects Successfully Delivered</p>
+                                    </div>
+                                    <div class="xb-contact-item">
+                                        <h3 class="xb-item--number xb-odm"><span class="xbo" data-count="95">00</span><span class="suffix">%</span></h3>
+                                        <p class="xb-item--content">Client Satisfaction Rate  on Our Results</p>
+                                    </div>
                                 </div>
-                                <div class="xb-contact-item">
-                                    <h3 class="xb-item--number xb-odm">
-                                        <span class="xbo" data-count="95">00</span><span class="suffix">%</span>
-                                    </h3>
-                                    <p>Client Satisfaction Rate</p>
-                                </div>
-                            </div>
                             <div class="shape shape--1"><img src="{{ asset('img/shape/contact-shape01.png') }}" alt="shape"></div>
                             <div class="shape shape--2"><img src="{{ asset('img/shape/contact-shape02.png') }}" alt="shape"></div>
                         </div>
@@ -1175,9 +1171,9 @@
     </section>
     {{--  ================= CONTACT END =================  --}}
 
-    
 
-    
+
+
 
 
     {{-- ================= BLOG ================= --}}

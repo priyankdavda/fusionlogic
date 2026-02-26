@@ -20,11 +20,11 @@
 @include('partials.back-to-top')
 
 <div class="body_wrap o-clip">
-    
+
     <div class="body-overlay"></div>
     <!-- main area start -->
     <main>
-        
+
         <!-- hero start -->
         <section class="breadcrumb bg_img" data-background="{{ asset('img/bg/bootcamp-bg.png') }}">
             <div class="container">
@@ -39,18 +39,18 @@
             </div>
         </section>
         <!-- hero end -->
-        
+
         <!-- service-details start -->
         <section class="service-details pos-rel">
             <div class="container">
-                
+
                 <!-- Featured Image/Video Section -->
                 @if($service->featured_image || $service->video_link)
                 <div class="single-item-image service-det-img mb-60">
                     @if($service->featured_image)
                          <img src="{{ rtrim(config('services.cms.asset_url'), '/') . '/storage/' . $service->featured_image }}" alt="{{ $service->title }}">
                     @endif
-                    
+
                     @if($service->video_link)
                         <a class="popup-video btn-video btn-video-center" href="{{ $service->video_link }}">
                             <span><svg width="27" height="30" viewBox="0 0 27 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -60,12 +60,12 @@
                     @endif
                 </div>
                 @endif
-                
+
                 <!-- Title and Short Description -->
                 @if($service->title)
                     <h2 class="details-content-title mb-15 mt-40">{{ $service->title }}</h2>
                 @endif
-                
+
                 @if($service->short_description)
                     <p>{!! nl2br(e($service->short_description)) !!}</p>
                 @endif
@@ -78,7 +78,7 @@
                         <h2 class="details-content-title mt-35 mb-0">{{ $service->content_blocks_tagline }}</h2>
                         @endif
                     </div>
-                    
+
                     <div class="row mt-0">
                         @foreach($service->content_blocks as $block)
                         <div class="col-lg-4 mt-20 pt-20 d-flex">
@@ -117,7 +117,7 @@
                             @if(!empty($block['heading']))
                             <h3 class="xb-item--title xb-text-reveal mb-10">{{ $block['heading'] }}</h3>
                             @endif
-                            
+
                             @if(!empty($block['description']))
                             <p class="xb-item--details">{{ $block['description'] }}</p>
                             @endif
@@ -126,7 +126,7 @@
                     </div>
                 </div>
                 @endif
-                
+
                 <!-- Q&A Section -->
                 @if($service->qna && count($service->qna) > 0)
                 <div class="service-process-wrap pt-70 pb-70">
@@ -135,11 +135,11 @@
                             @if($service->qna_heading)
                             <h2 class="details-content-title">{{ $service->qna_heading }}</h2>
                             @endif
-                            
+
                             @if($service->qna_tagline)
                             <h4 class="mt-10 mb-20">{{ $service->qna_tagline }}</h4>
                             @endif
-                            
+
                             <div class="service_process_faq">
                                 <div class="accordion" id="service_process_faq">
                                     @foreach($service->qna as $index => $item)
@@ -182,7 +182,7 @@
                     </div>
                 </div>
                 @endif
-                
+
                 <!-- Features List -->
                 @if($service->features && count($service->features) > 0)
                 <div class="services-outcome-wrap mt-50">
@@ -202,7 +202,7 @@
                     </ul>
                 </div>
                 @endif
-                
+
                 <!-- Gallery Images -->
                 @if($service->gallery && count($service->gallery) > 0)
                 <div class="service-gallery mt-60">
@@ -218,12 +218,12 @@
                     </div>
                 </div>
                 @endif
-                
+
                 <!-- Call to Action -->
                 <div class="mt-60">
                     <h2 class="details-content-title mb-15">Ready to Get Started?</h2>
                     <p>Let's discuss how we can help transform your business with {{ $service->title }}.</p>
-                    
+
                     <div class="xb-item--btn mt-20 mb-70">
                         <a class="thm-btn agency-btn" href="{{ route('contact') }}">
                             <span class="text">
@@ -254,14 +254,14 @@
                         </a>
                     </div>
                 </div>
-                
+
             </div>
         </section>
         <!-- service-details end -->
-        
+
     </main>
     <!-- main area end -->
-    
+
 </div>
 
 @endsection
