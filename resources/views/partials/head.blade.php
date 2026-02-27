@@ -8,7 +8,7 @@
     <!--========= Primary SEO =========-->
     <title>@yield('title', 'FusionLogic')</title>
     <meta name="description" content="@yield('meta_description', '')">
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="noindex, nofollow">
 
     <!--========= Canonical =========-->
     <link rel="canonical" href="@yield('canonical', url()->current())">
