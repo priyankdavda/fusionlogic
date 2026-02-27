@@ -4086,7 +4086,7 @@ Drop Down menu end
     background-repeat: no-repeat;
     background-size: cover; }
   .brand-sub-title p {
-    font-size: 16px;
+    font-size: 30px;
     font-weight: 400;
     padding: 0 16px;
     position: relative;
@@ -5983,7 +5983,10 @@ Drop Down menu end
   letter-spacing: -0.01em;
   /*color: var(--color-white);*/
   color:var(--color-primary);
-  text-transform: capitalize; }
+  text-transform: capitalize;
+  margin-bottom:25px;
+
+}
   .sec-title .sub-title::before, .sec-title .sub-title::after {
     position: absolute;
     content: '';
@@ -12848,4 +12851,7 @@ section.project .xb-item--title{
     }
     .contact.conunter .xbo.xbo-auto-theme, .contact.conunter .xbo.xbo-theme-default {
         line-height: 1.3em;
+    }
+    .icon_wd{
+        max-width:50%;
     }

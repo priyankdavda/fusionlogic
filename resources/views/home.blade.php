@@ -228,7 +228,7 @@
     <section class="about pt-0 who-we-are-home">
         <div class="container">
 
-            <div class="sec-title about-sec-title mb-15">
+            {{--  <div class="sec-title about-sec-title mb-15">
                 <span class="sub-title">Who We are?</span>
 
                 <h2 class="title">
@@ -236,6 +236,15 @@
                     <span class="title-color">360 digital marketing company USA</span>
                     brands trust for AI-powered growth, performance marketing
                     and scalable web development solutions.
+                </h2>
+            </div>  --}}
+
+
+            <div class="sec-title sec-title-center text-center">
+                <span class="sub-title">Who We are?</span>
+                <h2 class="title">
+                Fusion Logic is a <img src="{{ asset('img/icon/360-degrees.png') }}" alt="shape" style="width:60px"><span class="title-color"> digital marketing company USA</span> brands
+                trust for AI-powered growth, performance marketing and scalable web development solutions.
                 </h2>
             </div>
 
@@ -466,11 +475,15 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-11">
-                    <div class="sec-title custom-sec-title xb-sec-padding text-center">
+                    {{--  <div class="sec-title custom-sec-title xb-sec-padding text-center">
                         <span class="sub-title">Our Main Services</span>
-                        <h2 class="title">
+                        <h2 class="title ">
                              Best Digital Marketing Services for Growth
                         </h2>
+                    </div>  --}}
+                    <div class="sec-title sec-title-center text-center ">
+                        <span class="sub-title">Our Main Service</span>
+                        <h2 class="title mb-20">Best Digital Marketing Services for Growth</h2>
                     </div>
                 </div>
             </div>
@@ -504,13 +517,14 @@
                                     @if($service->gallery && count($service->gallery) > 0)
                                         @foreach(array_slice($service->gallery, 0, 4) as $image)
                                             <a href="{{ url('/services/' . $service->slug) }}">
-                                                <img src="{{ asset('storage/' . $image) }}" alt="{{ $service->title }}">
+                                                <img src="{{ rtrim(config('services.cms.asset_url'), '/') . '/storage/' . $image }}" alt="{{ $service->title }}">
+
                                             </a>
                                         @endforeach
                                     @elseif($service->featured_image)
                                         @for($i = 0; $i < 4; $i++)
                                             <a href="{{ url('/services/' . $service->slug) }}">
-                                                <img src="{{ asset('storage/' . $service->featured_image) }}" alt="{{ $service->title }}">
+                                                <img src="{{ rtrim(config('services.cms.asset_url'), '/') . '/storage/' . $service->featured_image }}" alt="{{ $service->title }}">
                                             </a>
                                         @endfor
                                     @else
@@ -722,13 +736,12 @@
     <section class="project bg_img pt-80 pb-100" data-background="{{ asset('img/bg/project-bg.png') }}">
 
         <div class="container">
-            <div class="sec-title custom-sec-title xb-sec-padding text-center">
+            <div class="sec-title sec-title-center fea-sec-title text-center mb-50">
                 <span class="sub-title">Our Portfolio</span>
                 <h2 class="title">
-                    See the results that reflect our hard work
+                     See the results that reflect our hard work
                 </h2>
-
-                <div class="xb-heading-btn d-inline mt-15">
+                {{--  <div class="xb-heading-btn d-inline mt-25">
                     <a class="thm-btn agency-btn" href="#">
                         <span class="text">View More Portfolio</span>
                         <span class="arrow">
@@ -738,7 +751,35 @@
                             </span>
                         </span>
                     </a>
+                </div>  --}}
+                <div class="xb-heading-btns d-block mt-25 mb-55">
+                    <a class="thm-btn agency-btn" href="/about">
+                        <span class="text">View More Portfolio</span>
+                        <span class="arrow">
+                            <span class="arrow-icon">
+                                @include('partials.arrow-svg')
+                            </span>
+                        </span>
+                    </a>
                 </div>
+            </div>
+            <div class="sec-title custom-sec-title xb-sec-padding text-center">
+                {{--  <span class="sub-title">Our Portfolio</span>
+                <h2 class="title">
+                    See the results that reflect our hard work
+                </h2>  --}}
+
+                {{--  <div class="xb-heading-btn d-inline mt-15">
+                    <a class="thm-btn agency-btn" href="#">
+                        <span class="text">View More Portfolio</span>
+                        <span class="arrow">
+                            <span class="arrow-icon">
+                                @include('partials.arrow-svg')
+
+                            </span>
+                        </span>
+                    </a>
+                </div>  --}}
             </div>
         </div>
 
@@ -826,13 +867,13 @@
                 {{-- LEFT SIDE --}}
                 <div class="col-lg-5">
                     <div class="xb-process-left-container wow fadeInLeft" data-wow-duration="600ms">
-                        <div class="sec-title custom-sec-title xb-sec-padding text-center">
+                        {{--  <div class="sec-title custom-sec-title xb-sec-padding text-center">
                             <span class="sub-title">Case Studies</span>
                             <h2 class="title d-inline">Projects that deliver impact</h2>
 
                             <div class="xb-heading-btn d-inline">
                                 <a class="thm-btn agency-btn"
-                                    {{-- href="{{ route('case-studies.index') }}" --}}
+                                    href="{{ route('case-studies.index') }}"
                                 >
                                     <span class="text">View All Case Studies</span>
                                     <span class="arrow">
@@ -842,6 +883,23 @@
                                     </span>
                                 </a>
                             </div>
+                        </div>  --}}
+                        <div class="sec-title sec-title-center text-center pt-25">
+                            <span class="sub-title">Case Studies</span>
+                            <h2 class="title">
+                                Projects that deliver impact
+                            </h2>
+                        </div>
+
+                        <div class="xb-heading-btns d-block mt-25 mb-55">
+                            <a class="thm-btn agency-btn" href="/case-studies">
+                                <span class="text">Know About Us</span>
+                                <span class="arrow">
+                                    <span class="arrow-icon">
+                                        @include('partials.arrow-svg')
+                                    </span>
+                                </span>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -935,7 +993,7 @@
 
         <div class="container">
             <div class="sec-title sec-title-center text-center mb-50">
-                <span class="sub-title mb-0">Industries Served</span>
+                <span class="sub-title mt-25 mb-0">Industries Served</span>
                 <h2 class="title">Industries we served with FL</h2>
             </div>
         </div>
@@ -1074,7 +1132,7 @@
             <div class="row mt-none-50 justify-content-center">
 
                 {{-- LEFT CONTENT --}}
-                <div class="col-lg-6 mt-50">
+                {{--  <div class="col-lg-6 mt-50">
                     <div class="xb-content-wrap">
                         <div class="sec-title contact-sec-title">
                             <span class="sub-title mb-15">Our Achievements</span>
@@ -1096,6 +1154,101 @@
                                 </div>
                             <div class="shape shape--1"><img src="{{ asset('img/shape/contact-shape01.png') }}" alt="shape"></div>
                             <div class="shape shape--2"><img src="{{ asset('img/shape/contact-shape02.png') }}" alt="shape"></div>
+                        </div>
+                    </div>
+                </div>  --}}
+                <div class="col-lg-6 mt-50">
+                    <div class="xb-content-wrap">
+                        <div class="sec-title xb-sec-padding text-center pt-15">
+                            <span class="sub-title mb-15">Our Achievements</span></br>
+                            <h2 class="title d-inline">We are trusted Fusion Logic</h2>
+                        </div>
+                        <div class="row mt-20">
+                            <div class="col-lg-4 col-md-6 mt-30 d-flex">
+                                <div class="xb-contact-items img-hove-effect xb-border">
+                                    <div class="xb-item--inner">
+                                            <div class="xb-icon">
+                                            <img src="{{ asset('img/icon/1g.png') }}" alt="icon" class="icon_wd">
+                                        </div>
+                                        <div class="xb-item--holder">
+
+                                            <h3 class="xb-item--number"><span class="xbo" data-count="98">00</span><span class="suffix">%</span></h3>
+                                            <p class="xb-item--content">Client Retention Rate</p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 mt-30 d-flex">
+                                <div class="xb-contact-items img-hove-effect xb-border">
+                                    <div class="xb-item--inner">
+                                        <div class="xb-icon">
+                                            <img src="{{ asset('img/icon/2g.png') }}" alt="icon" class="icon_wd">
+                                        </div>
+                                        <div class="xb-item--holder">
+
+                                            <h3 class="xb-item--number"><span class="xbo" data-count="20">00</span><span class="suffix">+</span></h3>
+                                            <p class="xb-item--content">Country Served</p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 mt-30 d-flex">
+                                <div class="xb-contact-items img-hove-effect xb-border">
+                                    <div class="xb-item--inner">
+                                        <div class="xb-icon">
+                                            <img src="{{ asset('img/icon/3g.png') }}" alt="icon" class="icon_wd">
+                                        </div>
+                                        <div class="xb-item--holder">
+                                            <h3 class="xb-item--number"><span class="xbo" data-count="70">00</span><span class="suffix">+</span></h3>
+                                            <p class="xb-item--content">Happy Clients</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 mt-30 d-flex">
+                                <div class="xb-contact-items img-hove-effect xb-border">
+                                    <div class="xb-item--inner">
+                                        <div class="xb-icon">
+                                            <img src="{{ asset('img/icon/4g.png') }}" alt="icon" class="icon_wd">
+                                        </div>
+                                        <div class="xb-item--holder">
+                                            <h3 class="xb-item--number"><span class="xbo" data-count="30">00</span><span class="suffix">%</span></h3>
+                                            <p class="xb-item--content">Increase in Leads</p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 mt-30 d-flex">
+                                <div class="xb-contact-items img-hove-effect xb-border">
+                                    <div class="xb-item--inner">
+                                        <div class="xb-icon">
+                                            <img src="{{ asset('img/icon/6g.png') }}" alt="icon" class="icon_wd">
+                                        </div>
+                                        <div class="xb-item--holder">
+                                            <h3 class="xb-item--number"><span class="suffix"> Top </span><span class="xbo" data-count="10">00</span></h3>
+                                            <p class="xb-item--content">Keywords Ranking</p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 mt-30 d-flex">
+                                <div class="xb-contact-items img-hove-effect xb-border">
+                                    <div class="xb-item--inner">
+                                        <div class="xb-icon">
+                                            <img src="{{ asset('img/icon/6g.png') }}" alt="icon" class="icon_wd">
+                                        </div>
+                                        <div class="xb-item--holder">
+                                            <h3 class="xb-item--number"><span class="suffix"> Top </span><span class="xbo" data-count="10">00</span></h3>
+                                            <p class="xb-item--content">Keywords Ranking</p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
