@@ -21,6 +21,8 @@ class HomeController extends Controller
 {
     public function home()
     {
+
+        return view('comingsoon');
         $brands = BrandLogo::active()->ordered()->get();
 
         $activeBanner = \App\Models\Banner::where('is_active', true)
