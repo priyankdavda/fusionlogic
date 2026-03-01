@@ -91,6 +91,174 @@
                 </section>
             <!-- contact end -->
 
+            <section class="contact pb-50">
+                <div class="container">
+                    <div class="row mt-none-30">
+                        <div class="col-lg-4 col-md-6 mt-30">
+                            <div class="xb-contact-items img-hove-effect xb-border">
+                                <div class="xb-item--inner">
+                                    <div class="xb-img">
+                                    <a href="#!"><img src="{{ asset('img/contact/img01.png')  }}" alt="image"></a>
+                                    <a href="#!"><img src="{{ asset('img/contact/img01.png')  }}" alt="image"></a>
+                                    <a href="#!"><img src="{{ asset('img/contact/img01.png')  }}" alt="image"></a>
+                                    <a href="#!"><img src="{{ asset('img/contact/img01.png')  }}" alt="image"></a>
+                                    </div>
+                                    <div class="xb-item--holder">
+
+                                        <h3 class="title">New York</h3>
+                                        <!--<a href="#!" class="thm-btn form-btn">-->
+                                        <!--    VIEW LOCATION-->
+                                        <!--    <span class="xb-icon">-->
+                                        <!--        <img src="assets/img/icon/rotate-arrow-white02.svg" alt="icon">-->
+                                        <!--        <img src="assets/img/icon/rotate-arrow-black03.svg" alt="icon">-->
+                                        <!--    </span>-->
+                                        <!--</a>-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 mt-30">
+                            <div class="xb-contact-items img-hove-effect xb-border">
+                                <div class="xb-item--inner">
+                                    <div class="xb-img">
+                                    <a href="#!"><img src="{{ asset('img/contact/img04.png')  }}" alt="image"></a>
+                                    <a href="#!"><img src="{{ asset('img/contact/img04.png')  }}" alt="image"></a>
+                                    <a href="#!"><img src="{{ asset('img/contact/img04.png')  }}" alt="image"></a>
+                                    <a href="#!"><img src="{{ asset('img/contact/img04.png')  }}" alt="image"></a>
+                                    </div>
+                                    <div class="xb-item--holder">
+                                        <!--<p class="xb-item--location">London, United Kingdom</p>-->
+                                        <h3 class="title">London, United Kingdom</h3>
+                                        <!--<a href="#!" class="thm-btn form-btn">-->
+                                        <!--    Coming Soon-->
+                                        <!--    <span class="xb-icon">-->
+                                        <!--        <img src="assets/img/icon/rotate-arrow-white02.svg" alt="icon">-->
+                                        <!--        <img src="assets/img/icon/rotate-arrow-black03.svg" alt="icon">-->
+                                        <!--    </span>-->
+                                        <!--</a>-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 mt-30">
+                            <div class="xb-contact-items img-hove-effect xb-border">
+                                <div class="xb-item--inner">
+                                    <div class="xb-img">
+                                    <a href="#!"><img src="{{ asset('img/contact/img04.png')  }}" alt="image"></a>
+                                    <a href="#!"><img src="{{ asset('img/contact/img04.png')  }}" alt="image"></a>
+                                    <a href="#!"><img src="{{ asset('img/contact/img04.png')  }}" alt="image"></a>
+                                    <a href="#!"><img src="{{ asset('img/contact/img04.png')  }}" alt="image"></a>
+                                    </div>
+                                    <div class="xb-item--holder">
+                                        <!--<p class="xb-item--location">Toronto, Canada</p>-->
+                                        <h3 class="title">Dubai</h3>
+                                        <!--<a href="#!" class="thm-btn form-btn">-->
+                                        <!--    Coming Soon-->
+                                        <!--    <span class="xb-icon">-->
+                                        <!--        <img src="assets/img/icon/rotate-arrow-white02.svg" alt="icon">-->
+                                        <!--        <img src="assets/img/icon/rotate-arrow-black03.svg" alt="icon">-->
+                                        <!--    </span>-->
+                                        <!--</a>-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="contact conunter pt-30 pb-50">
+                <div class="container">
+                    <div class="row mt-none-30">
+                        <div class="col-lg-2 col-md-6 mt-30">
+                            <div class="xb-contact-items img-hove-effect xb-border">
+                                <div class="xb-item--inner">
+                                    <div class="xb-icon">
+                                        <img src="{{ asset('img/icon/1g.png')  }}" alt="icon">
+                                    </div>
+                                    <div class="xb-item--holder">
+
+                                        <h3 class="xb-item--number"><span class="xbo" data-count="98">00</span><span class="suffix">%</span></h3>
+                                        <p class="xb-item--content">Client Retention Rate</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-6 mt-30">
+                            <div class="xb-contact-items img-hove-effect xb-border">
+                                <div class="xb-item--inner">
+                                    <div class="xb-icon">
+                                        <img src="{{ asset('img/icon/2g.png')  }}" alt="icon">
+                                    </div>
+                                    <div class="xb-item--holder">
+
+                                        <h3 class="xb-item--number"><span class="xbo" data-count="20">00</span><span class="suffix">+</span></h3>
+                                        <p class="xb-item--content">Country Served</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-6 mt-30">
+                            <div class="xb-contact-items img-hove-effect xb-border">
+                                <div class="xb-item--inner">
+                                    <div class="xb-icon">
+                                        <img src="{{ asset('img/icon/3g.png')  }}" alt="icon">
+                                    </div>
+                                    <div class="xb-item--holder">
+                                        <h3 class="xb-item--number"><span class="xbo" data-count="70">00</span><span class="suffix">+</span></h3>
+                                        <p class="xb-item--content">Happy Clients</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-6 mt-30">
+                            <div class="xb-contact-items img-hove-effect xb-border">
+                                <div class="xb-item--inner">
+                                    <div class="xb-icon">
+                                        <img src="{{ asset('img/icon/4g.png')  }}" alt="icon">
+                                    </div>
+                                    <div class="xb-item--holder">
+                                        <h3 class="xb-item--number"><span class="xbo" data-count="30">00</span><span class="suffix">%</span></h3>
+                                        <p class="xb-item--content">Increase in Leads</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-6 mt-30">
+                            <div class="xb-contact-items img-hove-effect xb-border">
+                                <div class="xb-item--inner">
+                                    <div class="xb-icon">
+                                        <img src="{{ asset('img/icon/6g.png')  }}" alt="icon">
+                                    </div>
+                                    <div class="xb-item--holder">
+                                        <h3 class="xb-item--number"><span class="suffix"> Top </span><span class="xbo" data-count="10">00</span></h3>
+                                        <p class="xb-item--content">Keywords Ranking</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-6 mt-30">
+                            <div class="xb-contact-items img-hove-effect xb-border">
+                                <div class="xb-item--inner">
+                                    <div class="xb-icon">
+                                        <img src="{{ asset('img/icon/6g.png')  }}" alt="icon">
+                                    </div>
+                                    <div class="xb-item--holder">
+                                        <h3 class="xb-item--number"><span class="suffix"> Top </span><span class="xbo" data-count="10">00</span></h3>
+                                        <p class="xb-item--content">Keywords Ranking</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
             <!-- contact start -->
             <section class="contact">
