@@ -994,7 +994,7 @@
         <div class="container">
             <div class="sec-title sec-title-center text-center mb-50">
                 <span class="sub-title mt-25 mb-0">FusionLogic Served</span>
-                <h2 class="title">FusionLogic we served with FL</h2>
+                <h2 class="title">FusionLogic we served with Fusion Logic</h2>
             </div>
         </div>
 

@@ -62,8 +62,8 @@
                 @endif
 
                 <!-- Title and Short Description -->
-                @if($service->title)
-                    <h2 class="details-content-title mb-15 mt-40">{{ $service->title }}</h2>
+                @if($service->subtitle)
+                    <h2 class="details-content-title mb-15 mt-40">{{ $service->subtitle }}</h2>
                 @endif
 
                 @if($service->short_description)
@@ -207,7 +207,7 @@
                         @endif
                     </div>
                     @endforeach
-                @endif               
+                @endif
 
                 <!-- Gallery Images -->
                 @if($service->gallery && count($service->gallery) > 0)
