@@ -271,7 +271,7 @@
                 @endif
 
                 <!-- Call to Action -->
-                <div class="mt-60">
+                <div class="mt-60 text-center">
                     <h2 class="details-content-title mb-15">Ready to Get Started?</h2>
                     <p>Let's discuss how we can help transform your business with {{ $service->title }}.</p>
 
