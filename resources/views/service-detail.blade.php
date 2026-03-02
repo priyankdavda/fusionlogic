@@ -77,6 +77,10 @@
                         @if($service->content_blocks_tagline)
                         <h2 class="details-content-title mt-35 mb-0">{{ $service->content_blocks_tagline }}</h2>
                         @endif
+
+                        @if($service->description)
+                            <p>{!! $service->description !!}</p>
+                        @endif
                     </div>
 
                     {{--  <div class="row mt-0">
