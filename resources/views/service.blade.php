@@ -59,6 +59,7 @@
     margin-top: 20px !important;
     padding-top: 20px !important;
 }
+
 </style>
 @endpush
 
@@ -209,4 +210,9 @@
         },
     });
 </script>
+<style>
+    .swiper-navigation-icon{
+        display: none;
+    }
+    </style
 @endpush

@@ -79,7 +79,7 @@
                         @endif
                     </div>
 
-                    <div class="row mt-0">
+                    {{--  <div class="row mt-0">
                         @foreach($service->content_blocks as $block)
                         <div class="col-lg-4 mt-20 pt-20 d-flex">
                             <div class="xb-ser-item xb-border img-hove-effect">
@@ -123,6 +123,51 @@
                             @endif
                         </div> -->
                         @endforeach
+                    </div>  --}}
+                    <div class="swiper contentBlockSwiper mt-20">
+                        <div class="swiper-wrapper">
+
+                            @foreach($service->content_blocks as $block)
+                            <div class="swiper-slide">
+                                <div class="mt-20 pt-20 d-flex w-100">
+                                    <div class="xb-ser-item xb-border img-hove-effect w-100">
+                                        <div class="xb-item--inner">
+
+                                            @if(!empty($block['heading']))
+                                                <h3 class="xb-item--title xb-text-reveal mb-10">
+                                                    {{ $block['heading'] }}
+                                                </h3>
+                                            @endif
+
+                                            @if(!empty($block['description']))
+                                                <p class="xb-item--details">
+                                                    {{ $block['description'] }}
+                                                </p>
+                                            @endif
+
+                                            @if(!empty($block['thumbnail']))
+                                                <div class="xb-item--img xb-img">
+                                                    @for($i = 0; $i < 4; $i++)
+                                                        <a href="#!">
+                                                            <img
+                                                                src="{{ rtrim(config('services.cms.asset_url'), '/') . '/storage/' . $block['thumbnail'] }}"
+                                                                alt="{{ $block['heading'] ?? 'service' }}">
+                                                        </a>
+                                                    @endfor
+                                                </div>
+                                            @endif
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            @endforeach
+
+                        </div>
+
+                        <!-- Navigation -->
+                        <div class="swiper-button-next content-next"></div>
+                        <div class="swiper-button-prev content-prev"></div>
                     </div>
                 </div>
                 @endif
@@ -269,5 +314,69 @@
     <!-- main area end -->
 
 </div>
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+<script>
+new Swiper(".contentBlockSwiper", {
+    slidesPerView: 3,
+    spaceBetween: 30,
+    loop: true,
+    speed: 800,
+
+    navigation: {
+        nextEl: ".content-next",
+        prevEl: ".content-prev",
+    },
+
+    breakpoints: {
+        0: { slidesPerView: 1 },
+        768: { slidesPerView: 2 },
+        1200: { slidesPerView: 3 }
+    }
+});
+</script>
+
+<style>
+.contentBlockSwiper .swiper-slide {
+    display: flex;
+}
+
+.contentBlockSwiper .xb-ser-item {
+    height: 100%;
+    width: 100%;
+}
+/* Swiper slide full height */
+.contentBlockSwiper .swiper-wrapper {
+    align-items: stretch;
+}
+
+.contentBlockSwiper .swiper-slide {
+    height: auto;
+    display: flex;
+}
+
+/* Make card full height */
+.contentBlockSwiper .xb-ser-item {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+/* Push image section to bottom */
+.contentBlockSwiper .xb-item--inner {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.contentBlockSwiper .xb-item--img {
+    margin-top: auto;
+}
+.swiper-navigation-icon{
+display:none;
+}
+</style>
 
 @endsection
