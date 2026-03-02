@@ -77,9 +77,8 @@
                         @if($service->content_blocks_tagline)
                         <h2 class="details-content-title mt-35 mb-0">{{ $service->content_blocks_tagline }}</h2>
                         @endif
-
-                        @if($service->description)
-                            <p>{!! $service->description !!}</p>
+                        @if($service->content_blocks_description)
+                        <p>{{ $service->content_blocks_description }}</p>
                         @endif
                     </div>
 
@@ -276,11 +275,11 @@
 
                 <!-- Call to Action -->
                 <div class="mt-60 text-center">
-                    <h2 class="details-content-title mb-15">Ready to Get Started?</h2>
-                    <p>Let's discuss how we can help transform your business with {{ $service->title }}.</p>
+                    <h2 class="details-content-title mb-15"> {{ $service->meta_data['cta_heading'] ?? 'Ready to Get Started?' }} </h2>
+                    <p> {{ $service->meta_data['cta_description'] ?? "Let's discuss how we can help transform your business with " . $service->title . "." }} </p>
 
                     <div class="xb-item--btn mt-20 mb-70">
-                        <a class="thm-btn agency-btn" href="{{ $service->meta_data['cta_url'] ?? route('contact') }}">
+                        <a class="thm-btn agency-btn" href="{{ url($service->meta_data['cta_url']) ?? route('contact') }}">
                             <span class="text">
                                 {{ $service->meta_data['cta_label'] ?? 'Get in Touch' }}
                             </span>
