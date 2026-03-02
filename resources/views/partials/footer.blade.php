@@ -54,7 +54,7 @@
 
             {{-- Services --}}
             <div class="xb-footer-nav-item">
-                <h2 class="title">FL Services</h2>
+                <h2 class="title">Fusion Logic Services</h2>
                 <ul>
                     @foreach($footer->services ?? [] as $item)
                         <li>
