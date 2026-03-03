@@ -168,94 +168,37 @@
             </section>
 
 
+            
             <section class="contact conunter pt-30 pb-50">
                 <div class="container">
                     <div class="row mt-none-30">
-                        <div class="col-lg-2 col-md-6 mt-30">
-                            <div class="xb-contact-items img-hove-effect xb-border">
-                                <div class="xb-item--inner">
-                                    <div class="xb-icon">
-                                        <img src="{{ asset('img/icon/1g.png')  }}" alt="icon">
-                                    </div>
-                                    <div class="xb-item--holder">
+                        @foreach($achievements as $achievement)
+                            <div class="col-lg-2 col-md-6 mt-30">
+                                <div class="xb-contact-items img-hove-effect xb-border">
+                                    <div class="xb-item--inner">
 
-                                        <h3 class="xb-item--number"><span class="xbo" data-count="98">00</span><span class="suffix">%</span></h3>
-                                        <p class="xb-item--content">Client Retention Rate</p>
+                                        {{-- Icon --}}
+                                        <div class="xb-icon">
+                                            @if(!empty($achievement->icon_svg))
+                                                {!! $achievement->icon_svg !!}
+                                            @elseif(!empty($achievement->icon_image))
+                                                <img
+                                                    src="{{ rtrim(config('services.cms.asset_url'), '/') . '/storage/' . $achievement->icon_image }}"
+                                                    alt="{{ $achievement->title }}"
+                                                >
+                                            @endif
+                                        </div>
 
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-6 mt-30">
-                            <div class="xb-contact-items img-hove-effect xb-border">
-                                <div class="xb-item--inner">
-                                    <div class="xb-icon">
-                                        <img src="{{ asset('img/icon/2g.png')  }}" alt="icon">
-                                    </div>
-                                    <div class="xb-item--holder">
-
-                                        <h3 class="xb-item--number"><span class="xbo" data-count="20">00</span><span class="suffix">+</span></h3>
-                                        <p class="xb-item--content">Country Served</p>
+                                        {{-- Stat --}}
+                                        <div class="xb-item--holder">
+                                            <h3 class="xb-item--number">{{ $achievement->title }}</h3>
+                                            <p class="xb-item--content">{{ $achievement->subtitle }}</p>
+                                        </div>
 
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-lg-2 col-md-6 mt-30">
-                            <div class="xb-contact-items img-hove-effect xb-border">
-                                <div class="xb-item--inner">
-                                    <div class="xb-icon">
-                                        <img src="{{ asset('img/icon/3g.png')  }}" alt="icon">
-                                    </div>
-                                    <div class="xb-item--holder">
-                                        <h3 class="xb-item--number"><span class="xbo" data-count="70">00</span><span class="suffix">+</span></h3>
-                                        <p class="xb-item--content">Happy Clients</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-6 mt-30">
-                            <div class="xb-contact-items img-hove-effect xb-border">
-                                <div class="xb-item--inner">
-                                    <div class="xb-icon">
-                                        <img src="{{ asset('img/icon/4g.png')  }}" alt="icon">
-                                    </div>
-                                    <div class="xb-item--holder">
-                                        <h3 class="xb-item--number"><span class="xbo" data-count="30">00</span><span class="suffix">%</span></h3>
-                                        <p class="xb-item--content">Increase in Leads</p>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-6 mt-30">
-                            <div class="xb-contact-items img-hove-effect xb-border">
-                                <div class="xb-item--inner">
-                                    <div class="xb-icon">
-                                        <img src="{{ asset('img/icon/6g.png')  }}" alt="icon">
-                                    </div>
-                                    <div class="xb-item--holder">
-                                        <h3 class="xb-item--number"><span class="suffix"> Top </span><span class="xbo" data-count="10">00</span></h3>
-                                        <p class="xb-item--content">Keywords Ranking</p>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-6 mt-30">
-                            <div class="xb-contact-items img-hove-effect xb-border">
-                                <div class="xb-item--inner">
-                                    <div class="xb-icon">
-                                        <img src="{{ asset('img/icon/6g.png')  }}" alt="icon">
-                                    </div>
-                                    <div class="xb-item--holder">
-                                        <h3 class="xb-item--number"><span class="suffix"> Top </span><span class="xbo" data-count="10">00</span></h3>
-                                        <p class="xb-item--content">Keywords Ranking</p>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </section>

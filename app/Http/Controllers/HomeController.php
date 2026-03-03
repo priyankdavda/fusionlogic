@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Achievement;
 use Illuminate\Http\Request;
 use App\Models\BrandLogo;
 use Illuminate\Support\Facades\DB;
@@ -73,7 +74,11 @@ class HomeController extends Controller
             ->ordered()
             ->get();
 
-        return view('home', compact('brands','portfolios','heroFeatureCards','whyChooseUsItems','caseStudies','industries','testimonials','faqs','blogs','whoWeAreItems'));
+        $achievements = Achievement::where('is_active', true)
+            ->orderBy('sort_order')
+            ->get();
+
+        return view('home', compact('achievements','brands','portfolios','heroFeatureCards','whyChooseUsItems','caseStudies','industries','testimonials','faqs','blogs','whoWeAreItems'));
     }
 
     public function about()
@@ -101,8 +106,12 @@ class HomeController extends Controller
             ->orderBy('title')
             ->get();
 
+        $achievements = Achievement::where('is_active', true)
+            ->orderBy('sort_order')
+            ->get();
+
         // return view('about');
-        return view('contact', compact('footer','whyChooseUsItems','services'));
+        return view('contact', compact('footer','achievements','whyChooseUsItems','services'));
     }
 
     public function service()
