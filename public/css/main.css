@@ -9731,6 +9731,10 @@ Drop Down menu end
   @media (max-width: 767px) {
     .xb-contact-item {
       margin: 0 auto; } }
+      .xb-item--number{
+        display: flex;
+        justify-content: center;
+      }
   .xb-contact-item .xb-item--number {
     font-size: 70px;
     margin-bottom: 15px;

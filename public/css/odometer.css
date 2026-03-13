@@ -34,7 +34,7 @@
 	left: 0;
 	right: 0;
 	bottom: 0;
-	overflow: hidden;
+	/* overflow: hidden; */
 }
 .xbo.xbo-auto-theme .xbo-digit .xbo-ribbon,
 .xbo.xbo-theme-default .xbo-digit .xbo-ribbon {
