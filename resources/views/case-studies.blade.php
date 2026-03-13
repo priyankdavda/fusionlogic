@@ -68,8 +68,9 @@
                                     {{-- Country flag - Static as flag images are not in model --}}
                                     @if($caseStudy->country)
                                         {{-- Note: Flag image path is static - would need flag mapping logic for dynamic flags --}}
-                                        <img src="{{ asset('img/case-study/india-flag.png') }}" 
-                                             alt="{{ $caseStudy->country }} Flag">
+                                        <!-- <img src="{{ asset('img/case-study/india-flag.png') }}"  -->
+                                        <img src="{{ asset('img/case-study/flag.jpeg') }}" 
+                                             alt="{{ $caseStudy->country }} Flag" style="margin-top: 10px;">
                                     @endif
                                     
                                     <div class="project-name">

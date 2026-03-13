@@ -578,7 +578,7 @@
     </section>
     {{-- ================= SERVICES SECTION END ================= --}}
 
-    <div class="bg_img" data-background="{{ asset('img/bg/features-gradient-bg.png') }}">
+    <div class="bg_img pb-90" data-background="{{ asset('img/bg/features-gradient-bg.png') }}">
 
         <!-- ================= WHO WE ARE START ================= -->
         <section class="who-we-are pt-80">
@@ -691,7 +691,7 @@
         <!-- ================= WHO WE ARE END ================= -->
 
         {{-- ================= BRAND SECTION ================= --}}
-        <section class="brand pt-110 pb-90">
+        <!-- <section class="brand pt-110 pb-90">
             <div class="container">
                 <div class="xb-brand-wrap xb-border">
 
@@ -727,7 +727,7 @@
 
                 </div>
             </div>
-        </section>
+        </section> -->
         {{-- ================= BRAND SECTION END ================= --}}
 
     </div>
@@ -938,7 +938,7 @@
                                                 </p>
                                             </div>
                                             <div class="xb-item---btn mt-10 case-study-more">
-                                                <a class="thm-btn agency-btn" href="#">
+                                                <a class="thm-btn agency-btn"  href="{{ route('case-studies.show', $case->slug) }}">
                                                 <span class="arrow">
                                                     <span class="arrow-icon">
                                                         @include('partials.arrow-svg')
@@ -993,8 +993,8 @@
 
         <div class="container">
             <div class="sec-title sec-title-center text-center mb-50">
-                <span class="sub-title mt-25 mb-0">FusionLogic Served</span>
-                <h2 class="title">FusionLogic we served with Fusion Logic</h2>
+                <span class="sub-title mt-25 mb-0">Industry We Serve</span>
+                <!-- <h2 class="title">FusionLogic we served with Fusion Logic</h2> -->
             </div>
         </div>
 
