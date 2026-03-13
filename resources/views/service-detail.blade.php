@@ -26,7 +26,7 @@
     <main>
 
         <!-- hero start -->
-        <section class="breadcrumb bg_img" data-background="{{ asset('img/bg/bootcamp-bg.png') }}">
+        <!-- <section class="breadcrumb bg_img" data-background="{{ asset('img/bg/bootcamp-bg.png') }}">
             <div class="container">
                 <div class="breadcrumb__content">
                     <ul class="breadcrumb__list clearfix list-unstyled">
@@ -37,7 +37,7 @@
                     <h2 class="breadcrumb__title">{{ $service->title }}</h2>
                 </div>
             </div>
-        </section>
+        </section> -->
         <!-- hero end -->
 
         <!-- service-details start -->
