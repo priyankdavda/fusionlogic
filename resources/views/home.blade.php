@@ -753,7 +753,7 @@
                     </a>
                 </div>  --}}
                 <div class="xb-heading-btns d-block mt-25 mb-55">
-                    <a class="thm-btn agency-btn" href="/about">
+                    <a class="thm-btn agency-btn" href="/portfolio">
                         <span class="text">View More Portfolio</span>
                         <span class="arrow">
                             <span class="arrow-icon">
