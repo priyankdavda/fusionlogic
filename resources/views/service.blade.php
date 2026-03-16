@@ -91,7 +91,7 @@
         <section class="service pos-rel bg_img full-box pt-80 pb-80"
             data-background="{{ asset('img/bg/service-gradient-bg.png') }}">
 
-            <div class="container">
+            <div class="container" style="overflow:hidden;">
 
                 <div class="swiper serviceSwiper mt-none-30">
                     <div class="swiper-wrapper">

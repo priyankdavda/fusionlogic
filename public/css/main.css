@@ -9188,7 +9188,8 @@ Drop Down menu end
         .xb-faq .accordion_box .block.active-block .acc-btn .arrow::after {
           opacity: 1; }
       .xb-faq .accordion_box .block .acc-btn {
-        padding: 24px 30px;
+        /* padding: 24px 30px; */
+        padding: 24px 50px 24px 20px;
         font-size: 22px;
         line-height: 1.3;
         font-weight: 500;

@@ -1035,7 +1035,7 @@
         <div class="container">
             <div class="sec-title sec-title-center text-center mb-50">
                 <span class="sub-title mb-15">Our Testimonial</span>
-                <h2 class="title">Hear from our happy customers</h2>
+                <!-- <h2 class="title">Hear from our happy customers</h2> -->
             </div>
         </div>
 
@@ -1159,12 +1159,13 @@
                 </div>  --}}
                 <div class="col-lg-6 mt-50">
                     <div class="xb-content-wrap">
-                        <div class="sec-title xb-sec-padding text-center pt-15">
+                        <!-- <div class="sec-title xb-sec-padding text-center pt-15"> -->
+                        <div class="sec-title text-center pt-15">
                             <span class="sub-title mb-15">Our Achievements</span><br>
                             <h2 class="title d-inline">We are trusted Fusion Logic</h2>
                         </div>
                 
-                        <div class="row mt-20">
+                        <div class="row mt-40">
                             @foreach($achievements as $achievement)
                                 <div class="col-lg-4 col-md-6 mt-30 d-flex">
                                     <div class="xb-contact-items img-hove-effect xb-border">

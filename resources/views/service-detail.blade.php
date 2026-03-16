@@ -72,7 +72,7 @@
 
                 <!-- Content Blocks Section -->
                 @if($service->content_blocks && count($service->content_blocks) > 0)
-                <div class="ai-award-wrap mt-60">
+                <div class="ai-award-wrap mt-60" style="overflow:hidden;">
                     <div class="sec-title-three">
                         @if($service->content_blocks_tagline)
                         <h2 class="details-content-title mt-35 mb-0">{{ $service->content_blocks_tagline }}</h2>
