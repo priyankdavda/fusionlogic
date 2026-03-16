@@ -1,4 +1,4 @@
-<!-- header start -->
+        <!-- header start -->
 <header id="xb-header-area" class="header-area header-style--one header-transparent is-sticky">
     <div class="xb-header stricky">
         <div class="container mxw-1650">
@@ -74,7 +74,7 @@
                         <div class="xb-menu-close xb-hide-xl xb-close"></div>
                         <div class="xb-logo-mobile xb-hide-xl">
                             <a href="{{ url('/') }}" rel="home">
-                                <img src="{{ asset('img/logo/logo.svg') }}" alt="Fusion Logic">
+                                <img src="{{ asset('img/logo/fusion-logic.svg') }}" alt="Fusion Logic">
                             </a>
                         </div>
 
@@ -129,4 +129,4 @@
         </div>
     </div>
 </header>
-<!-- header end -->
+<!-- header end -->    

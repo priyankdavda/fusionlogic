@@ -1,4 +1,4 @@
-@extends('layouts.app')
+        @extends('layouts.app')
 
 {{-- ===== SEO Meta Tags ===== --}}
 @section('title', $service->meta_title ?: $service->title . ' - Fusion Logic')
@@ -26,22 +26,22 @@
     <main>
 
         <!-- hero start -->
-        <!-- <section class="breadcrumb bg_img" data-background="{{ asset('img/bg/bootcamp-bg.png') }}">
-            <div class="container">
-                <div class="breadcrumb__content">
-                    <ul class="breadcrumb__list clearfix list-unstyled">
-                        <li class="breadcrumb-item"><a href="{{ route('home') }}">home</a></li>
-                        <li class="breadcrumb-item"><a href="{{ route('services') }}">Services</a></li>
-                        <li class="breadcrumb-item">{{ $service->title }}</li>
-                    </ul>
-                    <h2 class="breadcrumb__title">{{ $service->title }}</h2>
-                </div>
-            </div>
-        </section> -->
+        <!-- <section class="breadcrumb bg_img" data-background="{{ asset('img/bg/bootcamp-bg.png') }}">-->
+        <!--    <div class="container">-->
+        <!--        <div class="breadcrumb__content">-->
+        <!--            <ul class="breadcrumb__list clearfix list-unstyled">-->
+        <!--                <li class="breadcrumb-item"><a href="{{ route('home') }}">home</a></li>-->
+        <!--                <li class="breadcrumb-item"><a href="{{ route('services') }}">Services</a></li>-->
+        <!--                <li class="breadcrumb-item">{{ $service->title }}</li>-->
+        <!--            </ul>-->
+        <!--            <h2 class="breadcrumb__title">{{ $service->title }}</h2>-->
+        <!--        </div>-->
+        <!--    </div>-->
+        <!--</section>-->
         <!-- hero end -->
 
         <!-- service-details start -->
-        <section class="service-details pos-rel">
+        <section class="service-details pos-rel pt-100">
             <div class="container">
 
                 <!-- Featured Image/Video Section -->
@@ -279,7 +279,7 @@
                     <p> {{ $service->meta_data['cta_description'] ?? "Let's discuss how we can help transform your business with " . $service->title . "." }} </p>
 
                     <div class="xb-item--btn mt-20 mb-70">
-                        <a class="thm-btn agency-btn" href="{{ url($service->meta_data['cta_url']) ?? route('contact') }}">
+                        <a class="sdp thm-btn agency-btn" href="{{ url($service->meta_data['cta_url']) ?? route('contact') }}">
                             <span class="text">
                                 {{ $service->meta_data['cta_label'] ?? 'Get in Touch' }}
                             </span>
@@ -383,3 +383,4 @@ display:none;
 </style>
 
 @endsection
+    

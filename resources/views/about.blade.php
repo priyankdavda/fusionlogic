@@ -1,4 +1,4 @@
-@extends('layouts.app')
+        @extends('layouts.app')
 
 {{-- ===== SEO Meta Tags ===== --}}
 @section('title', page_seo('about-us', 'title', 'About Us – Fusion Logic'))
@@ -187,7 +187,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-8">
-                            <div class="xb-feature-content">
+                            <div class="xb-feature-content mb-padding">
                                 <div class="sec-title sec-title-center fea-sec-title mb-35">
                                     <span class="sub-title mb-20">Why We are Better?</span>
                                     <h2 class="title title-line_height">Why Fusion Logic Is Here</h2>
@@ -374,3 +374,4 @@
     </div>
 
 @endsection
+    

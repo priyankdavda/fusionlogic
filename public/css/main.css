@@ -1,4 +1,4 @@
-/*-----------------------------------------------------------------------------------
+                        /*-----------------------------------------------------------------------------------
 
     Project Name: Aivora - AI Agency & Technology HTML Template
     Author: XpressBuddy -->> (https://themeforest.net/user/xpressbuddy)
@@ -4577,7 +4577,8 @@ Drop Down menu end
       font-size: 32px; } }
   @media (max-width: 767px) {
     .xb-project-content .xb-item--title {
-      font-size: 26px; } }
+      font-size: 26px;
+      line-height: 36px;} }
   @media only screen and (min-width: 576px) and (max-width: 767px) {
     .xb-project-content .xb-item--title {
       font-size: 28px; } }
@@ -5963,7 +5964,8 @@ Drop Down menu end
       font-size: 48px; } }
   @media (max-width: 767px) {
     .sec-title .title {
-      font-size: 32px; } }
+        font-size: 22px;
+        line-height: 36px; } }
   .sec-title .title.horizontal-shape img {
     height: 50px;
     width: 165px;
@@ -6121,7 +6123,8 @@ Drop Down menu end
     max-width: 874px; }
     @media (max-width: 767px) {
       .about-sec-title .title {
-        font-size: 36px; } }
+                font-size: 22px;
+        line-height: 36px;} }
     .about-sec-title .title span {
       position: relative;
       display: inline-block; }
@@ -6327,7 +6330,7 @@ Drop Down menu end
       height: 670px; } }
   @media (max-width: 767px) {
     .xb-service-item {
-      height: 635px;
+      height: auto;
       width: 100%;
       flex: unset; } }
   @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -6363,7 +6366,7 @@ Drop Down menu end
         padding: 82px 30px 85px; } }
     @media (max-width: 767px) {
       .xb-service-item .xb-item--item {
-        padding: 82px 20px 85px; } }
+        padding: 40px 20px 45px; } }
   .xb-service-item .xb-item--title {
     font-size: 36px;
     letter-spacing: -0.06em;
@@ -6860,7 +6863,7 @@ Drop Down menu end
         padding: 50px 40px 40px 30px; } }
     @media (max-width: 767px) {
       .xb-feature-item .xb-item--inner {
-        padding: 50px 30px 40px; } }
+        padding: 40px 30px 40px; } }
     .xb-feature-item .xb-item--inner::before {
       position: absolute;
       content: '';
@@ -7787,7 +7790,7 @@ Drop Down menu end
       line-height: 34px; } }
 
 .blog_details_content p {
-  line-height: 28px; }
+  line-height: 32px; }
 
 .blog-details-video {
   width: 100%;
@@ -8187,7 +8190,9 @@ Drop Down menu end
   letter-spacing: -0.04em; }
   @media (max-width: 767px) {
     .related-blog-title {
-      font-size: 24px; } }
+      font-size: 24px;
+        margin-top: 40px;
+        margin-bottom: 40px; } }
 
 .blog-details_item .xb-item--img {
   overflow: hidden;
@@ -9318,7 +9323,7 @@ Drop Down menu end
     font-family: var(--font-heading); }
     @media (max-width: 767px) {
       .service_process_faq .accordion .accordion-button {
-        font-size: 18px; } }
+        font-size: 16px; } }
     .service_process_faq .accordion .accordion-button:not(:last-child) {
       border-bottom: 1px solid #40414b; }
     .service_process_faq .accordion .accordion-button:hover {
@@ -9362,7 +9367,9 @@ Drop Down menu end
     @media (max-width: 767px) {
       .content_layer_group > li {
         width: 330px;
-        height: 132px; } }
+        height: 132px; 
+        text-align: center;
+      } }
     @media only screen and (min-width: 576px) and (max-width: 767px) {
       .content_layer_group > li {
         width: 452px;
@@ -9398,7 +9405,9 @@ Drop Down menu end
       .content_layer_group span {
         width: 330px;
         height: 132px;
-        font-size: 16px; } }
+        font-size: 16px; 
+        line-height: 24px;
+      } }
     @media only screen and (min-width: 576px) and (max-width: 767px) {
       .content_layer_group span {
         width: 452px;
@@ -9481,7 +9490,7 @@ Drop Down menu end
         font-size: 30px; } }
     @media (max-width: 767px) {
       .xb-contact-form .title {
-        font-size: 24px; } }
+        font-size: 22px; } }
   .xb-contact-form .content {
     color: var(--color-white); }
   .xb-contact-form .xb-input-field {
@@ -10775,8 +10784,8 @@ body .mfp-wrap .mfp-container .mfp-content .mfp-close:hover::before, body .mfp-w
 
     @media (max-width: 767px) {
       .hero-content--two .title {
-        font-size: 36px;
-        line-height: 52px; } }
+        font-size: 32px;
+        line-height: 48px; } }
   .hero-content--three {
     margin: 0 auto;
     max-width: 1476px;
@@ -12650,6 +12659,7 @@ margin-top:16px;
 .blog_details_content.list-page .xb-img img{
     height: 315px;
     width: 312px;
+    padding: 0 15px;
 }
 .follow-us i, .follow-us svg{
     padding-right:10px;
@@ -12860,3 +12870,94 @@ section.project .xb-item--title{
     .icon_wd{
         max-width:50%;
     }
+    .blog-content-body h2{
+        font-size: 26px;
+    line-height: 38px;
+    letter-spacing: -0.04em;
+    margin-bottom: 25px;
+    margin-top: 35px;
+    }
+    .blog-content-body h3{
+        font-size: 22px;
+    line-height: 34px;
+    letter-spacing: -0.04em;
+    margin-bottom: 25px;
+    margin-top: 35px;
+    }
+    .xb-blog-item img{
+            padding: 0 15px;
+    }
+    
+    
+      @media (max-width: 767px) {
+          .main-contact-input-form .row>* {
+                 padding: 0 !important;
+          }
+          .sec-title .sub-title {
+                font-size: 36px;
+                line-height: 40px;
+          }
+          .text-ul li {
+                font-size: 14px;
+            }
+            .img-txt {
+             font-size: 20px;
+            }
+            .service .xb-service-wrap {
+                 padding: 0 12px;
+            }
+            .xb-service-item {
+                margin-bottom: 20px;
+            }
+            .text-end.right-content {
+                margin-top: 20px;
+            }
+            .case-studies .col-md-3 {
+                margin-top: 20px;
+            }
+             .xb-process-right-container {
+                padding-bottom: 10px !important;
+             }
+             .process-sction::before {
+                bottom: -300px;
+            }
+                .xb-faq .accordion_box .block .acc-btn {
+                font-size: 16px;
+                line-height: 22px;
+            }
+            #faq .row{
+                    gap: 20px;
+            }
+            .what-we-believe .xb-feature-item .xb-item--inner {
+                padding: 35px 20px 30px;
+            }
+            .xb-feature-item .xb-item--title {
+                font-size: 20px;
+                line-height: 30px;
+            }
+            .mb-padding{
+                        padding-top: 45px;
+            }
+            .sdp.agency-btn .text {
+             padding: 12.2px 20px;
+            }
+            .breadcrumb .breadcrumb-item {
+                font-size: 14px;
+            }
+            .blog_details_content.list-page .xb-img img {
+                height: auto;
+                width: auto;
+                padding: 0 15px;
+            }
+            .blog-content-body h2 {
+                font-size: 22px;
+                line-height: 34px;
+            }
+            .blog-content-body h3 {
+                font-size: 18px;
+                line-height: 32px;
+            }
+            .services-outcome-wraps .table-wrap {
+                margin-top: 40px;
+            }
+      }        

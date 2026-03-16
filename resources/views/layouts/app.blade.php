@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+        <!DOCTYPE html>
 <html lang="en">
 
 @include('partials.head')
@@ -11,12 +11,12 @@
 @include('partials.all-scripts')
 
 <!-- JS -->
-{{--  <script src="{{ asset('js/jquery.js') }}"></script>  --}}
-<script src="{{ asset('js/jquery-3.7.1.min.js') }}"></script>
+ <!--<script src="{{ asset('js/jquery.js') }}"></script>-->
+<!--<script src="{{ asset('js/jquery-3.7.1.min.js') }}"></script>-->
 
-<script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
-<script src="{{ asset('js/swiper.min.js') }}"></script>
-<script src="{{ asset('js/main.js') }}"></script>
+<!--<script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>-->
+<!--<script src="{{ asset('js/swiper.min.js') }}"></script>-->
+<!--<script src="{{ asset('js/main.js') }}"></script>-->
 
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
@@ -34,3 +34,4 @@
     
 </body>
 </html>
+    
