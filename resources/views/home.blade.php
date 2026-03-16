@@ -953,7 +953,10 @@
                                             <div class="col-md-4">
                                                 <div class="info-box">
                                                     <h5 class="fw-bold mb-1">Challenge</h5>
-                                                    <p>{{ $case->challenge }}</p>
+                                                    <p>
+                                                    <!-- {{ $case->challenge }} -->
+                                                    {{ Str::limit($case->challenge, 200) }}
+                                                    </p>
                                                 </div>
                                             </div>
 
@@ -961,7 +964,7 @@
                                                 <div class="info-box">
                                                     <h5 class="fw-bold mb-1">Results</h5>
                                                     <p class="fw-bold text-success">
-                                                        {{ Str::limit($case->results, 50) }}
+                                                        {{ Str::limit($case->results, 200) }}
                                                     </p>
                                                 </div>
                                             </div>
