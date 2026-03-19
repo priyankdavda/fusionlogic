@@ -242,9 +242,14 @@
 
             <div class="sec-title sec-title-center text-center">
                 <span class="sub-title">Who We are?</span>
-                <h2 class="title">
+                <!-- <h2 class="title">
                 Fusion Logic is a <img src="{{ asset('img/icon/360-degrees.png') }}" alt="shape" style="width:60px"><span class="title-color"> digital marketing company USA</span> brands
                 trust for AI-powered growth, performance marketing and scalable web development solutions.
+                </h2> -->
+                <h2 class="title">
+                Fusion Logic is a 
+                <!--<img src="{{ asset('img/icon/360-degrees.png') }}" alt="shape" style="width:60px">-->
+                <span class="title-color"> digital marketing</span> partner trusted by US brands for AI-powered growth, performance marketing and scalable web solutions.
                 </h2>
             </div>
 
