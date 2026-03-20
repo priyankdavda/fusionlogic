@@ -1170,7 +1170,7 @@
                         <!-- <div class="sec-title xb-sec-padding text-center pt-15"> -->
                         <div class="sec-title text-center pt-15">
                             <span class="sub-title mb-15">Our Achievements</span><br>
-                            <h2 class="title d-inline">We are trusted Fusion Logic</h2>
+                            <h2 class="title d-inline">Proven Results That Speak for Themselves</h2>
                         </div>
                 
                         <div class="row mt-40">
