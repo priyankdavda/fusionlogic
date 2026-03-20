@@ -1173,7 +1173,7 @@
                             <h2 class="title d-inline">Proven Results That Speak for Themselves</h2>
                         </div>
                 
-                        <div class="row mt-40">
+                        <div class="row mt-20">
                             @foreach($achievements as $achievement)
                                 <div class="col-lg-4 col-md-6 mt-30 d-flex">
                                     <div class="xb-contact-items img-hove-effect xb-border">
