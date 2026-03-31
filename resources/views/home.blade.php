@@ -36,7 +36,7 @@
 
         <div class="container">
             <div class="row">
-                 <div class="col-lg-9 col-md-9">
+                 <div class="col-lg-8 col-md-8">
                     <div class="hero-content hero-content--two" style="text-align: {{ $activeBanner->text_alignment }}; color: {{ $activeBanner->text_color }};">
 
                         <h2 class="title scale-animation wow" style="color: {{ $activeBanner->text_color }};">
@@ -68,9 +68,9 @@
 
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-3">
+                <div class="col-lg-4 col-md-4">
                     <div class="hero-icon wow zoomIn" data-wow-delay="700ms" data-wow-duration="800ms">
-                        <img src="{{ asset('img/icon/animated-gif02.gif') }}" alt="icon">
+                        <img src="{{ asset('img/icon/animated-fusionlogic.gif') }}" alt="icon">
                     </div>
                 </div>
             </div>

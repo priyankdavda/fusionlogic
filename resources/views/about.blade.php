@@ -97,7 +97,7 @@
             <div class="bg_img" data-background="{{ asset('img/bg/features-gradient-bg.png')  }}">
 
                 <!-- who-we-are start -->
-                <section class="who-we-are what-we-believe pt-55">
+                <section class="who-we-are what-we-believe pt-110 pb-90">
                     <div class="container">
                         <div class="sec-title sec-title-center about-sec-title about-sec-title-two mt-20">
                         <h2 class="title">
@@ -143,7 +143,7 @@
                     </div>
                 </section>
                 <!-- who-we-are end -->
-                <section class="brand pt-110 pb-90">
+                <!-- <section class="brand pt-110 pb-90">
                     <div class="container">
                         <div class="xb-brand-wrap xb-border">
 
@@ -179,7 +179,7 @@
 
                         </div>
                     </div>
-                </section>
+                </section> -->
             </div>
 
             <!-- feature start -->
