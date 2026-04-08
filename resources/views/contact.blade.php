@@ -37,6 +37,8 @@
                 <section class="contact pt-30 pb-50">
                     <div class="container">
                         <div class="row mt-none-30">
+
+                        
                             @if(!empty($footer->contact_info['address']))
                             <div class="col-lg-4 col-md-6 mt-30">
                                 <div class="xb-contact-items img-hove-effect xb-border">
@@ -46,8 +48,11 @@
                                         </div>
                                         <div class="xb-item--holder">
                                             <h3 class="title">Address</h3>
-                                            <span class="xb-item--contact_info">{{ collect($footer->contact_info['address'])->filter()->join(', ') }}</span>
-
+                                            <!-- <span class="xb-item--contact_info">{{ collect($footer->contact_info['address'])->filter()->join(', ') }}</span> -->
+                                            <span class="xb-item--contact_info">
+                                                {{ $footer->contact_info['address']['city'] ?? '' }},
+                                                {{ $footer->contact_info['address']['country'] ?? '' }}
+                                            </span>
 
                                         </div>
                                     </div>
@@ -270,7 +275,8 @@
                             </form>
                         </div>
                         <div class="google-map">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3349.9272690696894!2d-117.19292672453469!3d32.9000911736124!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dc07695b4d27f5%3A0xd3264b71b3c1ca98!2sRegus%20-%20San%20Diego%20-%20One%20Pacific%20Heights!5e0!3m2!1sen!2sin!4v1774942277687!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d209.3704343967155!2d-117.1904252!3d32.9000996!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dc0769436aaaab%3A0x21bb1397ed032f81!2s9920%20Pacific%20Heights%20Blvd%20Suite%20150%2C%20San%20Diego%2C%20CA%2092121%2C%20USA!5e0!3m2!1sen!2sin!4v1775553147521!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3349.9272690696894!2d-117.19292672453469!3d32.9000911736124!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dc07695b4d27f5%3A0xd3264b71b3c1ca98!2sRegus%20-%20San%20Diego%20-%20One%20Pacific%20Heights!5e0!3m2!1sen!2sin!4v1774942277687!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
                             <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14602.254272231177!2d90.3654215!3d23.7985508!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1592852423971!5m2!1sen!2sbd"></iframe> -->
                         </div>
                     </div>
