@@ -70,7 +70,8 @@
                 </div>
                 <div class="col-lg-4 col-md-4">
                     <div class="hero-icon wow zoomIn" data-wow-delay="700ms" data-wow-duration="800ms">
-                        <img src="{{ asset('img/icon/Fusion-Logic-logo-small.gif') }}" alt="icon">
+                        <!-- <img src="{{ asset('img/icon/Fusion-Logic-logo-small.gif') }}" alt="icon"> -->
+                        <img src="{{ asset('img/icon/new Fusion Logic logo sample 2.gif') }}" alt="icon">
                     </div>
                 </div>
             </div>
